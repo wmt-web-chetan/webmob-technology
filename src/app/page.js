@@ -1,3 +1,4 @@
+import ServiceSection from "@/sections/HomePage/ServiceSection";
 import { sectionRegistry } from "@/sections/sectionsRegistry";
 import { getPageData } from "@/utils/pageApi";
 
@@ -7,7 +8,7 @@ export default async function Home() {
 
   return (
     <>
-      {pageBlocks.map((block, i) => {
+      {/* {pageBlocks.map((block, i) => {
         const key = Object.keys(block)[0];
         const Component = sectionRegistry[key];
 
@@ -16,7 +17,8 @@ export default async function Home() {
         }
 
         return <Component key={i} {...block[key]} />;
-      })}
+      })} */}
+      <ServiceSection/>
     </>
   );
 }
