@@ -1,0 +1,39 @@
+@keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .marqueeContainer {
+    display: flex;
+    animation: marquee 30s linear infinite;
+  }
+  
+  .marqueeContainer:hover {
+    animation-play-state: paused;
+  }
+  
+  .logoSet {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  .blueGradient {
+    opacity: 0.5;
+    background: linear-gradient(90deg, var(--color-primary) -3.12%, rgba(51, 95, 255, 0.00) 100%);
+  }
+  
+  .whiteGradient {
+    width: 149.203px;
+    height: 85.428px;
+    flex-shrink: 0;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
+  }
+  
+  .blueLineAccent {
+    background: var(--color-primary);
+  }
