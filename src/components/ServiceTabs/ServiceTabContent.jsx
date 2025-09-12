@@ -1,22 +1,36 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { tabsData } from './tabsData';
 import Image from 'next/image';
 import serviceImage from "../../assets/images/service.webp"
 import pythonSvg from "../../assets/svg/python.svg"
+import PrimaryButton from '../PrimaryButton';
+import arrowSvg from "../../assets/svg/arrow.svg"
 
 const ServiceTabContent = ({ activeTab }) => {
+  const [isVisible, setIsVisible] = useState(true);
   const currentTab = tabsData[activeTab];
+
+  useEffect(() => {
+    setIsVisible(false);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 150);
+
+    return () => clearTimeout(timer);
+  }, [activeTab]);
 
   if (!currentTab) return null;
 
   return (
     <div className="">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2  gap-10">
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-7 lg:gap-10 transition-opacity duration-300 ease-in-out ${
+          isVisible ? 'opacity-100' : 'opacity-50'
+        }`}>
           {/* Left side - Image */}
-          <div className="flex justify-end">
-             <Image src={serviceImage} width={450} height={500} priority />
+          <div className="flex  lg:justify-end">
+             <Image src={serviceImage} width={450} height={500} priority  alt='demo'  className=''/>
           </div>
 
           {/* Right side - Content */}
@@ -55,16 +69,19 @@ const ServiceTabContent = ({ activeTab }) => {
               <p className="text-text-secondary text-base mb-4">
                 {currentTab.tools.description}
               </p>
-              <div className="flex flex-wrap  lg:gap-6">
+              <div className="flex flex-wrap gap-4  lg:gap-6">
                 {currentTab.tools.logos.map((tool, index) => (
                   <div
                     key={index}
                     className=" bg-light-bg pt-2 pb-2 px-6 border-none rounded-lg flex flex-col items-center justify-center shadow-sm"
                   >
-                    <Image src={pythonSvg} width={40} height={40}/>
+                    <Image src={pythonSvg} width={40} height={40} alt='demo'/>
                     <div className='text-xs mt-1.5'>Python</div>
                   </div>
                 ))}
+              </div>
+              <div className='mt-6'>
+              <PrimaryButton icon={arrowSvg} text="View All case studies" className="bg-primary-button text-white"/>
               </div>
             </div>
 

@@ -18,7 +18,7 @@ const ServiceTabs = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="flex flex-wrap justify-center gap-8 px-4 py-6">
+      <div className="flex flex-wrap justify-center gap-2 2xl:gap-8 px-4 py-6">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -30,9 +30,9 @@ const ServiceTabs = () => {
             }`}
           >
             {tab}
-            {activeTab === tab && (
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-primary w-1/2 rounded-b-full"></div>
-            )}
+            <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-primary rounded-b-full transition-all duration-500 ease-in-out ${
+              activeTab === tab ? 'w-1/2 opacity-100' : 'w-0 opacity-0'
+            }`}></div>
           </button>
         ))}
       </div>
