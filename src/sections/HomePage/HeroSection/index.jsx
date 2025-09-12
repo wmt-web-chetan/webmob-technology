@@ -21,7 +21,7 @@ const HeroSection = (props) => {
           
         </div>
         <div className="flex justify-center mt-8 gap-3">
-            <PrimaryButton text="Architect Your Future" className="text-white bg-primary-button text-sm"/>
+            <PrimaryButton text="Architect Your Future" className="text-white bg-primary-button text-sm "/>
             <PrimaryButton text=" Explore Our Realized Visions" className="border text-white border-white"/>
           </div>
 
