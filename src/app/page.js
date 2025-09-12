@@ -1,3 +1,4 @@
+import BrandSection from "@/sections/BrandSection";
 import ServiceSection from "@/sections/HomePage/ServiceSection";
 import { sectionRegistry } from "@/sections/sectionsRegistry";
 import { getPageData } from "@/utils/pageApi";
@@ -19,6 +20,7 @@ export default async function Home() {
         return <Component key={i} {...block[key]} />;
       })} */}
       <ServiceSection/>
+      <BrandSection />
     </>
   );
 }
