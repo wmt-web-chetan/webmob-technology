@@ -1,5 +1,3 @@
-"use client"
-
 import { Fragment } from "react"
 import styles from "./BrandSection.module.css"
 import Image from "next/image"
