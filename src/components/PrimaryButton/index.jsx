@@ -10,7 +10,7 @@ const PrimaryButton = ({ text, className, method, icon }) => {
         onClick={method}
       >
         {text}
-        {icon && <Image src={icon} alt='demo'/>}
+        {icon && <Image src={icon} alt="button icon"/>}
       </button>
     </div>
   );

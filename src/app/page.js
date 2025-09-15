@@ -3,10 +3,16 @@ import BrandSection from "@/sections/BrandSection";
 import AipoweredVelocity from "@/sections/HomePage/AipoweredVelocity";
 import AwardSection from "@/sections/HomePage/AwardSection";
 import BlogsSection from "@/sections/HomePage/BlogsSection";
+import TailwindSlider from "@/components/Slider";
+// import BrandSection from "@/sections/BrandSection";
+// import AipoweredVelocity from "@/sections/HomePage/AipoweredVelocity";
+import CaseStudySection from "@/sections/HomePage/CaseStudySection";
+import HeroSection from "@/sections/HomePage/HeroSection";
 import ServiceSection from "@/sections/HomePage/ServiceSection";
 import StatsSection from "@/sections/HomePage/StatsSection";
 import IntelligenceReturn from "@/sections/PerformanceSection";
 import { sectionRegistry } from "@/sections/sectionsRegistry";
+import TestimonialSection from "@/sections/TestimonialSection";
 import { getPageData } from "@/utils/pageApi";
 
 export default async function Home() {
@@ -25,10 +31,13 @@ export default async function Home() {
 
         return <Component key={i} {...block[key]} />;
       })} */}
+      <HeroSection/>
       <BrandSection/>
       <ServiceSection/>
+      <CaseStudySection/>
       <AipoweredVelocity/>
       <StatsSection />
+      <TestimonialSection/>
       <IntelligenceReturn />
       <BlogsSection />
       <AwardSection />

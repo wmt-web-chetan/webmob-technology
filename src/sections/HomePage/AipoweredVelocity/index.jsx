@@ -32,7 +32,7 @@ const AipoweredVelocity = () => {
             ].map((item, index) => {
               return (
                 <div key={index} className="flex gap-5 mb-3">
-                  <Image src={bullet} width={10} alt="ddd"/>
+                  <Image src={bullet} width={10} alt="bullet point"/>
                   <div className="text-text-secondary">{item}</div>
                 </div>
               );
