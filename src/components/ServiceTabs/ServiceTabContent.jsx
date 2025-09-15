@@ -25,16 +25,16 @@ const ServiceTabContent = ({ activeTab }) => {
   return (
     <div className="">
       <div className="max-w-7xl mx-auto">
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-7 lg:gap-10 transition-opacity duration-300 ease-in-out ${
+        <div className={`flex flex-col lg:flex-row gap-8 md:gap-7 lg:gap-10 transition-opacity duration-300 ease-in-out ${
           isVisible ? 'opacity-100' : 'opacity-50'
         }`}>
           {/* Left side - Image */}
-          <div className="flex  lg:justify-end">
-             <Image src={serviceImage} width={450} height={500} priority  alt='demo'  className=''/>
+          <div className="flex lg:justify-end lg:w-2/5">
+             <Image src={serviceImage} width={450} height={500} priority  alt='demo'  className='w-full'/>
           </div>
 
           {/* Right side - Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 lg:w-3/5">
             <div>
               <h2 className="text-lg font-semibold mb-1">
                 {currentTab.title}

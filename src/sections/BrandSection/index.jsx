@@ -22,7 +22,7 @@ export default function BrandSection() {
     <Fragment>
 
       <section className="px-wrapper section-padding-y">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20">
+        <div className="container mx-auto ">
           {/* Header Section */}
           <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-16 2xl:mb-16 3xl:mb-16">
             <div className="h2-heading mb-6">

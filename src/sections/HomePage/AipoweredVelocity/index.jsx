@@ -5,16 +5,16 @@ import AiPoweredRightSection from "@/components/AipoweredRightSection";
 
 const AipoweredVelocity = () => {
   return (
-    <div className="px-wrapper">
+    <div className="px-wrapper section-padding-y max-w-7xl mx-auto ">
       <div className="flex justify-center text-center">
         <h2 className="h2-heading">
           The Symbiosis: How We Achieve{" "}
           <span className="text-gradient-primary font-bold">5X Velocity</span>
         </h2>
       </div>
-      <div className="flex gap-5 mt-10">
-        <div className="flex-1 py-4">
-          <p className="text-lg text-text-primary   ">
+      <div className="lg:flex gap-5 mt-10 relative">
+        <div className="flex-1 py-4 lg:sticky lg:top-10 self-start">
+          <p className="text-lg text-text-primary">
             This isn't about developers just working harder. It's about them
             working smarter, amplified by a suite of proprietary and
             best-in-class AI tools. This fusion of human expertise and machine
@@ -23,23 +23,27 @@ const AipoweredVelocity = () => {
             of our development engine.
           </p>
           <div className="mt-8">
-            {[1, 2, 3, 4].map((item) => {
+            {[
+              "70% Faster Time-to-Market",
+              "60% Cost Savings on Development",
+              "Smarter AI Assistance = Higher Productivity, Lower Errors",
+              "Built-in Compliance & Enterprise Security",
+              "Unified Experience: Cloud, On-Premise, Hybrid",
+            ].map((item, index) => {
               return (
-                <div className="flex gap-5 mb-3">
-                  {" "}
-                  <Image src={bullet} width={10} />{" "}
-                  <div className="text-text-secondary">
-                    70% Faster Time-to-Market
-                  </div>
+                <div key={index} className="flex gap-5 mb-3">
+                  <Image src={bullet} width={10} alt="ddd"/>
+                  <div className="text-text-secondary">{item}</div>
                 </div>
               );
             })}
           </div>
         </div>
         <div className="flex-1">
-            <AiPoweredRightSection/>
+          <AiPoweredRightSection />
         </div>
       </div>
+     
     </div>
   );
 };
