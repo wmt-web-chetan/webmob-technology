@@ -2,7 +2,6 @@
 
 import { Fragment } from "react"
 import styles from "./BrandSection.module.css"
-import Image from "next/image"
 
 export default function BrandSection() {
   const logos = [
@@ -40,7 +39,7 @@ export default function BrandSection() {
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24">
             {/* Trusted By Text - Left aligned */}
             <div className="mb-6 lg:mb-0 lg:shrink-0 text-center lg:text-left">
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-medium ">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-medium text-gray-900 ">
                 Trusted by <span className="font-bold text-gradient-primary">3500+</span>
                 <span className="xl:block"> Brand worldwide</span>
               </p>
@@ -58,12 +57,9 @@ export default function BrandSection() {
                       key={index}
                       className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
                     >
-                      <Image
-                        priority
+                      <img
                         src={logo.src || "/placeholder.svg"}
                         alt={`${logo.name} logo`}
-                        width={192}
-                        height={96}
                         className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 2xl:h-22 3xl:h-24 w-20 sm:w-24 md:w-28 lg:w-32 xl:w-40 2xl:w-44 3xl:w-48 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                       />
                     </div>
