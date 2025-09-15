@@ -69,7 +69,7 @@ const AiPoweredRightSection = () => {
               return (
                 <div
                   key={card.id}
-                  className={`border sticky ${stickyPositions[index]} border-gray-300 rounded-lg px-6 lg:px-7 xl:px-8 py-6 shadow-lg space-y-6 mb-4 bg-white h-auto`}
+                  className={`border sticky ${stickyPositions[index]} hover:shadow-2xl border-gray-300 rounded-lg px-6 lg:px-7 xl:px-8 py-6 shadow-lg space-y-6 mb-4 bg-white h-auto`}
                 >
                   <div className="flex gap-3.5 items-center">
                     <div className="bg-light-bg inline-block py-4 px-4 rounded-2xl">

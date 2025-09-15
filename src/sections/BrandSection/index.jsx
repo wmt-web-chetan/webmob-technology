@@ -53,7 +53,7 @@ export default function BrandSection() {
                 <div className={`${styles.logoSet} gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 3xl:gap-14`}>
                   {logos.concat(logos).map((logo, index) => (
                     <div
-                      key={index}
+                      key={`${logo.name}-${index}`}
                       className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity duration-300"
                     >
                       <Image

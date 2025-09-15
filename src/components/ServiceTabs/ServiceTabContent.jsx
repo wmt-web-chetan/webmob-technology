@@ -30,7 +30,7 @@ const ServiceTabContent = ({ activeTab }) => {
         }`}>
           {/* Left side - Image */}
           <div className="flex lg:justify-end lg:w-2/5">
-             <Image src={serviceImage} width={450} height={500} priority  alt='demo'  className='w-full'/>
+             <Image src={serviceImage} width={450} height={500} priority  alt='Service demonstration image'  className='w-full'/>
           </div>
 
           {/* Right side - Content */}
@@ -75,7 +75,7 @@ const ServiceTabContent = ({ activeTab }) => {
                     key={index}
                     className=" bg-light-bg pt-2 pb-2 px-6 border-none rounded-lg flex flex-col items-center justify-center shadow-sm"
                   >
-                    <Image src={pythonSvg} width={40} height={40} alt='demo'/>
+                    <Image src={pythonSvg} width={40} height={40} alt='Technology logo'/>
                     <div className='text-xs mt-1.5'>Python</div>
                   </div>
                 ))}
