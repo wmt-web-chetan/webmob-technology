@@ -14,6 +14,7 @@ import IntelligenceReturn from "@/sections/PerformanceSection";
 import { sectionRegistry } from "@/sections/sectionsRegistry";
 import TestimonialSection from "@/sections/TestimonialSection";
 import { getPageData } from "@/utils/pageApi";
+import IndustrySection from "@/sections/HomePage/IndustrySection";
 
 export default async function Home() {
   const data = await getPageData("home");
@@ -31,17 +32,18 @@ export default async function Home() {
 
         return <Component key={i} {...block[key]} />;
       })} */}
-      <HeroSection/>
+      {/* <HeroSection/>
       <BrandSection/>
       <ServiceSection/>
       <CaseStudySection/>
       <AipoweredVelocity/>
-      <StatsSection />
+      <StatsSection /> */}
       <TestimonialSection/>
-      <IntelligenceReturn />
+      {/* <IndustrySection/> */}
+      {/* <IntelligenceReturn />
       <BlogsSection />
       <AwardSection />
-      <BottomFooter />
+      <BottomFooter /> */}
     </>
   );
 }
