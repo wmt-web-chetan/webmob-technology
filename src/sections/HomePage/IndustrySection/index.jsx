@@ -175,7 +175,7 @@ const IndustrySection = () => {
           </span>{" "}
         </h2>
       </div>
-      <div className="flex justify-center mt-4">
+      <div className="flex justify-center mt-3">
         <p className="h2-description lg:max-w-3xl  xl:max-w-4xl  2xl:max-w-5xl 3xl:max-w-7xl text-center">
           Technology is universal, but its application must be specific to be
           effective. We bring deep domain expertise to every project, ensuring
@@ -185,7 +185,11 @@ const IndustrySection = () => {
       </div>
       <div className="border-[1px] rounded-2xl border-[#1B1B3533] p-2  md:p-3 md:py-4 mt-8 ">
         {/* Mobile Tab Bar */}
-        <div className="xl:hidden mb-4">
+        <div className="xl:hidden mb-4 relative">
+          {/* Left white overlay */}
+          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+          {/* Right white overlay */}
+          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
           <div
             className="flex gap-2 overflow-x-auto scrollbar-hide pb-2"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
@@ -222,7 +226,7 @@ const IndustrySection = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 md:gap-4 xl:gap-4 2xl:gap-5 2xl:min-h-[300px] ">
+        <div className="grid lg:grid-cols-12 md:gap-4 xl:gap-4 2xl:gap-7 3xl:gap-10 2xl:min-h-[300px] ">
           {/* Tab Section */}
           <div className=" hidden xl:block xl:col-span-2 2xl:col-span-2">
             <div className="bg-light-bg p-2 h-full flex flex-col xl:gap-2 2xl:gap-3 rounded-2xl">
@@ -255,7 +259,7 @@ const IndustrySection = () => {
                   <div
                     className={`text-base ${
                       activeIndustry === index
-                        ? "text-text-primary font-medium"
+                        ? "text-text-secondary font-medium"
                         : "text-text-secondary"
                     }`}
                   >
@@ -272,7 +276,7 @@ const IndustrySection = () => {
               key={`content-${activeIndustry}`}
             >
               <div>
-                <h3 className="text-lg mt-2 md:mt-0 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-3xl font-semibold transition-all duration-300">
+                <h3 className="text-xl mt-4 md:mt-0 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-3xl font-semibold transition-all duration-300">
                   {industries[activeIndustry].title}
                 </h3>
               </div>
@@ -300,7 +304,7 @@ const IndustrySection = () => {
                 })}
               </div>
               <div className="flex mt-6 transition-all duration-300">
-                <span className="font-semibold text-sm md:text-md 2xl:text-lg inline-block w-40 md:w-22 lg:w-20 2xl:w-28">
+                <span className="font-semibold text-sm md:text-md 2xl:text-lg inline-block w-40 md:w-22 lg:w-20 2xl:w-42 3xl:w-28">
                   Our Work:
                 </span>
                 <div className="text-sm md:text-md 2xl:text-lg">
@@ -318,7 +322,7 @@ const IndustrySection = () => {
                       width={60}
                       height={24}
                       alt="Honeywell partner company logo"
-                      className="3xl:w-22"
+                      className="md:w-20 xl:w-20 2xl:w-20 3xl:w-22"
                     />
                   </div>
                 ))}

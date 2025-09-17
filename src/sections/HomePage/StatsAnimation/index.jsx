@@ -85,7 +85,7 @@ export default function StatsAnimation({ statsData }) {
   };
 
   return (
-    <div ref={sectionRef} className="max-w-7xl mx-auto space-y-6 sm:space-y-6 md:space-y-7 lg:space-y-8 xl:space-y-9 2xl:space-y-10 3xl:space-y-11">
+    <div ref={sectionRef} className= "2xl:max-w-6xl 3xl:max-w-7xl mx-auto space-y-6 sm:space-y-6 md:space-y-7 lg:space-y-8 xl:space-y-9 2xl:space-y-10 3xl:space-y-11 mt-10">
       {/* Mobile Layout - All cards stacked */}
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:hidden gap-4 sm:gap-4 md:gap-5">
         {statsData.map((stat, index) => {
@@ -97,7 +97,7 @@ export default function StatsAnimation({ statsData }) {
             >
               <div className="mb-4">
                 <span
-                  className="text-3xl sm:text-4xl md:text-4xl font-semibold text-black"
+                  className="text-3xl sm:text-4xl 2xl:text-xl font-semibold text-text-primary"
                   aria-live="polite"
                 >
                   {base}

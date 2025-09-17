@@ -32,14 +32,18 @@ export default async function Home() {
 
         return <Component key={i} {...block[key]} />;
       })} */}
-      {/* <HeroSection/>
-      <BrandSection/>
+      {/* <HeroSection/> */}
+      {/* <BrandSection/>
       <ServiceSection/>
       <CaseStudySection/>
       <AipoweredVelocity/>
       <StatsSection /> */}
-      <TestimonialSection/>
-      {/* <IndustrySection/> */}
+      {/* <TestimonialSection/> */}
+      <ServiceSection/>
+      <CaseStudySection/>
+      <AipoweredVelocity/>
+      <StatsSection />
+      <IndustrySection/>
       {/* <IntelligenceReturn />
       <BlogsSection />
       <AwardSection />
