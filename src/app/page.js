@@ -14,6 +14,11 @@ import IntelligenceReturn from "@/sections/PerformanceSection";
 import { sectionRegistry } from "@/sections/sectionsRegistry";
 import TestimonialSection from "@/sections/TestimonialSection";
 import { getPageData } from "@/utils/pageApi";
+import AvantGardeSection from "@/sections/HomePage/AvantGardeSection";
+import FaqSection from "@/sections/HomePage/FaqSection";
+import CubeCtaBanner from "@/sections/HomePage/CubeCtaBanner";
+import SimpleCtaBanner from "@/sections/HomePage/SimpleCtaBanner";
+import NewHeroSection from "@/sections/HomePage/NewHeroSection";
 
 export default async function Home() {
   const data = await getPageData("home");
@@ -31,7 +36,8 @@ export default async function Home() {
 
         return <Component key={i} {...block[key]} />;
       })} */}
-      <HeroSection/>
+      {/* <HeroSection/> */}
+      <NewHeroSection></NewHeroSection>
       <BrandSection/>
       <ServiceSection/>
       <CaseStudySection/>
@@ -41,6 +47,10 @@ export default async function Home() {
       <IntelligenceReturn />
       <BlogsSection />
       <AwardSection />
+      <AvantGardeSection />
+      <FaqSection />
+      <CubeCtaBanner />
+      <SimpleCtaBanner />
       <BottomFooter />
     </>
   );

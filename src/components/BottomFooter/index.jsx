@@ -43,7 +43,7 @@ const BottomFooter = () => {
           </svg>
         </div> */}
       </div>
-      <div className="relative pt-8 sm:pt-16 px-4 sm:px-8 md:px-16 lg:px-24 section-padding-y footer-gradient ">
+      <div className="relative pt-8 sm:pt-16 px-4 sm:px-8 md:px-16 lg:px-24 section-padding-y bg-dark-bg ">
         <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-16 pb-8 sm:pb-10 border-b border-text-disabled">
           <div>
             <Image

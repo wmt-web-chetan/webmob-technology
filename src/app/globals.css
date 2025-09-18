@@ -1,36 +1,33 @@
 @import "tailwindcss";
 
-
 @theme {
-
-   /* Primary & Secondary */
+  /* Primary & Secondary */
   --color-primary: #335fff;
   --color-secondary: #2c23e8;
-  
+
   /* Accent Colors */
   --color-accent-green: #28b673;
   --color-accent-yellow: #ffd333;
-  
+
   /* Functional & BG */
   --color-dark-bg: #1b1b35;
   --color-functional: #cb264d;
   --color-functional-light: #ff744d;
   --color-light-bg: #f0f4ff;
-  
+
   /* Text Colors */
   --color-text-primary: #24262b;
   --color-text-secondary: #3d4048;
   --color-text-disabled: #c4c7ce;
-  
+
   /* Gradient Colors */
   --color-gradient-start: #335fff;
   --color-gradient-end: #2c23e8;
-  
+
   /* breakpoint */
-   --breakpoint-lg: 1025px;
-   --breakpoint-2xl: 1536px;
-   --breakpoint-3xl: 1791px;
- 
+  --breakpoint-lg: 1025px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1791px;
 }
 
 body {
@@ -40,44 +37,296 @@ body {
   color: var(--color-text-primary);
   margin: 0;
   padding: 0;
-  
 }
 
-.h1-heading{
+.h1-heading {
   @apply text-3xl  md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl;
 }
 
-
-.h2-heading{
+.h2-heading {
   @apply text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl;
 }
 
-.h2-description{
+.h2-description {
   @apply text-sm md:text-lg xl:text-lg text-text-secondary;
 }
 
-.text-gradient-primary{
-  background: linear-gradient(163deg,rgba(42, 159, 255, 1) 0%, rgba(44, 35, 232, 1) 67%);
+.text-gradient-primary {
+  background: linear-gradient(
+    163deg,
+    rgba(42, 159, 255, 1) 0%,
+    rgba(44, 35, 232, 1) 67%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.bg-primary-button{
-    background: linear-gradient(163deg,rgba(42, 159, 255, 1) 0%, rgba(44, 35, 232, 1) 67%);
+.bg-primary-button {
+  background: linear-gradient(
+    163deg,
+    rgba(42, 159, 255, 1) 0%,
+    rgba(44, 35, 232, 1) 67%
+  );
 }
 
 /* by yash */
-.section-padding-y{
+.section-padding-y {
   @apply py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20 2xl:py-24;
 }
-.section-padding-y-v2{
+.section-padding-y-v2 {
   @apply py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 2xl:py-20;
 }
 
-
-.px-wrapper{
-  @apply px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 ;
+.px-wrapper {
+  @apply px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20;
 }
-.px-wrapper-v2{
+.px-wrapper-v2 {
   @apply px-3 sm:px-3 md:px-6 lg:px-9 xl:px-12 2xl:px-[72px];
+}
+
+/* .gradient-border-button {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: #335fff;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.gradient-border-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, #2a9fff, #2c23e8);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  z-index: -1;
+} */
+
+
+.gradient-border-button-pulse {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: #335fff;
+  font-weight: 500;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-button-pulse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, #2a9fff, #2c23e8);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-button-pulse:hover {
+  animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(42, 159, 255, 0.4);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(42, 159, 255, 0.6);
+    transform: scale(1.05);
+  }
+}
+.gradient-border-button-thick {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: #335fff;
+  font-weight: 500;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-button-thick::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, #2a9fff, #2c23e8);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-button-thick:hover::before {
+  padding: 2px;
+  background: linear-gradient(135deg, #2a9fff, #2c23e8, #6c5ce7, #fd79a8);
+}
+
+.gradient-border-button-thick:hover {
+  color: #2c23e8;
+  transform: translateY(-1px);
+}
+.gradient-border-button-shimmer {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: #335fff;
+  font-weight: 500;
+  z-index: 1;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.gradient-border-button-shimmer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, #2a9fff, #2c23e8);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-button-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(6, 23, 175, 0.3), transparent);
+  transition: left 0.6s ease;
+  z-index: 2;
+}
+
+.gradient-border-button-shimmer:hover::after {
+  left: 100%;
+}
+.btn-style501 {
+  background-image: linear-gradient(to right, #2a9fff 0%, #2c23e8 51%, #2a9fff 100%);
+  background-size: 200% auto;
+  background-position: left top;
+  border-color: transparent;
+  color: #ffff;
+  transition: all 0.3s ease;
+}
+
+.btn-style501:hover {
+  background-position: right bottom;
+  color: #ffff;
+}
+
+.gradient-border-button-neon {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: #335fff;
+  font-weight: 500;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-button-neon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, #2a9fff, #2c23e8);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-button-neon:hover {
+  color: #1128a8;
+  text-shadow: 0 0 10px rgba(42, 159, 255, 0.8);
+  animation: neonWave 1.5s ease-in-out infinite;
+}
+
+@keyframes neonWave {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(42, 159, 255, 0.5),
+      0 0 40px rgba(44, 35, 232, 0.3),
+      inset 0 0 20px rgba(42, 159, 255, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(42, 159, 255, 0.8),
+      0 0 60px rgba(44, 35, 232, 0.5),
+      inset 0 0 30px rgba(42, 159, 255, 0.2);
+  }
+}
+
+.gradient-border-button-matrix {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: #335fff;
+  font-weight: 500;
+  z-index: 1;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.gradient-border-button-matrix::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, #2a9fff, #2c23e8);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-button-matrix::after {
+  content: "0101010110100101";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  height: 200%;
+  background: linear-gradient(180deg, transparent, rgba(42, 159, 255, 0.1), transparent);
+  color: rgba(42, 159, 255, 0.6);
+  font-size: 8px;
+  font-family: monospace;
+  letter-spacing: 2px;
+  line-height: 10px;
+  z-index: 0;
+  transition: all 0.8s ease;
+  opacity: 0;
+}
+
+.gradient-border-button-matrix:hover::after {
+  top: 100%;
+  opacity: 1;
 }

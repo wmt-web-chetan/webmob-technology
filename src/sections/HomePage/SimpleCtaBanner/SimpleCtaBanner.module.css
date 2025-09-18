@@ -1,0 +1,36 @@
+/* SimpleCtaBanner.module.css */
+
+/* Continuous arrow animation - only targets the arrow icon */
+.arrowAnimate img,
+.arrowAnimate svg,
+.arrowAnimate .arrowIcon {
+  animation: arrowMove 1.5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+/* On hover, rotate arrow to 45 degrees and maintain animation */
+.arrowAnimate:hover img,
+.arrowAnimate:hover svg,
+.arrowAnimate:hover .arrowIcon {
+  animation: arrowMoveHover 1.5s ease-in-out infinite;
+}
+
+/* Normal arrow animation */
+@keyframes arrowMove {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+/* Hover arrow animation - combines rotation with movement */
+@keyframes arrowMoveHover {
+  0%, 100% {
+    transform: rotate(-45deg) translateX(0);
+  }
+  50% {
+    transform: rotate(-45deg) translateX(6px);
+  }
+}

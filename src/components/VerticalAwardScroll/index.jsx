@@ -6,6 +6,18 @@ const VerticalAwardScroll = ({ children, reverse = false }) => {
   const containerRef = useRef(null);
   const animationRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Convert children to array
   const childArray = React.Children.toArray(children);
@@ -20,26 +32,37 @@ const VerticalAwardScroll = ({ children, reverse = false }) => {
       const speed = 0.8; // scroll speed
       let newPosition = reverse ? prev - speed : prev + speed;
 
-      const scrollHeight = containerRef.current.scrollHeight;
-      const containerHeight = containerRef.current.clientHeight;
+      if (isMobile) {
+        // Horizontal scrolling logic
+        const scrollWidth = containerRef.current.scrollWidth;
+        const containerWidth = containerRef.current.clientWidth;
+        const maxScroll = scrollWidth - containerWidth;
 
-      // Only scrollable height (avoid flicker at end)
-      const maxScroll = scrollHeight - containerHeight;
+        if (!reverse && newPosition >= maxScroll / 2) {
+          newPosition = 0;
+        }
+        if (reverse && newPosition <= 0) {
+          newPosition = maxScroll / 2;
+        }
+      } else {
+        // Vertical scrolling logic
+        const scrollHeight = containerRef.current.scrollHeight;
+        const containerHeight = containerRef.current.clientHeight;
+        const maxScroll = scrollHeight - containerHeight;
 
-      if (!reverse && newPosition >= maxScroll / 2) {
-        // Reset seamlessly to first duplicate
-        newPosition = 0;
-      }
-      if (reverse && newPosition <= 0) {
-        // Reset seamlessly to middle duplicate
-        newPosition = maxScroll / 2;
+        if (!reverse && newPosition >= maxScroll / 2) {
+          newPosition = 0;
+        }
+        if (reverse && newPosition <= 0) {
+          newPosition = maxScroll / 2;
+        }
       }
 
       return newPosition;
     });
 
     animationRef.current = requestAnimationFrame(animate);
-  }, [reverse]);
+  }, [reverse, isMobile]);
 
   useEffect(() => {
     animationRef.current = requestAnimationFrame(animate);
@@ -48,21 +71,49 @@ const VerticalAwardScroll = ({ children, reverse = false }) => {
 
   useEffect(() => {
     if (containerRef.current) {
-      containerRef.current.scrollTop = scrollPosition;
+      if (isMobile) {
+        containerRef.current.scrollLeft = scrollPosition;
+      } else {
+        containerRef.current.scrollTop = scrollPosition;
+      }
     }
-  }, [scrollPosition]);
+  }, [scrollPosition, isMobile]);
+
+  if (isMobile) {
+    return (
+      <div className="relative w-full max-w-[calc(100vw-2rem)]">
+        {/* Gradient overlays for horizontal */}
+        <div className="absolute top-0 left-0 bottom-0 w-8 wrapper-gradient-left z-10"></div>
+        <div className="absolute top-0 right-0 bottom-0 w-8 wrapper-gradient-right z-10"></div>
+
+        {/* Horizontal scrolling container */}
+        <div 
+          ref={containerRef} 
+          className="overflow-hidden px-4"
+        >
+          <div className="grid grid-flow-col auto-cols-max gap-4 w-max">
+            {extendedChildren.map((child, index) => (
+              <div key={index} className="transition-all duration-300 h-full">
+                {child}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative max-h-[400px] sm:max-h-[500px] lg:max-h-[650px]">
-      {/* Gradient overlays */}
-      <div className="absolute top-0 left-0 right-0 h-12 sm:h-16 lg:h-20 wrapper-gradient-top"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 lg:h-20 wrapper-gradient-bottom"></div>
+      {/* Gradient overlays for vertical */}
+      <div className="absolute top-0 left-0 right-0 h-12 sm:h-16 lg:h-20 wrapper-gradient-top z-10"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 lg:h-20 wrapper-gradient-bottom z-10"></div>
 
-      {/* Scrolling container */}
+      {/* Vertical scrolling container */}
       <div ref={containerRef} className="h-full overflow-hidden py-6 sm:py-7 lg:py-8">
-        <div className="space-y-4 sm:space-y-5 lg:space-y-6">
+        <div className="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
           {extendedChildren.map((child, index) => (
-            <div key={index} className="transition-all duration-300">
+            <div key={index} className="transition-all duration-300 h-full">
               {child}
             </div>
           ))}

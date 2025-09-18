@@ -92,7 +92,7 @@ const AwardSection = () => {
   };
 
   return (
-    <div className="bg-dark-bg flex flex-col xl:flex-row justify-between gap-8 xl:gap-16 py-12 xl:py-0 px-4 sm:px-24 md:px-30 xl:px-42 2xl:!px-48">
+    <div className="bg-dark-bg flex flex-col xl:flex-row justify-between gap-8 xl:gap-0 py-12 xl:py-0 px-4 sm:px-24 md:px-30 xl:px-23 2xl:!px-48">
       <div className="w-full xl:max-w-3xl flex flex-col gap-y-8 xl:gap-y-16 justify-center">
         <div className="flex flex-col gap-y-4 xl:gap-y-6">
           <div className="text-white h2-heading font-bold leading-tight text-center xl:text-start">
@@ -129,17 +129,29 @@ const AwardSection = () => {
       </div>
 
       {/* Award Cards - responsive layout */}
-      <div className="flex gap-x-6 sm:gap-x-8 xl:gap-x-14 justify-center xl:justify-end mt-8 xl:mt-0">
-        <VerticalAwardScroll>
-          {staticData.awards.map((award, idx) => (
-            <AwardCard key={idx} image={award?.image?.node?.mediaItemUrl} text={award?.title} />
-          ))}
-        </VerticalAwardScroll>
-        <VerticalAwardScroll reverse>
-          {staticData.awards.map((award, idx) => (
-            <AwardCard key={idx} image={award?.image?.node?.mediaItemUrl} text={award?.title} />
-          ))}
-        </VerticalAwardScroll>
+      <div className="w-full md:w-auto">
+        {/* Mobile: Single horizontal scroll */}
+        <div className="md:hidden">
+          <VerticalAwardScroll>
+            {staticData.awards.map((award, idx) => (
+              <AwardCard key={idx} image={award?.image?.node?.mediaItemUrl} text={award?.title} />
+            ))}
+          </VerticalAwardScroll>
+        </div>
+        
+        {/* Desktop: Two vertical columns */}
+        <div className="hidden md:flex gap-x-6 sm:gap-x-8 xl:gap-x-14 justify-center xl:justify-end">
+          <VerticalAwardScroll>
+            {staticData.awards.map((award, idx) => (
+              <AwardCard key={idx} image={award?.image?.node?.mediaItemUrl} text={award?.title} />
+            ))}
+          </VerticalAwardScroll>
+          <VerticalAwardScroll reverse>
+            {staticData.awards.map((award, idx) => (
+              <AwardCard key={idx} image={award?.image?.node?.mediaItemUrl} text={award?.title} />
+            ))}
+          </VerticalAwardScroll>
+        </div>
       </div>
     </div>
   );

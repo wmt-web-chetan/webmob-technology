@@ -1,28 +1,45 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function HeroVideo() {
-  return (
-    <>
-      {/* Background image for mobile & tablet */}
-      <div className="absolute inset-0 w-full h-full bg-cover bg-center lg:hidden"
-           style={{ backgroundImage: "url('/bgHero.webp')" }}>
-      </div>
+  const [isMobile, setIsMobile] = useState(false);
 
-      {/* Background video only for md+ (desktop) */}
-      <video
-        className="hidden lg:block absolute inset-0 w-full h-full object-cover "
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster="/bgHero.webp"
-      >
-        <source src="/hero.webm" type="video/webm" />
-        <source src="/hero.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </>
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint equivalent
+    };
+
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
+  // Only render on mobile since desktop video is handled in parent component
+  if (!isMobile) {
+    return null;
+  }
+
+  const mobileVideoStyle = {
+    width: '100%',
+    height: 'auto',
+    maxHeight: '300px', // You can adjust this size
+    // borderRadius: '12px',
+    // boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
+  };
+
+  return (
+    <video
+      style={mobileVideoStyle}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      poster="/bgHero.webp"
+    >
+      <source src="/heroMobile.webm" type="video/webm" />
+      <source src="/heroMobile.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   );
 }
