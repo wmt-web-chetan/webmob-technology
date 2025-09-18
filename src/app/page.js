@@ -19,6 +19,7 @@ import FaqSection from "@/sections/HomePage/FaqSection";
 import CubeCtaBanner from "@/sections/HomePage/CubeCtaBanner";
 import SimpleCtaBanner from "@/sections/HomePage/SimpleCtaBanner";
 import NewHeroSection from "@/sections/HomePage/NewHeroSection";
+import IndustrySection from "@/sections/HomePage/IndustrySection";
 
 export default async function Home() {
   const data = await getPageData("home");
@@ -39,12 +40,18 @@ export default async function Home() {
       {/* <HeroSection/> */}
       <NewHeroSection></NewHeroSection>
       <BrandSection/>
+      {/* <BrandSection/>
+      <ServiceSection/>
+      <CaseStudySection/>
+      <AipoweredVelocity/>
+      <StatsSection /> */}
+      {/* <TestimonialSection/> */}
       <ServiceSection/>
       <CaseStudySection/>
       <AipoweredVelocity/>
       <StatsSection />
-      <TestimonialSection/>
-      <IntelligenceReturn />
+      <IndustrySection/>
+      {/* <IntelligenceReturn />
       <BlogsSection />
       <AwardSection />
       <AvantGardeSection />
@@ -52,6 +59,7 @@ export default async function Home() {
       <CubeCtaBanner />
       <SimpleCtaBanner />
       <BottomFooter />
+      <BottomFooter /> */}
     </>
   );
 }

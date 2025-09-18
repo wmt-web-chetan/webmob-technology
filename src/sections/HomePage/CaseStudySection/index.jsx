@@ -1,6 +1,7 @@
 import CaseStudyCard from "@/components/CaseStudyCard";
 import React from "react";
 import vivaImage from "../../../assets/images/viva.jpg"
+import stream from "../../../assets/images/stream.png"
 
 const CaseStudySection = () => {
   const caseStudyData = [
@@ -17,7 +18,7 @@ const CaseStudySection = () => {
       title: "StreamBase",
       description: "StreamBase is a real-time analytics and decision engine that helps companies build applications that can process massive amounts of streaming data.",
       tags: ["Email Design", "Event Friendly", "Web API Support"],
-      image: vivaImage,
+      image: stream,
     },
     {
       id: 3,
@@ -30,8 +31,8 @@ const CaseStudySection = () => {
       id: 4,
       title: "La Savista",
       description: "La Savista wants to be the ultimate place for cryptocurrency trades with an easy-to-use and complete trading software solution.",
-      tags: ["Voice Studio", "Travel Tool Design", "Chart Report Navigation"],
-      image: vivaImage,
+      tags: ["Voice Studio", "Travel Tool Design", "Voice Studio", "Travel Tool Design","Chart Report Navigation"],
+      image: stream,
     }
   ];
 
