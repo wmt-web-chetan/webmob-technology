@@ -1,0 +1,48 @@
+/* AvantGardeSection.module.css */
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+.cardWithAnimatedBorder {
+  position: relative;
+}
+
+.cardWithAnimatedBorder::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent 50%,
+    #28b873,
+    #ffd333,
+    #db264d 99%,
+    #ff744d,
+    #335fff,
+    transparent 50%
+  );
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.cardWithAnimatedBorder:hover::before {
+  opacity: 1;
+  animation: bgSpin 3s linear infinite;
+}
+
+@keyframes bgSpin {
+  to {
+    --border-angle: 1turn;
+  }
+}

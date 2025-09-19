@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Checks from "@/assets/svg/Checks.svg"
 import arrowSvg from "@/assets/svg/arrow.svg"
-import styles from "./SimpleCtaBanner.module.css";
+// import styles from "./SimpleCtaBanner.module.css";
 
 const SimpleCtaBanner = () => {
   return (
@@ -36,7 +36,7 @@ const SimpleCtaBanner = () => {
           <PrimaryButton
             icon={arrowSvg}
             text="Schedule a Strategic Call"
-            className={`text-white bg-primary-button text-sm ${styles.arrowAnimate}`}
+            className="text-white bg-primary-button text-sm arrow-animate"
           />
         </div>
       </div>

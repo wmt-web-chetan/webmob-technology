@@ -7,7 +7,7 @@ import roundcube3 from "@/assets/images/RoundCube3.png";
 
 const CubeCtaBanner = () => {
   return (
-    <div className="relative min-h-[400px] bg-[#F0F4FF] overflow-hidden">
+    <div className="relative min-h-[400px] bg-light-bg overflow-hidden">
       {/* Cube background images */}
       <div className="absolute inset-0">
         {/* Top-left cube */}

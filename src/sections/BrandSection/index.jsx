@@ -21,7 +21,7 @@ export default function BrandSection() {
   return (
     <Fragment>
 
-      <section className="px-wrapper section-padding-y">
+      <section className="px-wrapper section-padding-y bg-light-bg">
         <div className="container mx-auto ">
           {/* Header Section */}
           <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-16 2xl:mb-16 3xl:mb-16">

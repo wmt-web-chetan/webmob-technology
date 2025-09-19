@@ -4,6 +4,9 @@ import Image from 'next/image';
 import bulb from '@/assets/svg/bulb.svg?url';
 import growthIcon from '@/assets/svg/growth.svg';
 import efficiencyIcon from '@/assets/svg/meter.svg?url';
+import PrimaryButton from '@/components/PrimaryButton';
+import arrowSvg from "@/assets/svg/arrow.svg"
+
 
 export default function IntelligenceReturn({
   mainTitle = 'The Tangible Return on Intelligence',
@@ -94,11 +97,13 @@ export default function IntelligenceReturn({
       </div>
 
       {/* CTA Button */}
-      <div className="flex justify-center mt-12">
-        <button className="bg-primary-button text-white px-8 py-3 text-lg rounded-full transition-colors duration-200">
-          {ctaText}
-        </button>
-      </div>
+      <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-8">
+          <PrimaryButton
+            icon={arrowSvg}
+            text="See the Velocity in Action"
+            className="text-white bg-primary-button text-sm arrow-animate"
+          />
+        </div>
     </section>
   );
 }

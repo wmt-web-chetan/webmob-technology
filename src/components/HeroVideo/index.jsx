@@ -2,44 +2,42 @@
 import React, { useState, useEffect } from "react";
 
 export default function HeroVideo() {
-  const [isMobile, setIsMobile] = useState(false);
-
+  const [isDesktop, setIsDesktop] = useState(false);
+  
   useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 1024); // lg breakpoint equivalent
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024); // lg breakpoint equivalent
     };
-
-    checkIsMobile();
-    window.addEventListener('resize', checkIsMobile);
-    return () => window.removeEventListener('resize', checkIsMobile);
+    
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+    return () => window.removeEventListener('resize', checkIsDesktop);
   }, []);
-
-  // Only render on mobile since desktop video is handled in parent component
-  if (!isMobile) {
+  
+  // Only render on desktop since mobile only shows webp background
+  if (!isDesktop) {
     return null;
   }
-
-  const mobileVideoStyle = {
-    width: '100%',
-    height: 'auto',
-    maxHeight: '300px', // You can adjust this size
-    // borderRadius: '12px',
-    // boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)'
-  };
-
+  
   return (
-    <video
-      style={mobileVideoStyle}
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      poster="/bgHero.webp"
-    >
-      <source src="/heroMobile.webm" type="video/webm" />
-      <source src="/heroMobile.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div className="w-full flex justify-center">
+      <video
+        className="w-full max-w-6xl h-auto object-cover rounded-xl shadow-2xl"
+        style={{
+          aspectRatio: '16/9', // Adjust this based on your video's aspect ratio
+          maxHeight: '500px'   // Prevent video from getting too tall
+        }}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/bgHero.webp"
+      >
+        <source src="/hero.webm" type="video/webm" />
+        <source src="/hero.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
   );
 }

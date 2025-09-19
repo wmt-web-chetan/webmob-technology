@@ -5,25 +5,9 @@ import React from "react";
 const NewHeroSection = () => {
   return (
     <section className="relative w-full px-wrapper min-h-screen overflow-hidden">
-      {/* Desktop background video */}
-      <div className="hidden lg:block">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/bgHero.webp"
-        >
-          <source src="/hero.webm" type="video/webm" />
-          <source src="/hero.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      {/* Mobile background image */}
+      {/* Background image for all screen sizes */}
       <div 
-        className="lg:hidden absolute inset-0 w-full h-full bg-cover bg-center"
+        className="absolute inset-0 w-full h-full bg-cover bg-center"
         style={{ backgroundImage: "url('/bgHero.webp')" }}
       ></div>
 
@@ -51,8 +35,8 @@ const NewHeroSection = () => {
           </div>
         </div>
 
-        {/* Mobile video section - positioned below buttons */}
-        <div className="lg:hidden mt-8 w-full max-w-lg">
+        {/* Desktop video section - positioned below buttons */}
+        <div className="hidden lg:block mt-8 w-full max-w-4xl">
           <HeroVideo />
         </div>
       </div>

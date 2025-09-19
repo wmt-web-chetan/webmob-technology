@@ -14,12 +14,13 @@ import IntelligenceReturn from "@/sections/PerformanceSection";
 import { sectionRegistry } from "@/sections/sectionsRegistry";
 import TestimonialSection from "@/sections/TestimonialSection";
 import { getPageData } from "@/utils/pageApi";
-import AvantGardeSection from "@/sections/HomePage/AvantGardeSection";
 import FaqSection from "@/sections/HomePage/FaqSection";
 import CubeCtaBanner from "@/sections/HomePage/CubeCtaBanner";
 import SimpleCtaBanner from "@/sections/HomePage/SimpleCtaBanner";
 import NewHeroSection from "@/sections/HomePage/NewHeroSection";
 import IndustrySection from "@/sections/HomePage/IndustrySection";
+import AvantGardeSection from "@/sections/HomePage/AvantGardeSection";
+import EngineeringHorizonSection from "@/sections/HomePage/EngineeringHorizonSection";
 
 export default async function Home() {
   const data = await getPageData("home");
@@ -50,16 +51,16 @@ export default async function Home() {
       <CaseStudySection/>
       <AipoweredVelocity/>
       <StatsSection />
-      <IndustrySection/>
-      {/* <IntelligenceReturn />
+     <IntelligenceReturn />
       <BlogsSection />
-      <AwardSection />
+      <SimpleCtaBanner />
       <AvantGardeSection />
+      <EngineeringHorizonSection />
+      <IndustrySection/>
+      <AwardSection />
       <FaqSection />
       <CubeCtaBanner />
-      <SimpleCtaBanner />
       <BottomFooter />
-      <BottomFooter /> */}
     </>
   );
 }
