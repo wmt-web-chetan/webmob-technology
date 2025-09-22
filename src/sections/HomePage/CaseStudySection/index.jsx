@@ -2,6 +2,8 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import React from "react";
 import vivaImage from "../../../assets/images/viva.jpg"
 import stream from "../../../assets/images/stream.png"
+import PrimaryButton from "@/components/PrimaryButton";
+import arrowSvg from "../../../assets/svg/arrow.svg"
 
 const CaseStudySection = () => {
   const caseStudyData = [
@@ -37,22 +39,30 @@ const CaseStudySection = () => {
   ];
 
   return (
-    <div className="bg-light-bg section-padding-y px-wrapper">
-      <div className="flex justify-center text-center mb-12">
+    <div className="bg-light-bg section-padding-y px-wrapper ">
+      <div className="flex justify-center text-center mb-8 xl:mb-12">
         <h2 className="h2-heading">
           Our Work is{" "}
           <span className="text-gradient-primary font-bold">Our Proof.</span>
-          Analyze the Unredacted{" "}
+           Analyze the Unredacted{" "}
           <span className="text-gradient-primary font-bold">Evidence.</span>
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2  gap-3 md:gap-4 xl:gap-4 2xl:gap-6 mx-auto items-stretch">
         {caseStudyData.map((study, caseStudyIndex) => (
           <div key={caseStudyIndex} className="flex">
              <CaseStudyCard data={study}/>
             </div>
         ))}
       </div>
+       <div className="flex justify-center mt-8">
+        <PrimaryButton
+          icon={arrowSvg}
+          text="View All Case Studies "
+          className="text-white bg-primary-button text-sm arrow-animate"
+        />
+      </div>
+     
     </div>
   );
 };

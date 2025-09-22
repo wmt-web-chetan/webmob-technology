@@ -247,9 +247,9 @@ const TestimonialCard = () => {
               alt="quotation mark"
             />
           </div>
-          <div className="mt-3 flex flex-col justify-between h-full">
+          <div className="mt-3 flex flex-col h-full">
             <p
-              className={`mt-3 lg:mt-10 z-20 text-base md:text-lg lg:text-lg xl:text-lg 2xl:text-lg 3xl:text-xl xl:max-w-2xl 2xl:max-w-5xl text-text-secondary transition-all duration-500 ease-in-out delay-200 flex-1 md:min-h-[160px] lg:min-h-[130px]  flex items-start ${
+              className={`mt-3 lg:mt-10 z-20 text-base md:text-lg lg:text-lg xl:text-lg 2xl:text-lg 3xl:text-xl xl:max-w-2xl 2xl:max-w-5xl text-text-secondary transition-all duration-500 ease-in-out delay-200 flex-grow ${
                 isTransitioning
                   ? "opacity-0 translate-x-4"
                   : "opacity-100 translate-x-0"
@@ -257,7 +257,7 @@ const TestimonialCard = () => {
             >
               {currentTestimonial.text}
             </p>
-            <div className="flex-shrink-0">
+            <div className="mt-auto flex-shrink-0">
               <div
                 className={`text-lg mt-4 lg:mt-0 font-bold transition-all duration-500 ease-in-out delay-300 ${
                   isTransitioning

@@ -49,7 +49,7 @@ body {
 
 
 .h2-heading{
-  @apply text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl 3xl:text-5xl  leading-relaxed;
+  @apply text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl 3xl:text-5xl leading-tight;
 }
 
 .h2-description{

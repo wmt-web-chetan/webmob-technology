@@ -2,19 +2,21 @@ import Image from "next/image";
 import React from "react";
 import bullet from "../../../assets/svg/bullet.svg";
 import AiPoweredRightSection from "@/components/AipoweredRightSection";
+import arrowSvg from "../../../assets/svg/arrow.svg"
+import PrimaryButton from "@/components/PrimaryButton";
 
 const AipoweredVelocity = () => {
   return (
-    <div className="px-wrapper section-padding-y max-w-7xl mx-auto ">
+    <div className="px-wrapper section-padding-y max-w-[1400px] mx-auto ">
       <div className="flex justify-center text-center">
         <h2 className="h2-heading">
           The Symbiosis: How We Achieve{" "}
           <span className="text-gradient-primary font-bold">5X Velocity</span>
         </h2>
       </div>
-      <div className="lg:flex gap-5 mt-10 relative">
+      <div className="lg:flex gap-5 mt-4 md:mt-6 xl:mt-10 relative">
         <div className="flex-1 py-4 lg:sticky lg:top-10 self-start">
-          <p className="text-lg text-text-primary">
+          <p className="text-base text-text-primary">
             This isn't about developers just working harder. It's about them
             working smarter, amplified by a suite of proprietary and
             best-in-class AI tools. This fusion of human expertise and machine
@@ -32,8 +34,8 @@ const AipoweredVelocity = () => {
             ].map((item, index) => {
               return (
                 <div key={index} className="flex gap-5 mb-3">
-                  <Image src={bullet} width={10} alt="bullet point"/>
-                  <div className="text-text-secondary">{item}</div>
+                  <Image src={bullet} width={10} alt="bullet point" />
+                  <div className="text-text-secondary text-sm">{item}</div>
                 </div>
               );
             })}
@@ -43,7 +45,13 @@ const AipoweredVelocity = () => {
           <AiPoweredRightSection />
         </div>
       </div>
-     
+      <div className="flex justify-center mt-8">
+        <PrimaryButton
+          icon={arrowSvg}
+          text="See the Velocity in Action"
+          className="text-white bg-primary-button text-sm arrow-animate"
+        />
+      </div>
     </div>
   );
 };

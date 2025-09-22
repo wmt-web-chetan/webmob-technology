@@ -38,20 +38,12 @@ export default async function Home() {
 
         return <Component key={i} {...block[key]} />;
       })} */}
-      {/* <HeroSection/> */}
-      <NewHeroSection></NewHeroSection>
-      <BrandSection/>
-      {/* <BrandSection/>
-      <ServiceSection/>
-      <CaseStudySection/>
-      <AipoweredVelocity/>
-      <StatsSection /> */}
-      {/* <TestimonialSection/> */}
-      <ServiceSection/>
+  
       <CaseStudySection/>
       <AipoweredVelocity/>
       <StatsSection />
      <IntelligenceReturn />
+     {/* <TestimonialSection/> */}
       <BlogsSection />
       <SimpleCtaBanner />
       <AvantGardeSection />

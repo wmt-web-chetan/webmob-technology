@@ -18,7 +18,7 @@ const ServiceTabs = () => {
 
   return (
     <div className="w-full bg-white">
-      <div className="flex flex-wrap justify-center gap-2 2xl:gap-8 px-4 py-6">
+      <div className="flex overflow-y-auto justify-center gap-2 2xl:gap-8 px-4 py-6">
         {tabs.map((tab) => (
           <button
             key={tab}

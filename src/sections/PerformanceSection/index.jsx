@@ -40,10 +40,10 @@ export default function IntelligenceReturn({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
         <div className="space-y-6">
           <div className="space-y-4 max-w-3xl">
-            <div className="h1-heading text-center sm:text-start leading-tight">
+            <div className="h2-heading text-center sm:text-start leading-tight">
               {mainTitle.split(' ').map((word, index) =>
                 word.toLowerCase() === 'intelligence' ? (
-                  <span key={index} className="text-gradient-primary font-bold">
+                  <span key={index} className="text-gradient-primary font-semibold">
                     {word}{' '}
                   </span>
                 ) : (
@@ -58,7 +58,7 @@ export default function IntelligenceReturn({
         <div className="p-6 bg-white rounded-3xl shadow-sm border border-text-disabled hover:border-blue-600 transition-colors duration-300 flex flex-col h-full">
           <div className="space-y-4 flex flex-col flex-grow">
             <div
-              className="w-16 h-16 flex items-center justify-center rounded-[16px] bg-white"
+              className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-[16px] bg-white "
               style={{ boxShadow: '0 0 9.9px 4px rgba(51, 95, 255, 0.24)' }}
             >
               <Image src={cards[0].icon} alt="Innovation Icon" width={32} height={32} />
@@ -73,7 +73,7 @@ export default function IntelligenceReturn({
       </div>
 
       {/* Smaller Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3 md:mt-5">
         {cards.slice(1).map((card, index) => (
           <div
             key={index}
@@ -81,7 +81,7 @@ export default function IntelligenceReturn({
           >
             <div className="space-y-4 flex flex-col flex-grow">
               <div
-                className="w-16 h-16 flex items-center justify-center rounded-[16px] bg-white"
+                className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-[16px] bg-white"
                 style={{ boxShadow: '0 0 9.9px 4px rgba(51, 95, 255, 0.24)' }}
               >
                 <Image src={card.icon} alt="Card Icon" width={32} height={32} />

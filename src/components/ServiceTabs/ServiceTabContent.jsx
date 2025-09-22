@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { tabsData } from "./tabsData";
 import Image from "next/image";
 import serviceImage from "../../assets/images/service.webp";
@@ -7,29 +7,14 @@ import PrimaryButton from "../PrimaryButton";
 import arrowSvg from "../../assets/svg/arrow.svg";
 
 const ServiceTabContent = ({ activeTab }) => {
-  const [isVisible, setIsVisible] = useState(true);
   const currentTab = tabsData[activeTab];
-
-  useEffect(() => {
-    setIsVisible(false);
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 50);
-
-    return () => clearTimeout(timer);
-  }, [activeTab]);
 
   if (!currentTab) return null;
 
   return (
     <div className="">
       <div className="max-w-7xl mx-auto">
-        <div
-          key={activeTab}
-          className={`flex flex-col lg:flex-row gap-8 md:gap-7 lg:gap-10 transition-opacity duration-300 ease-in-out ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-7 lg:gap-10">
           {/* Left side - Image */}
           <div className="flex lg:justify-end lg:w-2/5">
             <Image
@@ -38,7 +23,7 @@ const ServiceTabContent = ({ activeTab }) => {
               height={500}
               priority
               alt="Service demonstration image"
-              className="w-full aspect-square object-cover rounded-2xl"
+              className="w-full   aspect-square object-cover rounded-2xl"
             />
           </div>
 

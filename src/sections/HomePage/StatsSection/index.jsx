@@ -33,7 +33,7 @@ export default function StatsSection({ stats = [] }) {
           <span className="text-gradient-primary font-bold">Dominance</span>
         </div>
         <div className="flex justify-center mt-3">
-          <p className="h2-description  h2-description lg:max-w-3xl  xl:max-w-4xl  2xl:max-w-5xl 3xl:max-w-7xl text-center">
+          <p className="  h2-description lg:max-w-3xl  xl:max-w-4xl  2xl:max-w-5xl 3xl:max-w-7xl text-center">
             For 15 years, WebMob Technologies has been obsessed with delivering
             tangible results. These numbers represent not just our past
             performance, but the foundation of trust upon which we build every

@@ -3,6 +3,7 @@ import Image from "next/image";
 import dummySvg from "../../assets/svg/Group.svg";
 import github from "../../assets/svg/github.svg";
 import bullet from "../../assets/svg/bullet.svg";
+import framer from "../../assets/svg/Framer.svg"
 
 const cards = [
   {
@@ -70,7 +71,7 @@ const AiPoweredRightSection = () => {
               return (
                 <div
                   key={card.id}
-                  className={`border sticky ${stickyPositions[index]} hover:shadow-2xl border-gray-300 rounded-2xl px-6 lg:px-7 xl:px-8 py-6 shadow-lg space-y-6 mb-4 bg-white h-auto`}
+                  className={`border sticky ${stickyPositions[index]} hover:shadow-2xl border-text-disabled rounded-2xl px-2.5 md:px-4 lg:px-7 xl:px-8 py-6 space-y-6 mb-4 bg-white h-auto`}
                 >
                   <div className="flex gap-3.5 items-center">
                     <div className="bg-light-bg inline-block py-4 px-4 rounded-2xl">
@@ -107,7 +108,7 @@ const AiPoweredRightSection = () => {
                   <div className="flex gap-4 lg:gap-8 flex-wrap">
                     {card.icons.map((icon, iconIndex) => (
                       <Image
-                        src={github}
+                        src={framer}
                         alt="icon"
                         width={40}
                         className="inline-block "
