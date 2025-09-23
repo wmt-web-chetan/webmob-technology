@@ -21,6 +21,7 @@ import NewHeroSection from "@/sections/HomePage/NewHeroSection";
 import IndustrySection from "@/sections/HomePage/IndustrySection";
 import AvantGardeSection from "@/sections/HomePage/AvantGardeSection";
 import EngineeringHorizonSection from "@/sections/HomePage/EngineeringHorizonSection";
+import SlidingBanner from "@/components/SlidingBanner";
 
 export default async function Home() {
   const data = await getPageData("home");
@@ -50,6 +51,7 @@ export default async function Home() {
       <EngineeringHorizonSection />
       <IndustrySection/>
       <AwardSection />
+      <SlidingBanner />
       <FaqSection />
       <CubeCtaBanner />
       <BottomFooter />

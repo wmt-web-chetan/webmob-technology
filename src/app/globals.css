@@ -219,13 +219,13 @@ body {
   }
   50% {
     transform: rotate(-45deg) translateX(6px);
-  }
+  } 
 } */
 @keyframes arrowMoveHover {
   0%, 100% {
-    transform: rotate(-45deg) ;
+    transform: rotate(-45deg) translateX(0) translateY(0);
   }
   50% {
-    transform: rotate(-45deg) ;
+    transform: rotate(-45deg) translateX(4px) translateY(-4px);
   }
 }

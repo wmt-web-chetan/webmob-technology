@@ -1,0 +1,126 @@
+/* SlidingBanner.css */
+
+/* Main banner container */
+.sliding-banner {
+    width: 100%;
+    background-color: #1B1B35;
+    color: white;
+    padding: 1rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Shadow gradient base styles */
+  .shadow-gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 5rem;
+    z-index: 10;
+    pointer-events: none;
+  }
+  
+  /* Left shadow */
+  .shadow-left {
+    left: 0;
+    background: linear-gradient(to right, #1B1B35, transparent);
+  }
+  
+  /* Right shadow */
+  .shadow-right {
+    right: 0;
+    background: linear-gradient(to left, #1B1B35, transparent);
+  }
+  
+  /* Sliding content container */
+  .sliding-content {
+    display: flex;
+    white-space: nowrap;
+    animation: slide 15s linear infinite;
+  }
+  
+  /* Pause animation on hover */
+  .sliding-content:hover {
+    animation-play-state: paused;
+  }
+  
+  /* Banner items container */
+  .banner-items {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+  
+  /* Individual banner item */
+  .banner-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  /* Banner text styling */
+  .banner-text {
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+  }
+  
+  /* Diamond separator */
+  .diamond-separator {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: white;
+    transform: rotate(45deg);
+    opacity: 0.7;
+  }
+  
+  /* Keyframe animation */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .banner-text {
+      font-size: 1rem;
+    }
+    
+    .banner-items {
+      gap: 1.5rem;
+      padding: 0 1.5rem;
+    }
+    
+    .banner-item {
+      gap: 1.5rem;
+    }
+    
+    .shadow-gradient {
+      width: 3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .banner-text {
+      font-size: 0.875rem;
+    }
+    
+    .banner-items {
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+    
+    .banner-item {
+      gap: 1rem;
+    }
+    
+    .diamond-separator {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+  }

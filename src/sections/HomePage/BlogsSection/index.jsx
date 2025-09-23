@@ -90,8 +90,8 @@ export default function BlogsSection(props) {
           featuredPost.blogCardFields?.shortDescription ||
           defaultFeaturedBlog.description,
         author: featuredPost.author?.node?.name || "Author",
-        date: new Date().toLocaleDateString(), // Date not provided in new structure
-        tags: ["Latest"], // Tags not provided in new structure
+        date: new Date().toLocaleDateString(),
+        tags: ["Latest"],
         imageSrc:
           featuredPost.blogCardFields?.cardImage?.node?.mediaItemUrl ||
           defaultFeaturedBlog.imageSrc,
@@ -108,8 +108,8 @@ export default function BlogsSection(props) {
       ? nonFeaturedPosts.map((post) => ({
           title: post.title,
           author: post.author?.node?.name || "Author",
-          date: new Date().toLocaleDateString(), // Date not provided in new structure
-          tags: ["Latest"], // Tags not provided in new structure
+          date: new Date().toLocaleDateString(),
+          tags: ["Latest"],
           thumbnailSrc:
             post.blogCardFields?.cardImage?.node?.mediaItemUrl ||
             defaultBlogCards[0].thumbnailSrc,
@@ -117,7 +117,7 @@ export default function BlogsSection(props) {
         }))
       : defaultBlogCards;
 
-  // View All button data (using default since not provided in new structure)
+  // View All button data
   const viewAllButton = { title: "View All Blogs", url: "/blog" };
 
   return (
@@ -141,20 +141,22 @@ export default function BlogsSection(props) {
         </p>
       </div>
 
-      {/* Blog Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8 sm:mb-12 xl:mb-16">
+      {/* Blog Grid with Equal Heights */}
+      <div className="flex flex-col lg:flex-row lg:items-stretch gap-6 lg:gap-8 mb-8 sm:mb-12 xl:mb-16">
         {/* Featured Blog - Left 50% on large screens */}
-        <div className="lg:col-span-1">
-          <BlogCard {...featuredBlog} className="h-full" />
+        <div className="lg:w-1/2 order-1 lg:order-none flex">
+          <div className="w-full flex flex-col">
+            <BlogCard {...featuredBlog} className="h-full flex-1" />
+          </div>
         </div>
 
         {/* Smaller Blog Cards - Right 50% on large screens */}
-        <div className="lg:col-span-1 flex flex-col">
-          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-4 lg:gap-4 h-full">
+        <div className="lg:w-1/2 flex order-2 lg:order-none">
+          <div className="flex flex-col gap-4 lg:gap-4 w-full h-full">
             {blogCards.slice(0, 3).map((blog, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-5 border border-text-disabled flex flex-1 min-h-[140px] sm:min-h-[160px] lg:min-h-[200px]"
+                className="bg-white rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-5 border border-text-disabled flex flex-1 min-h-[140px] sm:min-h-[160px]"
               >
                 {/* Image section - responsive width */}
                 <div className="flex-shrink-0 w-2/5 sm:w-2/5 lg:w-1/2">
@@ -169,7 +171,7 @@ export default function BlogsSection(props) {
 
                 {/* Content section - responsive width and spacing */}
                 <div className="flex flex-col justify-between pl-3 sm:pl-4 lg:pl-4 w-3/5 sm:w-3/5 lg:w-1/2">
-                  <div className="flex-0">
+                  <div className="flex-1 flex flex-col">
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1 mb-2 sm:mb-3">
                       {blog.tags.slice(0, 2).map((tag, tagIndex) => (
@@ -183,21 +185,21 @@ export default function BlogsSection(props) {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-text-primary mb-2 sm:mb-3 line-clamp-2 sm:line-clamp-2 leading-tight">
+                    <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-text-primary mb-2 sm:mb-3 line-clamp-2 sm:line-clamp-2 leading-tight flex-1">
                       {blog.title}
                     </h3>
+
+                    {/* Read more link */}
+                    <a
+                      href={blog.readMoreLink}
+                      className="text-primary hover:text-secondary text-xs sm:text-sm lg:text-base font-medium transition-colors duration-200 block mb-2"
+                    >
+                      Read more
+                    </a>
                   </div>
 
-                  {/* Read more link */}
-                  <a
-                    href={blog.readMoreLink}
-                    className="text-primary hover:text-secondary text-xs sm:text-sm lg:text-base font-medium transition-colors duration-200  block"
-                  >
-                    Read more
-                  </a>
-
-                  {/* Author Info - Compact version for smaller cards */}
-                  <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                  {/* Author Info - Pushed to bottom */}
+                  <div className="flex items-center gap-2 mt-auto">
                     <div className="w-5 h-5 sm:w-8 sm:h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white font-semibold text-[8px] sm:text-[10px]">
                         {blog.author

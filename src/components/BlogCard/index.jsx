@@ -1,9 +1,9 @@
 import Image from "next/image"
 
-export function BlogCard({ title, highlightedText, description, author, date, tags, imageSrc, readMoreLink }) {
+export function BlogCard({ title, highlightedText, description, author, date, tags, imageSrc, readMoreLink, className = "", ...props }) {
   return (
-    <div className="relative overflow-hidden bg-white p-6 sm:p-8 xl:p-6 2xl:p-6 3xl:p-6 rounded-3xl border border-text-disabled">
-      <div className="mb-6 sm:mb-8 xl:mb-10 rounded-2xl border-1 border-text-disabled">
+    <div className={`relative overflow-hidden bg-white p-6 sm:p-8 xl:p-6 2xl:p-6 3xl:p-6 rounded-3xl border border-text-disabled flex flex-col ${className}`} {...props}>
+      <div className="mb-6 sm:mb-8 xl:mb-10 rounded-2xl border-1 border-text-disabled flex-shrink-0">
         <Image
           src={imageSrc || "/placeholder.svg?height=300&width=800&query=healthcare technology main image"}
           alt="Featured Article Image"
@@ -13,7 +13,7 @@ export function BlogCard({ title, highlightedText, description, author, date, ta
         />
       </div>
 
-      <div className="space-y-3 sm:space-y-4 xl:space-y-5">
+      <div className="space-y-3 sm:space-y-4 xl:space-y-5 flex flex-col flex-1">
         <h2 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-gray-900 leading-tight">
           {title}
         </h2>
@@ -30,7 +30,7 @@ export function BlogCard({ title, highlightedText, description, author, date, ta
           ))}
         </div>
 
-        <p className="text-xs sm:text-sm lg:text-sm text-gray-600 leading-relaxed">
+        <p className="text-xs sm:text-sm lg:text-sm text-gray-600 leading-relaxed flex-1">
           {description}
         </p>
 
@@ -42,7 +42,7 @@ export function BlogCard({ title, highlightedText, description, author, date, ta
         </a>
 
         {/* Author Info */}
-        <div className="flex items-center gap-3 pt-4 sm:pt-6 border-t border-gray-200">
+        <div className="flex items-center gap-3 pt-4 sm:pt-6 border-t border-gray-200 mt-auto">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded-full flex items-center justify-center">
             <span className="text-white font-semibold text-sm sm:text-base">
               {author

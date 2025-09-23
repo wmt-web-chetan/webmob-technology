@@ -1,8 +1,7 @@
-import FaqItem from '@/components/FaqItem';
+import FaqWrapper from '@/components/FaqWrapper';
 import React from 'react';
 
 const FaqSection = () => {
-
   const leftColumnFaqs = [
     {
       id: 'ai-enabled',
@@ -83,27 +82,10 @@ const FaqSection = () => {
         </p>
       </div>
 
-      <div className='mt-10 sm:mt-12 lg:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12'>
-        {/* Left Column */}
-        <div>
-          {leftColumnFaqs?.map((faq) => (
-            <FaqItem
-              key={faq.id}
-              faq={faq}
-            />
-          ))}
-        </div>
-
-        {/* Right Column */}
-        <div>
-          {rightColumnFaqs?.map((faq) => (
-            <FaqItem
-              key={faq.id}
-              faq={faq}
-            />
-          ))}
-        </div>
-      </div>
+      <FaqWrapper 
+        leftColumnFaqs={leftColumnFaqs} 
+        rightColumnFaqs={rightColumnFaqs} 
+      />
     </div>
   );
 };
