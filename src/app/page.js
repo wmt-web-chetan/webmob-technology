@@ -21,6 +21,8 @@ import NewHeroSection from "@/sections/HomePage/NewHeroSection";
 import IndustrySection from "@/sections/HomePage/IndustrySection";
 import AvantGardeSection from "@/sections/HomePage/AvantGardeSection";
 import EngineeringHorizonSection from "@/sections/HomePage/EngineeringHorizonSection";
+import Header from "@/components/Header";
+import PricingSection from "@/sections/HomePage/PricingSection";
 import SlidingBanner from "@/components/SlidingBanner";
 
 export default async function Home() {
@@ -32,14 +34,15 @@ export default async function Home() {
       {/* {pageBlocks.map((block, i) => {
         const key = Object.keys(block)[0];
         const Component = sectionRegistry[key];
-
+        
         if (!Component) {
           return null;
-        }
-
-        return <Component key={i} {...block[key]} />;
-      })} */}
+          }
+          
+          return <Component key={i} {...block[key]} />;
+          })} */}
   
+      <Header/>
       <CaseStudySection/>
       <AipoweredVelocity/>
       <StatsSection />
@@ -54,6 +57,7 @@ export default async function Home() {
       <SlidingBanner />
       <FaqSection />
       <CubeCtaBanner />
+      <PricingSection/>
       <BottomFooter />
     </>
   );
