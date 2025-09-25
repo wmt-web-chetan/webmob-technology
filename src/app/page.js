@@ -1,10 +1,8 @@
 import BottomFooter from "@/components/BottomFooter";
-import BrandSection from "@/sections/BrandSection";
 import AipoweredVelocity from "@/sections/HomePage/AipoweredVelocity";
 import AwardSection from "@/sections/HomePage/AwardSection";
 import BlogsSection from "@/sections/HomePage/BlogsSection";
 import TailwindSlider from "@/components/Slider";
-// import BrandSection from "@/sections/BrandSection";
 // import AipoweredVelocity from "@/sections/HomePage/AipoweredVelocity";
 import CaseStudySection from "@/sections/HomePage/CaseStudySection";
 import HeroSection from "@/sections/HomePage/HeroSection";
@@ -23,6 +21,7 @@ import AvantGardeSection from "@/sections/HomePage/AvantGardeSection";
 import EngineeringHorizonSection from "@/sections/HomePage/EngineeringHorizonSection";
 import Header from "@/components/Header";
 import PricingSection from "@/sections/HomePage/PricingSection";
+import BrandSection from "@/sections/BrandSection";
 import SlidingBanner from "@/components/SlidingBanner";
 
 export default async function Home() {
@@ -43,18 +42,20 @@ export default async function Home() {
           })} */}
   
       <Header/>
+      <BrandSection />
+      <ServiceSection />
       <CaseStudySection/>
       <AipoweredVelocity/>
+      <SlidingBanner />
       <StatsSection />
      <IntelligenceReturn />
-     {/* <TestimonialSection/> */}
-      <BlogsSection />
-      <SimpleCtaBanner />
-      <AvantGardeSection />
-      <EngineeringHorizonSection />
+     <TestimonialSection/>
       <IndustrySection/>
+      <SimpleCtaBanner />
+      <EngineeringHorizonSection />
+      <AvantGardeSection />
+      <BlogsSection />
       <AwardSection />
-      <SlidingBanner />
       <FaqSection />
       <CubeCtaBanner />
       <PricingSection/>

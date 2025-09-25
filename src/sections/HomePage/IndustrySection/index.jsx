@@ -166,7 +166,7 @@ const IndustrySection = () => {
     },
   ];
   return (
-    <div className="px-wrapper section-padding-y">
+    <div className="px-wrapper section-padding-y-v2">
       <div className="flex justify-center   ">
         <h2 className="h2-heading  text-center">
           Fluent in the Language of Your{" "}
@@ -226,8 +226,8 @@ const IndustrySection = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 md:gap-4 xl:gap-4 2xl:gap-7 3xl:gap-10 2xl:min-h-[300px] ">
-          {/* Tab Section */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 md:gap-4 xl:gap-4 2xl:gap-7 3xl:gap-10 2xl:min-h-[300px] ">
+          {/* Tab Section - Only visible on XL+ screens */}
           <div className=" hidden xl:block xl:col-span-2 2xl:col-span-2">
             <div className="bg-light-bg p-2 h-full flex flex-col xl:gap-2 2xl:gap-3 rounded-2xl">
               {industries.map((industry, index) => (
@@ -269,8 +269,9 @@ const IndustrySection = () => {
               ))}
             </div>
           </div>
-          {/* Middle Section */}
-          <div className="lg:col-span-6   xl:col-span-5 order-2 xl:order-1 flex flex-col justify-between">
+          
+          {/* Content Section */}
+          <div className="md:col-span-1 lg:col-span-6 xl:col-span-5 order-2 md:order-1 xl:order-1 flex flex-col justify-between">
             <div
               className="transition-all duration-500 ease-in-out opacity-100 animate-fade-in"
               key={`content-${activeIndustry}`}
@@ -335,17 +336,18 @@ const IndustrySection = () => {
               </div>
             </div>
           </div>
-          {/* Right Section */}
-          <div className="lg:col-span-6  xl:col-span-5   order-1 xl:order-2 flex items-center">
+          
+          {/* Image Section */}
+          <div className="md:col-span-1 lg:col-span-6 xl:col-span-5 order-1 md:order-2 xl:order-2 flex items-start">
             <div
-              className="transition-all duration-500 ease-in-out opacity-100 h-full animate-fade-in w-full"
+              className="transition-all duration-500 ease-in-out opacity-100 animate-fade-in w-full"
               key={`image-${activeIndustry}`}
             >
               <Image
                 src={industries[activeIndustry].image}
                 width={300}
                 alt={`${industries[activeIndustry].title} industry showcase image`}
-                className="w-full aspect-auto h-full object-cover rounded-2xl transition-all duration-300"
+                className="w-full aspect-square md:aspect-[4/3] lg:aspect-auto lg:h-full object-cover rounded-2xl transition-all duration-300"
               />
             </div>
           </div>

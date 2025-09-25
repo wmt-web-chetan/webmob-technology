@@ -23,7 +23,7 @@ export default function StatsSection({ stats = [] }) {
 
   return (
     <section
-      className="mx-auto bg-light-bg px-wrapper section-padding-y"
+      className="mx-auto bg-light-bg px-wrapper section-padding-y-v2"
       aria-labelledby="stats-heading"
     >
       {/* Header Section */}

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Logo from "@/assets/images/WebMobTech_Logo.png";
 import Image from "next/image";
@@ -9,41 +9,46 @@ const BottomFooter = () => {
     services: false,
     toolsTech: false,
     work: false,
-    company: false
+    company: false,
   });
 
   const toggleDropdown = (section) => {
-    setOpenDropdowns(prev => ({
+    setOpenDropdowns((prev) => ({
       ...prev,
-      [section]: !prev[section]
+      [section]: !prev[section],
     }));
   };
 
-      const DropdownSection = ({ title, items, sectionKey }) => {
+  const DropdownSection = ({ title, items, sectionKey }) => {
     const isOpen = openDropdowns[sectionKey];
-    
+
     return (
       <div className="lg:block">
         {/* Mobile Dropdown */}
-        <div className="lg:hidden border-b border-text-disabled/30 pb-4 mb-4 last:border-b-0 last:pb-0 last:mb-0">
+        <div className="lg:hidden border-b border-text-disabled/30 pb-5 mb-4 last:border-b-0 last:pb-0 last:mb-0">
           <button
             onClick={() => toggleDropdown(sectionKey)}
-            className="w-full flex items-center justify-between text-lg sm:text-xl md:text-2xl font-medium  text-white"
+            className="w-full flex items-center justify-between text-lg sm:text-2xl md:text-2xl font-medium text-white"
           >
             <span>{title}</span>
             <svg
               className={`w-5 h-5 transform transition-transform duration-200 ${
-                isOpen ? 'rotate-180' : ''
+                isOpen ? "rotate-180" : ""
               }`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </button>
           {isOpen && (
-            <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base font-normal text-text-disabled">
+            <ul className="mt-4 space-y-3 sm:space-y-4 text-sm sm:text-base font-normal text-text-disabled">
               {items.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
@@ -74,18 +79,34 @@ const BottomFooter = () => {
     "Blockchain Services",
     "Q&A Services",
     "Hire Dedicated Developers",
-    "Management & IT Consulting"
+    "Management & IT Consulting",
   ];
 
   const toolsTechItems = [
-    <>Laravel Development <span className="hidden sm:inline">Services</span></>,
-    <>React JS Development <span className="hidden sm:inline">Services</span></>,
-    <>AWS Development <span className="hidden sm:inline">Services</span></>,
-    <>Flutter <span className="hidden sm:inline">App</span> Development</>,
-    <>Node Js Development <span className="hidden sm:inline">Services</span></>,
-    <>React Native <span className="hidden sm:inline">Services</span></>,
-    <>Django development <span className="hidden sm:inline">Services</span></>,
-    <>Python development <span className="hidden sm:inline">Services</span></>
+    <>
+      Laravel Development <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      React JS Development <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      AWS Development <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      Flutter <span className="hidden sm:inline">App</span> Development
+    </>,
+    <>
+      Node Js Development <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      React Native <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      Django development <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      Python development <span className="hidden sm:inline">Services</span>
+    </>,
   ];
 
   const workItems = [
@@ -96,7 +117,7 @@ const BottomFooter = () => {
     "Dentaway",
     "Loan Management System",
     "Switchit",
-    "Zroomm"
+    "Zroomm",
   ];
 
   const companyItems = [
@@ -105,34 +126,35 @@ const BottomFooter = () => {
     "Contact Us",
     "Blog",
     "FAQ",
-    "Testimonial"
+    "Testimonial",
   ];
 
   return (
     <>
-      <div className="">
-        {/* Commented out section remains as is */}
-      </div>
-      <div className="relative pt-8 sm:pt-16 px-4 sm:px-8 md:px-16 lg:px-24 section-padding-y bg-dark-bg ">
-        <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-16  border-b border-text-disabled">
-          <div>
-            <Image
+      <div className="">{/* Commented out section remains as is */}</div>
+      <div className="relative pt-8 sm:pt-16 px-4 sm:px-8 md:px-16 lg:px-24 pb-8 sm:pb-10 bg-dark-bg">
+      <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-16 pb-0 lg:pb-8 lg:border-b border-text-disabled">          <div className="flex-shrink-0">
+            <Image      
               src={Logo}
               alt="WebMobTech Logo"
-              className="h-12 sm:h-14 md:h-16 xl:h-24 w-auto"
+              className="h-8 sm:h-10 md:h-12 xl:h-14 w-auto"
             />
             <h1 className="pt-6 sm:pt-10 md:pt-12 lg:pt-14 text-lg sm:text-xl md:text-2xl font-medium text-white">
               Contact
             </h1>
-            <div className="flex flex-col sm:flex-col gap-2 pt-3 sm:pt-4 md:pt-6">
+            <div className="flex flex-col gap-2 pt-3 sm:pt-4 md:pt-6">
               <div className="flex flex-row lg:flex-col gap-4 lg:gap-2">
                 <div className="text-sm sm:text-base flex gap-2 font-medium">
                   <h4 className="text-white">IND</h4>
-                  <p className="text-text-disabled font-normal">+91-70438-66892</p>
+                  <p className="text-text-disabled font-normal">
+                    +91-70438-66892
+                  </p>
                 </div>
                 <div className="text-sm sm:text-base flex gap-2 font-medium">
                   <h4 className="text-white">USA</h4>
-                  <p className="text-text-disabled font-normal">+1-408-520-9597</p>
+                  <p className="text-text-disabled font-normal">
+                    +1-408-520-9597
+                  </p>
                 </div>
               </div>
             </div>
@@ -237,32 +259,32 @@ const BottomFooter = () => {
               </svg>
             </div>
           </div>
-          <div>
-            <div className="grid grid-cols-1 lg:grid-cols-4 ">
+          <div className="flex-grow">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-8">
               {/* Services */}
-              <DropdownSection 
-                title="Services" 
+              <DropdownSection
+                title="Services"
                 items={servicesItems}
                 sectionKey="services"
               />
 
               {/* Tools & Tech */}
-              <DropdownSection 
-                title="Tools & Tech" 
+              <DropdownSection
+                title="Tools & Tech"
                 items={toolsTechItems}
                 sectionKey="toolsTech"
               />
 
               {/* Work */}
-              <DropdownSection 
-                title="Work" 
+              <DropdownSection
+                title="Work"
                 items={workItems}
                 sectionKey="work"
               />
 
               {/* Company */}
-              <DropdownSection 
-                title="Company" 
+              <DropdownSection
+                title="Company"
                 items={companyItems}
                 sectionKey="company"
               />
@@ -270,12 +292,12 @@ const BottomFooter = () => {
           </div>
         </div>
 
-        <div className="flex w-full flex-col lg:flex-row gap-3 sm:gap-4 lg:gap-0 justify-between lg:items-center text-xs sm:text-sm md:text-base font-light pt-6 lg:pt-8">
-          <p className="text-light-bg text-center lg:text-left">
-            © {new Date().getFullYear()} WebMobTech Solutions Pvt.Ltd.
-            All Rights Reserved.
+        <div className="flex w-full flex-col lg:flex-row gap-3 sm:gap-4 lg:gap-0 justify-between lg:items-center text-xs sm:text-base md:text-base font-light pt-6 lg:pt-6">
+          <p className="text-text-disabled text-center lg:text-left w-full">
+            © {new Date().getFullYear()} WebMobTech Solutions Pvt.Ltd. All
+            Rights Reserved.
           </p>
-          <div className="w-full flex flex-row gap-1 sm:gap-2 lg:gap-4 justify-center sm:justify-start lg:justify-end sm:items-center text-text-disabled text-[10px] sm:text-xs lg:text-sm">
+          <div className="w-full flex flex-row gap-1 sm:gap-2 lg:gap-4 justify-center sm:justify-start lg:justify-end sm:items-center text-text-disabled text-[10px] sm:text-base lg:text-base">
             <p>D-U-N-S Number: 860386955</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"

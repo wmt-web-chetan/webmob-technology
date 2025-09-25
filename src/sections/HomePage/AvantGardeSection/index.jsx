@@ -4,6 +4,18 @@ import toprightImg from "@/assets/svg/topright.svg";
 import bottomleftImg from "@/assets/svg/bottomleft.svg";
 import bottomrightImg from "@/assets/svg/bottomright.svg";
 import chatgptImg from "@/assets/svg/chatgpt.svg";
+import metaImg from "@/assets/svg/meta.svg";
+import cursorImg from "@/assets/svg/cursor.svg";
+import claudeImg from "@/assets/svg/claude.svg";
+import perplexityImg from "@/assets/svg/perplexity.svg";
+import copilotImg from "@/assets/svg/copilot.svg";
+import azureImg from "@/assets/svg/azure.svg";
+import geminiImg from "@/assets/svg/gemini.svg";
+import vertexImg from "@/assets/svg/vertex.svg";
+import awsbedrockImg from "@/assets/svg/awsbedrock.svg";
+import qodoImg from "@/assets/svg/qodo.svg";
+import tensorflowImg from "@/assets/svg/tensorflow.svg";
+
 import styles from "./AvantGardeSection.module.css";
 
 const AvantGardeSection = () => {
@@ -12,84 +24,84 @@ const AvantGardeSection = () => {
       name: "OpenAI",
       description: "GPT-3, Codex, Embeddings, DALL-E, Whisper",
       icon: chatgptImg,
-      gradient: "from-green-400 to-emerald-500",
+      gradient: "from-blue-400 to-blue-600",
     },
     {
       name: "Meta",
       description: "LLaMA 2, Segment, BlenderBot, Detection, VoE ",
-      icon: chatgptImg,
+      icon: metaImg,
       gradient: "from-blue-400 to-blue-600",
     },
     {
       name: "Cursor",
       description: "AI Code Completion, Workflow Automation",
-      icon: chatgptImg,
-      gradient: "from-purple-400 to-indigo-500",
+      icon: cursorImg,
+      gradient: "from-blue-400 to-blue-600",
     },
     {
       name: "Claude",
       description: "Opus 2.1, Sonnet, Memory, RLHF, Safety",
-      icon: chatgptImg,
-      gradient: "from-orange-400 to-red-500",
+      icon: claudeImg,
+      gradient: "from-blue-400 to-blue-600",
     },
     {
       name: "Perplexity",
       description: "Sonar, Embeddings, Search, Contextualization, Retrieval",
-      icon: chatgptImg,
-      gradient: "from-teal-400 to-cyan-500",
+      icon: perplexityImg,
+      gradient: "from-blue-400 to-blue-600",
     },
     {
       name: "Co-pilot",
       description: "GitHub Copilot X, Chat, Labs, Voice for Business",
-      icon: chatgptImg,
-      gradient: "from-purple-500 to-pink-500",
+      icon: copilotImg,
+      gradient: "from-blue-400 to-blue-600",
     },
     {
       name: "Microsoft Azure",
       description: "Cognitive, Synapse, Databricks, OpenAI",
-      icon: chatgptImg,
+      icon: azureImg,
       gradient: "from-blue-500 to-indigo-600",
     },
     {
       name: "Gemini",
       description: "Gemini 2.5, Deep Think, Flash, Lite, Pipelines",
-      icon: chatgptImg,
-      gradient: "from-yellow-400 to-orange-500",
+      icon: geminiImg,
+      gradient: "from-blue-400 to-blue-600",
     },
     {
       name: "Google Vertex AI",
       description: "Model Garden, Palm2, Flash-Lite Feature Store",
-      icon: chatgptImg,
+      icon: vertexImg,
       gradient: "from-green-500 to-teal-600",
     },
     {
       name: "AWS Bedrock",
       description: "Model APIs, LangOps, Fine-tuning, SageMaker",
-      icon: chatgptImg,
-      gradient: "from-orange-400 to-red-600",
+      icon: awsbedrockImg,
+      gradient: "from-blue-400 to-blue-600",
     },
     {
       name: "Qodo",
       description: "Merge AI Builder, AutoML, Integration Hub",
-      icon: chatgptImg,
-      gradient: "from-indigo-400 to-purple-500",
+      icon: qodoImg,
+      gradient: "from-blue-400 to-blue-600",
     },
     {
       name: "TensorFlow",
       description: "Deep Learning Framework, AutoML, Model Deployment",
-      icon: chatgptImg,
-      gradient: "from-amber-400 to-yellow-600",
+      icon: tensorflowImg,
+      gradient: "from-blue-400 to-blue-600",
     },
   ];
 
   return (
-    <div className="relative px-4 md:px-8 lg:px-16 xl:px-20 2xl:px-32 py-16 bg-dark-bg overflow-hidden">
+    <div className="relative px-4 md:px-8 lg:px-16 xl:px-20 2xl:px-32 py-12 md:py-16 lg:py-20 bg-dark-bg overflow-hidden">
       {/* Corner SVGs */}
       <div className="absolute top-0 left-0 pointer-events-none z-0">
         <Image
           src={topleftImg || "/placeholder.svg"}
           alt=""
-          className="w-56 h-56 md:w-64 md:h-64 lg:w-96 lg:h-96 xl:w-[20rem] xl:h-[18rem] opacity-30"
+          className="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-72 opacity-30"
         />
       </div>
 
@@ -97,7 +109,7 @@ const AvantGardeSection = () => {
         <Image
           src={toprightImg || "/placeholder.svg"}
           alt=""
-          className="w-56 h-56 md:w-64 md:h-64 lg:w-96 lg:h-96 xl:w-[20rem] xl:h-[18rem] opacity-30"
+          className="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-72 opacity-30"
         />
       </div>
 
@@ -105,7 +117,7 @@ const AvantGardeSection = () => {
         <Image
           src={bottomleftImg || "/placeholder.svg"}
           alt=""
-          className="w-56 h-56 md:w-64 md:h-64 lg:w-96 lg:h-96 xl:w-[20rem] xl:h-[18rem] opacity-30"
+          className="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-72 opacity-30"
         />
       </div>
 
@@ -113,7 +125,7 @@ const AvantGardeSection = () => {
         <Image
           src={bottomrightImg || "/placeholder.svg"}
           alt=""
-          className="w-56 h-56 md:w-64 md:h-64 lg:w-96 lg:h-96 xl:w-[20rem] xl:h-[18rem] opacity-30"
+          className="w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-72 opacity-30"
         />
       </div>
 
@@ -121,7 +133,7 @@ const AvantGardeSection = () => {
       <div className="relative z-10">
         {/* Header Section */}
         <div className="flex justify-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-center text-white max-w-6xl leading-tight">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-center text-white max-w-6xl leading-tight">
             The Arsenal of the{" "}
             <span className="font-bold text-gradient-primary bg-clip-text text-transparent">
               Avant-Garde
@@ -129,56 +141,50 @@ const AvantGardeSection = () => {
           </h2>
         </div>
 
-        <div className="flex justify-center mt-6">
-          <p className="text-lg md:text-xl text-gray-300 text-center max-w-4xl leading-relaxed">
+        <div className="flex justify-center mt-4 md:mt-6">
+          <p className="text-sm md:text-lg lg:text-xl text-gray-300 text-center max-w-4xl leading-relaxed px-4">
             We are masters of the foundational technologies that power the
             intelligent future. Our expertise runs deep across the entire
             next-generation ecosystem.
           </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        {/* Cards Grid - With Glow Effect */}
+        <div className="mt-12 md:mt-16 lg:mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-6 max-w-7xl sm:max-[72%] mx-auto px-2 md:px-4">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className={`group ${styles.cardWithAnimatedBorder} relative rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/20 hover:shadow-2xl hover:shadow-purple-500/20 z-20 bg-dark-bg/80 backdrop-blur-sm border border-white/55 hover:border-white/30`}
-              style={{
-                boxShadow:
-                  "0 8px 32px rgba(0, 0, 0, 0.3), inset -10px -10px 20px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
-              }}
-            >
-
-                  {/* Invisible corner squares behind the card content */}
-              {/* <div className="absolute top-0 right-0 w-4 h-4 bg-dark-bg rounded-sm -z-10"></div>
-              <div className="absolute bottom-0 left-0 w-4 h-4 bg-dark-bg rounded-sm -z-10"></div> */}
-              {/* Gradient overlay on hover */}
+            <div key={index} className="group relative">
+              {/* Glow Effect */}
+              <div className="absolute -inset-1 rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg" style={{ backgroundColor: '#335FFF3D' }}></div>
+              
+              {/* Main Card */}
               <div
-                className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 bg-gradient-to-br ${service.gradient}`}
-              ></div>
+                className={`group ${styles.cardWithAnimatedBorder} relative rounded-xl md:rounded-2xl pt-3 md:pt-4 lg:pt-6 pb-5 md:pb-6 lg:pb-7 px-3 md:px-4 lg:px-6 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/20 hover:shadow-2xl hover:shadow-blue-500/40 z-20 bg-dark-bg/80 backdrop-blur-sm border border-white/55 hover:border-white/30 h-full`}
+                style={{
+                  boxShadow:
+                    "0 8px 32px rgba(0, 0, 0, 0.3), inset -10px -10px 20px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
+                }}
+              >
+                {/* Content */}
+                <div className="relative z-10 h-full flex flex-col">
+                  {/* Icon */}
+                  <div className="w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12 rounded-lg md:rounded-xl flex items-center justify-center mb-2 md:mb-3 lg:mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Image
+                      src={service.icon}
+                      alt=""
+                      className="w-full h-full"
+                    />
+                  </div>
 
-              {/* Content */}
-              <div className="relative z-10">
-                {/* Icon */}
-                <div
-                  className={`w-12 h-12 rounded-xl flex items-center justify-center  text-4xl mb-4 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <Image
-                    src={service.icon || "/placeholder.svg"}
-                    alt=""
-                    className="w-56 h-56 md:w-64 md:h-64 lg:w-96 lg:h-96 xl:w-[20rem] xl:h-[18rem] "
-                  />
+                  {/* Service Name */}
+                  <h3 className="text-xs md:text-sm lg:text-2xl xl:text-2xl font-semibold text-white mb-1 md:mb-2 lg:mb-3  transition-all duration-300 line-clamp-1">
+                    {service.name}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-[9px] md:text-xs lg:text-lg text-light-bg leading-relaxed group-hover:text-gray-300 transition-colors duration-300 line-clamp-2 md:line-clamp-3 flex-1">
+                    {service.description}
+                  </p>
                 </div>
-
-                {/* Service Name */}
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-all duration-300">
-                  {service.name}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                  {service.description}
-                </p>
               </div>
             </div>
           ))}
