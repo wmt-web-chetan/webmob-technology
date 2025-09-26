@@ -41,23 +41,23 @@ export default async function Home() {
           
           return <Component key={i} {...block[key]} />;
           })} */}
-  
-      <Header/>
-      <CaseStudySection/>
-      <AipoweredVelocity/>
+
+      {/* <Header/> */}
+      <CaseStudySection />
+      <AipoweredVelocity />
       <StatsSection />
-     <IntelligenceReturn />
-     {/* <TestimonialSection/> */}
+      <IntelligenceReturn />
       <BlogsSection />
       <SimpleCtaBanner />
       <AvantGardeSection />
       <EngineeringHorizonSection />
-      <IndustrySection/>
+      <TestimonialSection />
+      <IndustrySection />
       <AwardSection />
       <SlidingBanner />
       <FaqSection />
       <CubeCtaBanner />
-      <PricingSection/>
+      <PricingSection />
       <BottomFooter />
     </>
   );
