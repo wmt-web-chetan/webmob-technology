@@ -1,9 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import dummySvg from "../../assets/svg/Group.svg";
+import codeswap from "../../assets/svg/chatgpt.svg";
 import github from "../../assets/svg/github.svg";
+import harbor from "../../assets/svg/harbor.svg";
+import copilot from "../../assets/svg/copilot.svg";
 import bullet from "../../assets/svg/bullet.svg";
-import framer from "../../assets/svg/Framer.svg"
+import framer from "../../assets/svg/Framer.svg";
 
 const cards = [
   {
@@ -15,9 +18,8 @@ const cards = [
       "Accelerates boilerplate and complex function creation.",
       "Ensures adherence to best practices and coding standards.",
       "Reduces cognitive load, freeing developers for strategic problem-solving.",
-      
     ],
-    icons: ["github", "ai", "code", "automation"],
+    icons: [github, copilot, codeswap, harbor],
   },
   {
     id: 2,
@@ -28,9 +30,8 @@ const cards = [
       "Automated test case generation and execution.",
       "Real-time code quality monitoring and suggestions.",
       "Predictive bug detection before deployment.",
-      
     ],
-    icons: ["test", "quality", "automation", "shield"],
+    icons: [copilot, harbor, github, codeswap],
   },
   {
     id: 3,
@@ -41,9 +42,8 @@ const cards = [
       "Predictive timeline estimation and resource optimization.",
       "Intelligent task prioritization and dependency mapping.",
       "Real-time progress tracking and bottleneck identification.",
-      
     ],
-    icons: ["management", "analytics", "timeline", "optimization"],
+    icons: [codeswap, github, copilot, harbor],
   },
   {
     id: 4,
@@ -54,9 +54,8 @@ const cards = [
       "Zero-downtime deployments with intelligent rollback.",
       "Automated infrastructure scaling and cost optimization.",
       "Continuous security scanning and compliance monitoring.",
-      
     ],
-    icons: ["devops", "pipeline", "cloud", "security"],
+    icons: [harbor, codeswap, copilot, github],
   },
 ];
 
@@ -82,9 +81,9 @@ const AiPoweredRightSection = () => {
                         className=""
                       />
                     </div>
-                    <h3 className="text-xl font-semibold">{card.title}</h3>
+                    <h3 className="text-xl sm:text-3xl font-semibold">{card.title}</h3>
                   </div>
-                  <p className="text-text-secondary text-base">
+                  <p className="text-text-secondary text-xs sm:text-lg ">
                     {card.description}
                   </p>
                   <div className="space-y-3">
@@ -99,7 +98,7 @@ const AiPoweredRightSection = () => {
                           alt="bullet"
                           className="mt-1"
                         />
-                        <div className="text-text-secondary text-sm">
+                        <div className="text-text-secondary text-xs sm:text-lg ">
                           {feature}
                         </div>
                       </div>
@@ -108,7 +107,7 @@ const AiPoweredRightSection = () => {
                   <div className="flex gap-4 lg:gap-8 flex-wrap">
                     {card.icons.map((icon, iconIndex) => (
                       <Image
-                        src={framer}
+                        src={icon}
                         alt="icon"
                         width={40}
                         className="inline-block "
