@@ -1,66 +1,162 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Logo from "@/assets/images/WebMobTech_Logo.png";
 import Image from "next/image";
 import "./index.css";
 
 const BottomFooter = () => {
+  const [openDropdowns, setOpenDropdowns] = useState({
+    services: false,
+    toolsTech: false,
+    work: false,
+    company: false,
+  });
+
+  const toggleDropdown = (section) => {
+    setOpenDropdowns((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
+  const DropdownSection = ({ title, items, sectionKey }) => {
+    const isOpen = openDropdowns[sectionKey];
+
+    return (
+      <div className="lg:block">
+        {/* Mobile Dropdown */}
+        <div className="lg:hidden border-b border-text-disabled/30 pb-5 mb-4 last:border-b-0 last:pb-0 last:mb-0">
+          <button
+            onClick={() => toggleDropdown(sectionKey)}
+            className="w-full flex items-center justify-between text-lg sm:text-2xl md:text-2xl font-medium text-white"
+          >
+            <span>{title}</span>
+            <svg
+              className={`w-5 h-5 transform transition-transform duration-200 ${
+                isOpen ? "rotate-180" : ""
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          {isOpen && (
+            <ul className="mt-4 space-y-3 sm:space-y-4 text-sm sm:text-base font-normal text-text-disabled">
+              {items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {/* Desktop Static */}
+        <div className="hidden lg:block">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-medium mb-4 sm:mb-6 text-white">
+            {title}
+          </h3>
+          <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base font-normal text-text-disabled">
+            {items.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  };
+
+  const servicesItems = [
+    "Web Development",
+    "Mobile Development",
+    "Product Design and Development",
+    "DevOps Services",
+    "Blockchain Services",
+    "Q&A Services",
+    "Hire Dedicated Developers",
+    "Management & IT Consulting",
+  ];
+
+  const toolsTechItems = [
+    <>
+      Laravel Development <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      React JS Development <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      AWS Development <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      Flutter <span className="hidden sm:inline">App</span> Development
+    </>,
+    <>
+      Node Js Development <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      React Native <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      Django development <span className="hidden sm:inline">Services</span>
+    </>,
+    <>
+      Python development <span className="hidden sm:inline">Services</span>
+    </>,
+  ];
+
+  const workItems = [
+    "HouzQuest",
+    "Video Streaming App",
+    "Sterling Accuris",
+    "Primally Nourished",
+    "Dentaway",
+    "Loan Management System",
+    "Switchit",
+    "Zroomm",
+  ];
+
+  const companyItems = [
+    "About Us",
+    "Career",
+    "Contact Us",
+    "Blog",
+    "FAQ",
+    "Testimonial",
+  ];
+
   return (
     <>
-      <div 
- className="">
-        {/* <div className="w-full  flex flex-col xl:flex-row gap-8 sm:gap-10 xl:gap-20 ">
-          <div className="text-lg sm:text-xl md:text-2xl lg:text-[28px] xl:text-[32px] font-semibold">
-            Step into our portfolio to witness ideas turned into{" "}
-            <br className="hidden sm:block" />
-            meaningful experiences and success stories.
-          </div>
-          <div className="border-r border-text-disabled hidden xl:block"></div>
-          <div className="flex flex-col gap-y-1 sm:gap-y-2 justify-center">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold">500+</h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-text-disabled font-normal">
-              Projects Delivered
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-1 sm:gap-y-2 justify-center">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold">99%</h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-text-disabled font-normal">
-              Happy Clients
-            </p>
-          </div>
-        </div>
-        <div className="xl:w-auto w-full flex xl:justify-center justify-start items-center gap-2 md:gap-4 xl:gap-6">
-          <h1 className="text-base sm:text-lg md:text-xl xl:text-2xl font-normal">View</h1>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 xl:w-10 xl:h-10"
-            viewBox="0 0 40 41"
-            fill="none"
-          >
-            <path
-              d="M33.3317 20.7492C33.3312 20.7785 33.3306 20.8079 33.3285 20.8371C33.3226 20.9187 33.3099 20.9984 33.2927 21.0764C33.2886 21.0949 33.2844 21.1133 33.2797 21.1317C33.2508 21.2438 33.2096 21.3507 33.1592 21.4523C33.0807 21.6112 32.9773 21.7612 32.8451 21.8934L21.1784 33.5601C20.5276 34.2109 19.4725 34.2109 18.8217 33.5601C18.1708 32.9092 18.1708 31.8542 18.8217 31.2033L27.6433 22.3817H8.33337C7.41294 22.3817 6.66678 21.6355 6.66671 20.715C6.66671 19.7946 7.4129 19.0484 8.33337 19.0484H27.6433L18.8217 10.2268C18.1708 9.57591 18.1708 8.52087 18.8217 7.86999C19.4725 7.21912 20.5276 7.21912 21.1784 7.86999L32.8451 19.5367C32.9404 19.6319 33.0224 19.7397 33.0925 19.8557C33.1126 19.8889 33.1319 19.9223 33.1495 19.9566C33.2027 20.0605 33.2458 20.1702 33.2764 20.2854C33.2838 20.313 33.2917 20.3405 33.2976 20.3684C33.3014 20.3866 33.3041 20.4052 33.3073 20.4237C33.3125 20.4529 33.3167 20.4822 33.3204 20.5116C33.324 20.5412 33.3265 20.571 33.3285 20.6011C33.3303 20.6277 33.3312 20.6543 33.3317 20.6809C33.332 20.6922 33.3334 20.7037 33.3334 20.715C33.3334 20.7265 33.332 20.7378 33.3317 20.7492Z"
-              fill="white"
-            />
-          </svg>
-        </div> */}
-      </div>
-      <div className="relative pt-8 sm:pt-16 px-4 sm:px-8 md:px-16 lg:px-24 section-padding-y bg-dark-bg ">
-        <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-16 pb-8 sm:pb-10 border-b border-text-disabled">
-          <div>
-            <Image
+      <div className="">{/* Commented out section remains as is */}</div>
+      <div className="relative pt-8 sm:pt-16 px-4 sm:px-8 md:px-16 lg:px-24 pb-8 sm:pb-10 bg-dark-bg">
+      <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-16 pb-0 lg:pb-8 lg:border-b border-text-disabled">          <div className="flex-shrink-0">
+            <Image      
               src={Logo}
               alt="WebMobTech Logo"
-              className="h-12 sm:h-14 md:h-16 xl:h-24 w-auto"
+              className="h-8 sm:h-10 md:h-12 xl:h-14 w-auto"
             />
             <h1 className="pt-6 sm:pt-10 md:pt-12 lg:pt-14 text-lg sm:text-xl md:text-2xl font-medium text-white">
               Contact
             </h1>
-            <div className="text-sm sm:text-base flex gap-2 font-medium pt-3 sm:pt-4 md:pt-6">
-              <h4 className="text-white">IND</h4>
-              <p className="text-text-disabled font-normal">+91-70438-66892</p>
-            </div>
-            <div className="text-sm sm:text-base flex gap-2 font-medium pt-2 sm:pt-3 md:pt-4">
-              <h4 className="text-white">USA</h4>
-              <p className="text-text-disabled font-normal">+1-408-520-9597</p>
+            <div className="flex flex-col gap-2 pt-3 sm:pt-4 md:pt-6">
+              <div className="flex flex-row lg:flex-col gap-4 lg:gap-2">
+                <div className="text-sm sm:text-base flex gap-2 font-medium">
+                  <h4 className="text-white">IND</h4>
+                  <p className="text-text-disabled font-normal">
+                    +91-70438-66892
+                  </p>
+                </div>
+                <div className="text-sm sm:text-base flex gap-2 font-medium">
+                  <h4 className="text-white">USA</h4>
+                  <p className="text-text-disabled font-normal">
+                    +1-408-520-9597
+                  </p>
+                </div>
+              </div>
             </div>
             <div className="pt-4 sm:pt-8 flex gap-4 sm:gap-6">
               <svg
@@ -163,113 +259,51 @@ const BottomFooter = () => {
               </svg>
             </div>
           </div>
-          <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
+          <div className="flex-grow">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-8">
               {/* Services */}
-              <div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-medium mb-4 sm:mb-6 text-white">
-                  Services
-                </h3>
-                <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base font-normal text-text-disabled">
-                  <li>Web Development</li>
-                  <li>Mobile Development</li>
-                  <li>Product Design and Development</li>
-                  <li>DevOps Services</li>
-                  <li>Blockchain Services</li>
-                  <li>Q&amp;A Services</li>
-                  <li>Hire Dedicated Developers</li>
-                  <li>Management &amp; IT Consulting</li>
-                </ul>
-              </div>
+              <DropdownSection
+                title="Services"
+                items={servicesItems}
+                sectionKey="services"
+              />
 
               {/* Tools & Tech */}
-              <div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-medium mb-4 sm:mb-6  text-white">
-                  Tools &amp; Tech
-                </h3>
-                <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base font-normal text-text-disabled">
-                  <li>
-                    Laravel Development{" "}
-                    <span className="hidden sm:inline">Services</span>
-                  </li>
-                  <li>
-                    React JS Development{" "}
-                    <span className="hidden sm:inline">Services</span>
-                  </li>
-                  <li>
-                    AWS Development{" "}
-                    <span className="hidden sm:inline">Services</span>
-                  </li>
-                  <li>
-                    Flutter <span className="hidden sm:inline">App</span>{" "}
-                    Development
-                  </li>
-                  <li>
-                    Node Js Development{" "}
-                    <span className="hidden sm:inline">Services</span>
-                  </li>
-                  <li>
-                    React Native{" "}
-                    <span className="hidden sm:inline">Services</span>
-                  </li>
-                  <li>
-                    Django development{" "}
-                    <span className="hidden sm:inline">Services</span>
-                  </li>
-                  <li>
-                    Python development{" "}
-                    <span className="hidden sm:inline">Services</span>
-                  </li>
-                </ul>
-              </div>
+              <DropdownSection
+                title="Tools & Tech"
+                items={toolsTechItems}
+                sectionKey="toolsTech"
+              />
 
               {/* Work */}
-              <div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-medium mb-4 sm:mb-6  text-white">
-                  Work
-                </h3>
-                <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base font-normal text-text-disabled">
-                  <li>HouzQuest</li>
-                  <li>Video Streaming App</li>
-                  <li>Sterling Accuris</li>
-                  <li>Primally Nourished</li>
-                  <li>Dentaway</li>
-                  <li>Loan Management System</li>
-                  <li>Switchit</li>
-                  <li>Zroomm</li>
-                </ul>
-              </div>
+              <DropdownSection
+                title="Work"
+                items={workItems}
+                sectionKey="work"
+              />
 
               {/* Company */}
-              <div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-medium mb-4 sm:mb-6  text-white">
-                  Company
-                </h3>
-                <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base font-normal text-text-disabled">
-                  <li>About Us</li>
-                  <li>Career</li>
-                  <li>Contact Us</li>
-                  <li>Blog</li>
-                  <li>FAQ</li>
-                  <li>Testimonial</li>
-                </ul>
-              </div>
+              <DropdownSection
+                title="Company"
+                items={companyItems}
+                sectionKey="company"
+              />
             </div>
           </div>
         </div>
 
-        <div className="flex w-full flex-col lg:flex-row gap-3 sm:gap-4 lg:gap-0 justify-between lg:items-center text-xs sm:text-sm md:text-base font-light pt-6 lg:pt-8">
-          <p className="text-light-bg">
-            © {new Date().getFullYear()} WebMobTech Solutions Pvt.Ltd.
-            All Rights Reserved.
+        <div className="flex w-full flex-col lg:flex-row gap-3 sm:gap-4 lg:gap-0 justify-between lg:items-center text-xs sm:text-base md:text-base font-light pt-6 lg:pt-6">
+          <p className="text-text-disabled text-center lg:text-left w-full">
+            © {new Date().getFullYear()} WebMobTech Solutions Pvt.Ltd. All
+            Rights Reserved.
           </p>
-          <div className="sm:w-auto w-full flex flex-col sm:flex-row gap-2 sm:gap-2 lg:gap-4 justify-start sm:items-center text-text-disabled text-xs sm:text-sm">
+          <div className="w-full flex flex-row gap-1 sm:gap-2 lg:gap-4 justify-center sm:justify-start lg:justify-end sm:items-center text-text-disabled text-[10px] sm:text-base lg:text-base">
             <p>D-U-N-S Number: 860386955</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="6"
-              height="7"
-              className="hidden sm:block w-6  "
+              width="4"
+              height="5"
+              className="hidden sm:block sm:w-6"
               viewBox="0 0 8 9"
               fill="none"
             >

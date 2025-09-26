@@ -32,10 +32,10 @@ const SimpleCtaBanner = () => {
       </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-8">
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-12">
           <PrimaryButton
             icon={arrowSvg}
-            text="Schedule a Strategic Call"
+            text="Start Your Project Blueprint"
             className="text-white bg-primary-button text-sm arrow-animate"
           />
         </div>

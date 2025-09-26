@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const FaqWrapper = ({ leftColumnFaqs, rightColumnFaqs }) => {
   const [openFaqId, setOpenFaqId] = useState(null);
@@ -38,8 +38,17 @@ const FaqWrapper = ({ leftColumnFaqs, rightColumnFaqs }) => {
 };
 
 const FaqItem = ({ faq, isOpen, onToggle }) => {
+  const contentRef = useRef(null);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(isOpen ? contentRef.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
+
   return (
-    <div className={`border border-gray-200 rounded-lg mb-3 sm:mb-4 transition-all duration-200 ${isOpen ? 'bg-blue-50 border-blue-200' : 'bg-white'}`}>
+    <div className={`border border-gray-200 rounded-lg mb-3 sm:mb-4 transition-all duration-300 ease-in-out ${isOpen ? 'bg-blue-50 border-blue-200' : 'bg-white'}`}>
       <button
         onClick={onToggle}
         className={`w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex justify-between items-start transition-colors duration-200 cursor-pointer ${isOpen ? 'text-primary' : 'text-gray-800'}`}
@@ -53,11 +62,16 @@ const FaqItem = ({ faq, isOpen, onToggle }) => {
           )}
         </div>
       </button>
-      {isOpen && (
+      
+      <div 
+        ref={contentRef}
+        style={{ height: `${height}px` }}
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+      >
         <div className="px-4 sm:px-6 pb-3 sm:pb-4">
           <p className="text-gray-600 leading-relaxed text-sm sm:text-base lg:text-lg">{faq.answer}</p>
         </div>
-      )}
+      </div>
     </div>
   );
 };
