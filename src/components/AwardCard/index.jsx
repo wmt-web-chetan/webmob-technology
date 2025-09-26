@@ -15,7 +15,7 @@ const AwardCard = ({ image, text }) => {
       <div className="rounded-full flex items-center justify-center relative flex-shrink-0">
         <div className="w-12 sm:w-16 lg:w-18 xl:w-14 2xl:w-16 rounded-full bg-white flex items-center justify-center">
           {image ? (
-            <img
+            <Image
               src={image}
               alt="Award Logo"
               className="w-full h-full object-contain rounded-full"

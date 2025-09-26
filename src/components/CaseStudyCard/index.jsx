@@ -6,12 +6,12 @@ import arrowBlueSvg from "@/assets/svg/arrow-blue.svg";
 
 const CaseStudyCard = ({ data }) => {
   return (
-    <div className="bg-white rounded-3xl p-2 h-full flex flex-col w-full hover:shadow-2xl transition-shadow duration-300 group">
-      <div className="flex justify-center">
+    <div className="bg-white rounded-3xl p-6 h-full flex flex-col w-full hover:shadow-2xl transition-shadow duration-300 group">
+      <div className="flex justify-center bg-[#eeeff1] rounded-2xl p-4">
         <Image
           src={data?.image}
           width={600}
-          className="rounded-3xl hover:scale-105 transition-transform 2xl:h-72 duration-300"
+          className="rounded-2xl hover:scale-105 transition-transform 2xl:h-72 duration-300"
           alt={data?.title || "Case study image"}
         />
       </div>

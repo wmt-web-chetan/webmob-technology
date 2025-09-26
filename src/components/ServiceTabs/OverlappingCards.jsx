@@ -95,19 +95,19 @@ const OverlappingCards = ({ activeTab }) => {
                 {card.icon}
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className=" text-xl sm:text-3xl font-semibold text-gray-900 mb-2">
                   {card.title}
                 </h3>
               </div>
             </div>
 
-            <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+            <p className="text-gray-600 text-xs sm:text-lg mb-4 leading-relaxed">
               {card.description}
             </p>
 
             <ul className="space-y-2 mb-4">
               {card.points.map((point, pointIndex) => (
-                <li key={pointIndex} className="flex items-start gap-2 text-sm text-gray-600">
+                <li key={pointIndex} className="flex items-start gap-2 text-xs sm:text-lg text-gray-600">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                   {point}
                 </li>

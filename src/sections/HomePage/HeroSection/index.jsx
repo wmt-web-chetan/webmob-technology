@@ -1,16 +1,36 @@
-
-import HeroVideo from "@/components/HeroVideo";
+"use client"
 import PrimaryButton from "@/components/PrimaryButton";
-import React from "react";
+import Image from "next/image";
+import React, { useState, useEffect } from "react";
+import patternglow from "@/assets/svg/svgpatternforHero.svg";
+import { HeroContentSection } from "./HeroContentSection";
+import { HeroVideoSection } from "./HeroVideoSection";
 
+
+
+// Main component that combines both sections with conditional rendering
 export default function HeroSection() {
-  return (
-    <section className="relative w-full   overflow-hidden">
-      <HeroVideo/>
-      
+  const [isMobile, setIsMobile] = useState(false);
 
-      {/* Overlay gradient (optional for text readability) */}
-      <div className="absolute inset-0 bg-black/40 z-0"></div>
-    </section>
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Check on mount
+    checkIfMobile();
+
+    // Check on resize
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
+  return (
+    <>
+      <HeroContentSection isMobile={isMobile} />
+      {!isMobile && <HeroVideoSection />}
+    </>
   );
 }

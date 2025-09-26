@@ -138,7 +138,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.gradient-border-button-pulse:hover {
+/* .gradient-border-button-pulse:hover {
   animation: pulseGlow 1.5s ease-in-out infinite;
 }
 
@@ -151,7 +151,7 @@ body {
     box-shadow: 0 0 30px rgba(42, 159, 255, 0.6);
     transform: scale(1.05);
   }
-}
+} */
 
 .btn-style501 {
   background-image: linear-gradient(to right, #2a9fff 0%, #2c23e8 51%, #2a9fff 100%);
@@ -191,41 +191,12 @@ body {
 .arrow-animate img,
 .arrow-animate svg,
 .arrow-animate .arrow-icon {
-  animation: arrowMove 1.5s ease-in-out infinite;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* On hover, rotate arrow to 45 degrees and maintain animation */
+/* On hover, rotate arrow to -45 degrees with smooth transition */
 .arrow-animate:hover img,
 .arrow-animate:hover svg,
 .arrow-animate:hover .arrow-icon {
-  animation: arrowMoveHover 1.5s ease-in-out infinite;
-}
-
-/* Normal arrow animation */
-/* @keyframes arrowMove {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(6px);
-  }
-} */
-
-/* Hover arrow animation - combines rotation with movement */
-/* @keyframes arrowMoveHover {
-  0%, 100% {
-    transform: rotate(-45deg) translateX(0);
-  }
-  50% {
-    transform: rotate(-45deg) translateX(6px);
-  } 
-} */
-@keyframes arrowMoveHover {
-  0%, 100% {
-    transform: rotate(-45deg) translateX(0) translateY(0);
-  }
-  50% {
-    transform: rotate(-45deg) translateX(4px) translateY(-4px);
-  }
+  transform: rotate(-45deg);
 }
