@@ -34,7 +34,7 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
 
           {/* Testimonial Text - Fixed height with scrollable content */}
           <div className="flex-1 flex flex-col mt-16 ">
-            <div className="flex-1 pr-2">
+            <div className="flex-1">
               <blockquote
                 className={`text-base text-text-primary leading-relaxed transition-all duration-500 ease-in-out delay-200 ${transitionClass}`}
               >
@@ -44,7 +44,7 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
           </div>
 
           {/* Profile Section - Fixed height */}
-          <div className="flex-shrink-0 flex items-center gap-4 mb-6 h-[80px]">
+          <div className="flex-shrink-0 flex items-center gap-4  h-[80px]">
             <div className="relative flex-shrink-0 group items-stretch">
               <Image
                 width={63}
@@ -102,13 +102,13 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
       <div className="hidden lg:flex lg:gap-8 xl:gap-12 2xl:gap-16 3xl:gap-20 items-stretch h-[400px]">
         {/* Right  */}
         <div className="relative">
-          <div className="relative max-w-sm h-full rounded-2xl group">
+          <div className="relative  h-full rounded-2xl group">
             <Image
               height={200}
               width={200}
               src={testimonial.image}
               alt={`${testimonial.name} testimonial`}
-              className={`object-cover w-full h-full rounded-2xl transition-all duration-500 ease-in-out ${
+              className={`object-cover min-w-2xs h-full rounded-2xl transition-all duration-500 ease-in-out ${
                 isTransitioning
                   ? "opacity-0 -translate-x-8"
                   : "opacity-100 translate-x-0"
@@ -138,7 +138,9 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
                       : "opacity-100 translate-x-0"
                   }`}
                 />
-                <span className="text-sm lg:text-base font-medium">Play Video</span>
+                <span className="text-sm lg:text-base font-medium">
+                  Play Video
+                </span>
               </button>
             </div>
           </div>
@@ -161,11 +163,11 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
           </div>
 
           {/* Main content area - Takes up remaining space */}
-          <div className="flex flex-col justify-between pt-22 h-full">
+          <div className="flex flex-col justify-between pt-18 h-full">
             {/* Testimonial text - Scrollable area */}
             <div className="">
               <blockquote
-                className={`text-lg lg:text-xl xl:text-xl 2xl:text-2xl 3xl:text-2xl leading-relaxed text-text-primary transition-all duration-500 ease-in-out delay-200 ${transitionClass}`}
+                className={`text-lg lg:text-xl xl:text-xl  3xl:text-2xl leading-relaxed text-text-primary transition-all duration-500 ease-in-out delay-200 ${transitionClass}`}
               >
                 "{testimonial.text}"
               </blockquote>
@@ -207,7 +209,6 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
             </div>
           </div>
         </div>
-
       </div>
 
       <VideoModal

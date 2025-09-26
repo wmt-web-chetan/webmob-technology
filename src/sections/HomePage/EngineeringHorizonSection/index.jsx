@@ -38,7 +38,7 @@ const EngineeringHorizonSection = () => {
         {/* Header */}
         <div className="flex flex-col max-w-6xl 2xl:max-w-screen-xl 3xl:max-w-screen-2xl mx-auto lg:flex-row lg:items-center lg:justify-between gap-8 mb-12 lg:mb-16 ">
           <div className="flex-1 max-w-4xl">
-            <h2 className="h1-heading  text-text-primary mb-6">
+            <h2 className="h2-heading  text-text-primary mb-6">
               Engineering the <span className="text-gradient-primary font-semibold">Horizon</span>
             </h2>
             <p className="h2-description items-center">

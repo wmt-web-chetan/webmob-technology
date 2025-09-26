@@ -58,7 +58,6 @@ export default async function Home() {
       <AwardSection />
       <FaqSection />
       <CubeCtaBanner />
-      <PricingSection />
       <BottomFooter />
     </>
   );

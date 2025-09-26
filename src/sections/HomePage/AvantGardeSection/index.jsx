@@ -130,19 +130,19 @@ const AvantGardeSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10">
+      <div className="relative z-10 px-wrapper ">
         {/* Header Section */}
         <div className="flex justify-center">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-center text-white max-w-6xl leading-tight">
+          <h2 className="h2-heading  text-center text-white">
             The Arsenal of the{" "}
-            <span className="font-bold text-gradient-primary bg-clip-text text-transparent">
+            <span className="font-semibold text-white">
               Avant-Garde
             </span>
           </h2>
         </div>
 
-        <div className="flex justify-center mt-4 md:mt-6">
-          <p className="text-sm md:text-lg lg:text-xl text-gray-300 text-center max-w-4xl leading-relaxed px-4">
+        <div className="flex justify-center mt-4 md:mt-6 h2-description">
+          <p className=" text-white text-center  leading-relaxed px-4">
             We are masters of the foundational technologies that power the
             intelligent future. Our expertise runs deep across the entire
             next-generation ecosystem.
