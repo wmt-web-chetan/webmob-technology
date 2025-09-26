@@ -67,7 +67,7 @@ const TestimonialSection = () => {
         </div>
 
         {/* Testimonial Slider */}
-        <div className="mt-13">
+        <div className="mt-3 md:mt-13">
           <TestimonialSlider testimonials={testimonialsData} />
         </div>
       </div>

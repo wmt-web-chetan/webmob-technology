@@ -42,7 +42,7 @@ export default async function Home() {
           return <Component key={i} {...block[key]} />;
           })} */}
 
-      {/* <Header/> */}
+      <Header/>
       <CaseStudySection />
       <AipoweredVelocity />
       <StatsSection />
