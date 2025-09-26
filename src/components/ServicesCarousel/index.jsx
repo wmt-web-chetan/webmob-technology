@@ -3,26 +3,29 @@
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import CarouselControls from "../CarouselControls";
 import ServiceCard from "../ServiceCard";
 
 const ServicesCarousel = ({ services }) => {
   // Initialize carousel
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "center",
-    dragFree: true,
-    skipSnaps: false,
-    loop: true,
-    slidesToScroll: 1,
-    // breakpoints: {
-    //   "(min-width: 640px)": { slidesToScroll: 1 },  
-    //   "(min-width: 768px)": { slidesToScroll: 1 },
-    //   "(min-width: 1025px)": { slidesToScroll: 1 },
-    //   "(min-width: 1280px)": { slidesToScroll: 1 },
-    //   "(min-width: 1536px)": { slidesToScroll: 1 },
-    //   "(min-width: 1791px)": { slidesToScroll: 1 },
-    // },
-  });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      align: "center",
+      dragFree: true,
+      skipSnaps: false,
+      slidesToScroll: 1,
+      // breakpoints: {
+      //   "(min-width: 640px)": { slidesToScroll: 1 },
+      //   "(min-width: 768px)": { slidesToScroll: 1 },
+      //   "(min-width: 1025px)": { slidesToScroll: 1 },
+      //   "(min-width: 1280px)": { slidesToScroll: 1 },
+      //   "(min-width: 1536px)": { slidesToScroll: 1 },
+      //   "(min-width: 1791px)": { slidesToScroll: 1 },
+      // },
+    },
+    [Autoplay({ delay: 5000, stopOnInteraction: false })]
+  );
 
   // State for enabling/disabling prev/next controls
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -88,7 +91,11 @@ const ServicesCarousel = ({ services }) => {
               key={index}
               className=" flex-none w-full sm:w-2/3  md:w-1/2  lg:w-2/5  xl:w-1/3 2xl:w-2/7 3xl:w-1/4 relative"
             >
-              <ServiceCard index={index} {...service} />
+              <ServiceCard
+                index={index}
+                isLast={index === services.length - 1}
+                {...service}
+              />
             </div>
           ))}
         </div>
