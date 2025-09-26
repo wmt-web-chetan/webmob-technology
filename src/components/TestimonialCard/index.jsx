@@ -15,7 +15,7 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
   return (
     <>
       {/* Mobile Layout - Fixed Height */}
-      <div className="lg:hidden h-[475px] sm:h-[300px] flex flex-col">
+      <div className="lg:hidden h-[400px] sm:h-[295px] flex flex-col">
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Quote icon at top */}
           <div
@@ -99,7 +99,8 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
       </div>
 
       {/* Desktop Layout - Fixed Height */}
-      <div className="hidden lg:flex lg:gap-8 xl:gap-12 2xl:gap-16 3xl:gap-20 items-stretch h-[500px]">
+      <div className="hidden lg:flex lg:gap-8 xl:gap-12 2xl:gap-16 3xl:gap-20 items-stretch h-[400px]">
+        {/* Right  */}
         <div className="relative">
           <div className="relative max-w-sm h-full rounded-2xl group">
             <Image
@@ -206,6 +207,7 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
             </div>
           </div>
         </div>
+
       </div>
 
       <VideoModal

@@ -81,7 +81,7 @@ const TestimonialSlider = ({ testimonials }) => {
       </div>
 
       {/* Navigation Controls - Outside the card */}
-      <div className="flex justify-center lg:justify-end mt-6 lg:mt-8">
+      <div className="flex justify-center lg:justify-end mt-6 ">
         <NavigationControls
           onPrevious={handlePrevious}
           onNext={handleNext}
