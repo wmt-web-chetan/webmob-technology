@@ -39,7 +39,7 @@ const CaseStudySection = () => {
   ];
 
   return (
-    <div className="bg-light-bg section-padding-y px-wrapper ">
+    <div className="bg-light-bg pt-14 pb-10 px-wrapper ">
       <div className="flex justify-center text-center mb-8 xl:mb-12">
         <h2 className="h2-heading">
           Our Work is{" "}
@@ -55,7 +55,7 @@ const CaseStudySection = () => {
             </div>
         ))}
       </div>
-       <div className="flex justify-center mt-8">
+       <div className="flex justify-center mt-12">
         <PrimaryButton
           icon={arrowSvg}
           text="View All Case Studies "

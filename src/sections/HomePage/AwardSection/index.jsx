@@ -3,19 +3,21 @@ import Image from "next/image";
 import AwardCard from "@/components/AwardCard";
 import VerticalAwardScroll from "@/components/VerticalAwardScroll";
 import StarRating from "@/components/StarRating";
+import clutchaward from "@/assets/svg/clutchaward.svg";
+
 
 // Static data
 const staticData = {
   title: "Excellence in Innovation Awards",
-  description: "Recognized globally for outstanding performance, innovative solutions, and exceptional customer satisfaction across multiple industries and platforms.",
+  description: "Our commitment to innovation and quality hasn't gone unnoticed. We are proud to be consistently recognized by leading industry bodies for our technical expertise, project success, and company culture. These accolades are a testament to the talent of our team and the trust of our partners.",
   mainRating: {
     logo: {
       node: {
-        mediaItemUrl: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=32&h=36&fit=crop" // Award/trophy icon
+        mediaItemUrl: clutchaward // Award/trophy icon
       }
     },
     value: "4.8",
-    reviewCount: "Based on 250+ verified reviews"
+    reviewCount: "44 reviews on Clutch"
   },
   awards: [
     {
@@ -95,8 +97,9 @@ const AwardSection = () => {
     <div className="bg-dark-bg flex flex-col xl:flex-row justify-between gap-8 xl:gap-0 py-12 xl:py-0 px-4 sm:px-24 md:px-30 xl:px-23 2xl:!px-48">
       <div className="w-full xl:max-w-3xl flex flex-col gap-y-8 xl:gap-y-16 justify-center">
         <div className="flex flex-col gap-y-4 xl:gap-y-6">
-          <div className="text-white h2-heading font-bold leading-tight text-center xl:text-start">
-            {formatTitle(staticData.title)}
+          <div className="text-white h2-heading leading-tight text-center xl:text-start">
+          Validated by the <span className="font-bol">Industry's Best.</span>
+            {/* {formatTitle(staticData.title)} */}
           </div>
           <p className="text-white text-base sm:text-lg lg:text-2xl font-normal leading-relaxed text-center xl:text-start">
             {staticData.description}
@@ -109,12 +112,12 @@ const AwardSection = () => {
                 <Image 
                   src={staticData.mainRating.logo.node.mediaItemUrl} 
                   alt="award logo" 
-                  width={32} 
-                  height={36} 
+                  width={51} 
+                  height={60} 
                 />
               )}
             </div>
-            {staticData.mainRating.value}
+            <div className="text-5xl">{staticData.mainRating.value}</div>
             <div className="">
               <StarRating
                 rating={Number(staticData.mainRating.value) ?? 0}
@@ -129,7 +132,7 @@ const AwardSection = () => {
       </div>
 
       {/* Award Cards - responsive layout */}
-      <div className="w-full md:w-auto">
+      <div className="w-full xl:w-auto xl:flex-shrink-0 xl:max-w-[600px]">
         {/* Mobile: Single horizontal scroll */}
         <div className="md:hidden">
           <VerticalAwardScroll>
