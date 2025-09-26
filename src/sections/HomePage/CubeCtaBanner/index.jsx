@@ -4,6 +4,8 @@ import React from "react";
 import roundcube1 from "@/assets/images/RoundCube1.png";
 import roundcube2 from "@/assets/images/RoundCube2.png";
 import roundcube3 from "@/assets/images/RoundCube3.png";
+import arrowSvg from "@/assets/svg/arrow.svg";
+import blueArrowSvg from "@/assets/svg/bluearrow.svg";
 
 const CubeCtaBanner = () => {
   return (
@@ -44,7 +46,6 @@ const CubeCtaBanner = () => {
         </div>
 
         {/* Subtle gradient overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-50/30 to-transparent"></div>
       </div>
 
       {/* Content */}
@@ -72,12 +73,14 @@ const CubeCtaBanner = () => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-6">
           <PrimaryButton
+            icon={arrowSvg}
             text="Schedule a Strategic Call"
-            className="btn-style501"
+            className="btn-style501 arrow-animate"
           />
           <PrimaryButton
+            icon={blueArrowSvg}
             text="Send Us Your Project Brief"
-            className="gradient-border-button-pulse"
+            className="gradient-border-button-pulse arrow-animate"
           />
         </div>
       </div>

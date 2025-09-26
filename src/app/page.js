@@ -42,6 +42,7 @@ export default async function Home() {
           })} */}
 
       <Header/>
+      <HeroSection />
       <BrandSection />
       <ServiceSection />
       <CaseStudySection />

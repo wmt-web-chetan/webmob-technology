@@ -4,6 +4,11 @@ import AwardCard from "@/components/AwardCard";
 import VerticalAwardScroll from "@/components/VerticalAwardScroll";
 import StarRating from "@/components/StarRating";
 import clutchaward from "@/assets/svg/clutchaward.svg";
+import cluthChampionsImg from "@/assets/svg/cluthChampions.svg";
+import upCitybadgeImg from "@/assets/svg/upCitybadge.svg";
+import topDevImg from "@/assets/svg/topDev.svg";
+import tbWebDevImg from "@/assets/svg/tbWebDev.svg";
+
 
 
 // Static data
@@ -21,53 +26,53 @@ const staticData = {
   },
   awards: [
     {
-      title: "Excellence in Innovation Award 2024",
+      title: "Top Website Developer 2023",
       image: {
         node: {
-          mediaItemUrl: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=200&h=200&fit=crop" // Innovation award
+          mediaItemUrl: upCitybadgeImg
         }
       }
     },
     {
-      title: "Best Design Excellence Award 2024", 
+      title: "Clutch Champion 2023", 
       image: {
         node: {
-          mediaItemUrl: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=200&h=200&fit=crop" // Design award
+          mediaItemUrl:cluthChampionsImg
         }
       }
     },
     {
-      title: "Outstanding Performance Award 2024",
+      title: "Top Web Development Company in 2022",
       image: {
         node: {
-          mediaItemUrl: "https://images.unsplash.com/photo-1567427018141-0584cfcbf1b8?w=200&h=200&fit=crop" // Performance award
+          mediaItemUrl: tbWebDevImg // Performance award
         }
       }
     },
-    {
-      title: "Customer Choice Award 2024",
-      image: {
-        node: {
-          mediaItemUrl: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=200&h=200&fit=crop" // Customer award
-        }
-      }
-    },
-    {
-      title: "Industry Leadership Award 2024",
-      image: {
-        node: {
-          mediaItemUrl: "https://images.unsplash.com/photo-1624969862293-b749659ccc4e?w=200&h=200&fit=crop" // Leadership award
-        }
-      }
-    },
-    {
-      title: "Premium Quality Award 2024",
-      image: {
-        node: {
-          mediaItemUrl: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=200&h=200&fit=crop" // Quality award
-        }
-      }
-    }
+    // {
+    //   title: "Customer Choice Award 2024",
+    //   image: {
+    //     node: {
+    //       mediaItemUrl: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=200&h=200&fit=crop" // Customer award
+    //     }
+    //   }
+    // },
+    // {
+    //   title: "Industry Leadership Award 2024",
+    //   image: {
+    //     node: {
+    //       mediaItemUrl: "https://images.unsplash.com/photo-1624969862293-b749659ccc4e?w=200&h=200&fit=crop" // Leadership award
+    //     }
+    //   }
+    // },
+    // {
+    //   title: "Premium Quality Award 2024",
+    //   image: {
+    //     node: {
+    //       mediaItemUrl: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=200&h=200&fit=crop" // Quality award
+    //     }
+    //   }
+    // }
   ]
 };
 
@@ -98,7 +103,7 @@ const AwardSection = () => {
       <div className="w-full xl:max-w-3xl flex flex-col gap-y-8 xl:gap-y-16 justify-center">
         <div className="flex flex-col gap-y-4 xl:gap-y-6">
           <div className="text-white h2-heading leading-tight text-center xl:text-start">
-          Validated by the <span className="font-bol">Industry's Best.</span>
+          Validated by the <span className="font-bold">Industry's Best.</span>
             {/* {formatTitle(staticData.title)} */}
           </div>
           <p className="text-white text-base sm:text-lg lg:text-2xl font-normal leading-relaxed text-center xl:text-start">

@@ -23,6 +23,8 @@ import sportBlack from "../../../assets/svg/sportblack.svg";
 import sportWhite from "../../../assets/svg/sportwhite.svg";
 import ecommerceBlack from "../../../assets/svg/Ecommerceblack.svg";
 import ecommerceWhite from "../../../assets/svg/Ecommercewhite.svg";
+import arrowSvg from "../../../assets/svg/arrow.svg"
+
 
 const IndustrySection = () => {
   const [activeIndustry, setActiveIndustry] = useState(0);
@@ -330,24 +332,25 @@ const IndustrySection = () => {
               </div>
               <div className="mt-8">
                 <PrimaryButton
+                icon ={arrowSvg}
                   text={industries[activeIndustry].buttonText}
-                  className="text-white bg-primary-button text-md py-3 transition-all duration-300"
+                  className="text-white bg-primary-button text-md py-3 transition-all duration-300 arrow-animate"
                 />
               </div>
             </div>
           </div>
           
           {/* Image Section */}
-          <div className="md:col-span-1 lg:col-span-6 xl:col-span-5 order-1 md:order-2 xl:order-2 flex items-start">
+          <div className="md:col-span-1 lg:col-span-6 xl:col-span-5 order-1 md:order-2 xl:order-2 xl:h-full">
             <div
-              className="transition-all duration-500 ease-in-out opacity-100 animate-fade-in w-full"
+              className="transition-all duration-500 ease-in-out opacity-100 animate-fade-in w-full xl:h-full"
               key={`image-${activeIndustry}`}
             >
               <Image
                 src={industries[activeIndustry].image}
                 width={300}
                 alt={`${industries[activeIndustry].title} industry showcase image`}
-                className="w-full aspect-square md:aspect-[4/3] lg:aspect-auto lg:h-full object-cover rounded-2xl transition-all duration-300"
+                className="w-full aspect-square md:aspect-[4/3] xl:h-full xl:aspect-auto object-cover rounded-2xl transition-all duration-300"
               />
             </div>
           </div>

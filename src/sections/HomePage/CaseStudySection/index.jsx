@@ -4,37 +4,42 @@ import vivaImage from "../../../assets/images/viva.jpg"
 import stream from "../../../assets/images/stream.png"
 import PrimaryButton from "@/components/PrimaryButton";
 import arrowSvg from "../../../assets/svg/arrow.svg"
+import VivaImg from "@/assets/svg/vivaImg.svg"
+import MellyImg from "@/assets/svg/MellyImg.svg"
+import LoImg from "@/assets/svg/LoImg.svg"
+import LasavistaImg from "@/assets/svg/LoImg.svg"
+
 
 const CaseStudySection = () => {
   const caseStudyData = [
     {
       id: 1,
-      title: "Vive Wireless",
+      title: "BrockerAIQ",
       description: "Robust B2B/B2C eCommerce and POS Solution with Dynamic Pricing, Marketplace Integration, and Real-Time Inventory Sync.",
-      tags: ["UX Design", "Webdesign", "App Store", "Post Card"],
-      image: vivaImage,
+      tags: ["Bulk Return", "Multichannel", "My Wallet", "Pay Later"],
+      image: LoImg,
       
     },
     {
       id: 2,
       title: "StreamBase",
-      description: "StreamBase is a real-time analytics and decision engine that helps companies build applications that can process massive amounts of streaming data.",
-      tags: ["Email Design", "Event Friendly", "Web API Support"],
-      image: stream,
+      description: "Revolutionizing AV Distribution with Seamless, Scalable, and Ultra-Low Latency Video and Audio Over IP",
+      tags: ["AV over IP", "IP  Based Routing", "Video-Wall Support"],
+      image: VivaImg,
     },
     {
       id: 3,
       title: "Melly",
-      description: "Let's cooking for a bit. Feel free to explore those great cooking blog pages and those recipes and those tasty photos.",
-      tags: ["Impressive Sound", "VR Content", "Web Control"],
-      image: vivaImage,
+      description: "Melly is a mental and emotional wellness app that helps enhance one’s mental health.",
+      tags: ["Categorized  Content ", "CBT Exercise", "Melly Coach AI"],
+      image: MellyImg,
     },
     {
       id: 4,
       title: "La Savista",
-      description: "La Savista wants to be the ultimate place for cryptocurrency trades with an easy-to-use and complete trading software solution.",
-      tags: ["Voice Studio", "Travel Tool Design", "Voice Studio", "Travel Tool Design","Chart Report Navigation"],
-      image: stream,
+      description: "La savista uses smart technology (Bluetooth and NFC) to create an invisible guide that helps users explore their surroundings independently.",
+      tags: ["Voice Guide", "Digital Trail Guide", "Smart Object Recognition"],
+      image: VivaImg,
     }
   ];
 
