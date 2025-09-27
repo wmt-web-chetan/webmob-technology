@@ -50,7 +50,14 @@ const EngineeringHorizonSection = () => {
       buttonText: "Model the Future",
       buttonHref: "/services/digital-twin",
     },
-    
+    {
+      icon: "",
+      title: "The Uncharted Territory",
+      description:
+        "Beyond these established domains, our innovation labs operate at the edge of possibility, engineering the next wave of digital solutions before they even have a name.",
+      buttonText: "Model the Future",
+      buttonHref: "/services/digital-twin",
+    },
   ];
 
   return (

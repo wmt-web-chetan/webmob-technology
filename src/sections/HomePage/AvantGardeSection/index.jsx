@@ -158,7 +158,7 @@ const AvantGardeSection = () => {
               
               {/* Main Card */}
               <div
-                className={`group ${styles.cardWithAnimatedBorder} relative rounded-xl md:rounded-2xl pt-3 md:pt-4 lg:pt-6 pb-5 md:pb-6 lg:pb-7 px-3 md:px-4 lg:px-6 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/20 hover:shadow-2xl hover:shadow-blue-500/40 z-20 bg-dark-bg/80 backdrop-blur-sm border border-white/55 hover:border-white/30 h-full`}
+                className={`group ${styles.cardWithAnimatedBorder} relative rounded-xl md:rounded-2xl lg:rounded-[24px] pt-3 md:pt-4 lg:pt-6 pb-5 md:pb-6 lg:pb-7 px-3 md:px-4 lg:px-6 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/20 hover:shadow-2xl hover:shadow-blue-500/40 z-20 bg-dark-bg/80 backdrop-blur-sm border border-white/55 hover:border-white/30 h-full`}
                 style={{
                   boxShadow:
                     "0 8px 32px rgba(0, 0, 0, 0.3), inset -10px -10px 20px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)",

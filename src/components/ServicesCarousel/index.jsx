@@ -13,8 +13,9 @@ const ServicesCarousel = ({ services }) => {
     {
       align: "center",
       dragFree: true,
-      skipSnaps: false,
+      startIndex:2,
       slidesToScroll: 1,
+      loop:true
       // breakpoints: {
       //   "(min-width: 640px)": { slidesToScroll: 1 },
       //   "(min-width: 768px)": { slidesToScroll: 1 },
@@ -89,7 +90,7 @@ const ServicesCarousel = ({ services }) => {
           {services.map((service, index) => (
             <div
               key={index}
-              className=" flex-none w-full sm:w-2/3  md:w-1/2  lg:w-2/5  xl:w-1/3 2xl:w-2/7 3xl:w-1/4 relative"
+              className=" flex-none w-fit sm:w-2/3  md:w-1/2  lg:w-2/5  xl:w-1/3 2xl:w-2/7 3xl:w-1/4 relative"
             >
               <ServiceCard
                 index={index}

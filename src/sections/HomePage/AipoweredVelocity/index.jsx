@@ -15,7 +15,7 @@ const AipoweredVelocity = () => {
         </h2>
       </div>
       <div className="lg:flex gap-5 mt-4 md:mt-6 xl:mt-10 relative">
-        <div className="flex-1 py-10 lg:sticky lg:top-10 self-start">
+        <div className="flex-1 py-15 lg:sticky lg:top-10 self-start">
           <p className="text-base sm:text-2xl text-text-primary">
             This isn't about developers just working harder. It's about them
             working smarter, amplified by a suite of proprietary and

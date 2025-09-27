@@ -84,10 +84,10 @@ export default function BrandSection() {
             {/* Logo Marquee - Takes remaining space */}
             <div className="flex-1 relative overflow-hidden">
               {/* Left shadow overlay */}
-              <div className="absolute left-0 top-0 w-12 sm:w-16 md:w-20 lg:w-24 xl:w-28 h-full bg-gradient-to-r from-white via-white/60 to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute left-0 top-0 w-12 sm:w-16 md:w-20 lg:w-24 xl:w-28 h-full bg-gradient-to-r from-light-bg via-light-bg/10 to-transparent z-10 pointer-events-none"></div>
               
               {/* Right shadow overlay */}
-              <div className="absolute right-0 top-0 w-12 sm:w-16 md:w-20 lg:w-24 xl:w-28 h-full bg-gradient-to-l from-white via-white/60 to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute right-0 top-0 w-12 sm:w-16 md:w-20 lg:w-24 xl:w-28 h-full bg-gradient-to-l from-light-bg via-light-bg/10 to-transparent z-10 pointer-events-none"></div>
               
               <div className={styles.marqueeContainer}>
                 <div

@@ -1,6 +1,6 @@
 import Button from "@/ui/Button";
 import Icon from "@/ui/icon";
-import ArrowRight from "../../assets/svg/ArrowRight.svg";
+import ArrowRight2 from "../../assets/svg/ArrowRight2.svg";
 import arrowBlack from "../../assets/svg/arrowBlack.svg";
 import Grid from "../../assets/svg/Grid.svg";
 import Image from "next/image";
@@ -17,7 +17,7 @@ const ServiceCard = ({
 }) => {
   return (
     <div
-      className={` group rounded-4xl p-4 mb-2 lg:p-6 border border-text-disabled shadow-sm hover:shadow-lg  hover:border-primary transition-all duration-300 h-full flex flex-col ${className} ${
+      className={` group rounded-4xl p-4 md:p-6 mb-2 lg:p-6 border border-text-disabled shadow-sm hover:shadow-lg  hover:border-primary transition-all duration-300 h-full flex flex-col ${className} ${
         index == 0 ? "ml-5 " : ""
       } ${
         isLast
@@ -29,11 +29,11 @@ const ServiceCard = ({
       <div className=" ">
         {isLast ? (
           <div
-            className="absolute inset-0 w-full h-[100px] bg-no-repeat bg-contain " // Adjust height (e.g., 100px) to match title position
+            className="absolute inset-0 w-full h-28 bg-no-repeat bg-contain " 
             style={{
-              backgroundImage: `url(${Grid.src})`, // Use the SVG as a background
-              backgroundSize: "cover", // Stretch to cover the area
-              zIndex: 1, // Ensure SVG is above the bg-primary
+              backgroundImage: `url(${Grid.src})`, 
+              backgroundSize: "cover", 
+              zIndex: 1, 
             }}
           />
         ) : (
@@ -43,7 +43,7 @@ const ServiceCard = ({
 
       {/* Icon */}
       <div className="mb-6">
-        <Icon type={icon} className={`w-10 h-10 lg:w-14 lg:h-14 `} />
+        <Icon type={icon} className={`w-8 h-8 lg:w-14 lg:h-14 `} />
       </div>
 
       {/* Content */}
@@ -57,7 +57,7 @@ const ServiceCard = ({
         </h3>
 
         <p
-          className={`text-text-secondary text-sm lg:text-base leading-6 mb-6 ${
+          className={`text-text-secondary text-sm lg:text-base mb-4  ${
             isLast ? "text-white" : ""
           }`}
         >
@@ -66,7 +66,7 @@ const ServiceCard = ({
       </div>
 
       {/* CTA */}
-      <div className="mt-auto">
+      <div className="mt-auto mb-1">
         {isLast ? (
           <a
             href={buttonHref}
@@ -89,7 +89,7 @@ const ServiceCard = ({
           >
             {buttonText}
             <Image
-              src={ArrowRight}
+              src={ArrowRight2}
               alt="Next"
               width={20}
               height={20}
