@@ -13,7 +13,7 @@ const CubeCtaBanner = () => {
       {/* Cube background images */}
       <div className="absolute inset-0">
         {/* Top-left cube */}
-        <div className="absolute top-[-77px] left-96 h-52 opacity-30 blur-[1px]">
+        <div className="absolute bottom-[-57px]  left-[-50px] sm:bottom-[-57px] sm:left-[-50px] lg:top-[-77px] lg:left-66 3xl:top-[-77px] 3xl:left-96 h-35 sm:h-52 ">
           <Image
             src={roundcube1}
             alt=""
@@ -24,7 +24,7 @@ const CubeCtaBanner = () => {
         </div>
 
         {/* Bottom-right cube */}
-        <div className="absolute bottom-[-130px] right-[-68px]  h-[400px] opacity-25 blur-[1px]">
+        <div className="absolute top-[-180px] right-[-120px] sm:top-[-180px] sm:right-[-120px]  lg:top-[230px] lg:right-[-190px] h-80  sm:h-[600px] ">
           <Image
             src={roundcube2}
             alt=""
@@ -35,7 +35,7 @@ const CubeCtaBanner = () => {
         </div>
 
         {/* Left-center floating cube */}
-        <div className="absolute top-96 left-40  transform -translate-y-1/2  h-40 opacity-20 blur-[0.5px]">
+        <div className=" hidden lg:block absolute top-96 left-30  transform -translate-y-1/2  h-40 ">
           <Image
             src={roundcube3}
             alt=""
