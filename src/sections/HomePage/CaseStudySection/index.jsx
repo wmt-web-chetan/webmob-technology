@@ -7,7 +7,7 @@ import arrowSvg from "../../../assets/svg/arrow.svg"
 import VivaImg from "@/assets/svg/vivaImg.svg"
 import MellyImg from "@/assets/svg/MellyImg.svg"
 import LoImg from "@/assets/svg/LoImg.svg"
-import LasavistaImg from "@/assets/svg/LoImg.svg"
+import LasavistaImg from "@/assets/svg/LaSavistaImg.svg"
 
 
 const CaseStudySection = () => {
@@ -39,7 +39,7 @@ const CaseStudySection = () => {
       title: "La Savista",
       description: "La savista uses smart technology (Bluetooth and NFC) to create an invisible guide that helps users explore their surroundings independently.",
       tags: ["Voice Guide", "Digital Trail Guide", "Smart Object Recognition"],
-      image: VivaImg,
+      image: LasavistaImg,
     }
   ];
 
