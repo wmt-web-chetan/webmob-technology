@@ -71,12 +71,12 @@ const FaqSection = () => {
   return (
     <div className='px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-32 py-12 sm:py-16 lg:py-24'>
       <div className='flex justify-center'>
-        <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center text-gray-900 leading-tight'>
+        <h2 className='h2-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center text-gray-900 leading-tight'>
           Your <span className='text-gradient-primary font-bold'>Questions</span>, Answered with <span className='text-gradient-primary font-bold'>Clarity</span>.
         </h2>
       </div>
       
-      <div className='flex justify-center mt-4 sm:mt-6'>
+      <div className='flex justify-center mt-4 sm:mt-6 h2-description'>
         <p className='text-base sm:text-lg text-text-secondary max-w-4xl text-center leading-relaxed px-2 sm:px-0'>
           We believe in radical transparency. Here are straightforward answers to some of the most common questions we receive.
         </p>

@@ -25,9 +25,9 @@ import ecommerceBlack from "../../../assets/svg/Ecommerceblack.svg";
 import ecommerceWhite from "../../../assets/svg/Ecommercewhite.svg";
 import arrowSvg from "../../../assets/svg/arrow.svg"
 
-
 const IndustrySection = () => {
   const [activeIndustry, setActiveIndustry] = useState(0);
+  const [expandedIndustry, setExpandedIndustry] = useState(0); // Track which industry is expanded (only one at a time)
 
   const industries = [
     {
@@ -167,6 +167,16 @@ const IndustrySection = () => {
       iconWhite: ecommerceWhite,
     },
   ];
+
+  const toggleIndustryExpansion = (index) => {
+    if (expandedIndustry === index) {
+      setExpandedIndustry(-1); // Close if clicking the same one
+    } else {
+      setExpandedIndustry(index); // Open the clicked one
+    }
+    setActiveIndustry(index);
+  };
+
   return (
     <div className="px-wrapper section-padding-y-v2">
       <div className="flex justify-center   ">
@@ -186,8 +196,141 @@ const IndustrySection = () => {
         </p>
       </div>
       <div className="border-[1px] rounded-2xl border-[#1B1B3533] p-2  md:p-3 md:py-4 mt-8 ">
-        {/* Mobile Tab Bar */}
-        <div className="xl:hidden mb-4 relative">
+        {/* Mobile Accordion - Only visible on small screens */}
+        <div className="md:hidden mb-4">
+          <div className="bg-light-bg rounded-xl p-2 space-y-1">
+            {industries.map((industry, index) => (
+              <div key={index} className="border-b border-gray-100 last:border-b-0">
+                {/* Accordion Header */}
+                <button
+                  className={`w-full flex items-center justify-between p-3 rounded-t-lg rounded-b-0  transition-all duration-200 ${
+                    activeIndustry === index 
+                      ? 'bg-white shadow-sm' 
+                      : 'hover:bg-white/50'
+                  }`}
+                  onClick={() => toggleIndustryExpansion(index)}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className={`p-2 rounded-lg ${
+                      activeIndustry === index ? 'bg-primary' : 'bg-gray-100'
+                    }`}>
+                      <Image
+                        src={activeIndustry === index ? industry.iconWhite : industry.iconBlack}
+                        width={18}
+                        alt={`${industry.name} industry icon`}
+                      />
+                    </div>
+                    <span className={`font-medium text-left ${
+                      activeIndustry === index ? 'text-text-secondary' : 'text-gray-600'
+                    }`}>
+                      {industry.name}
+                    </span>
+                  </div>
+                  <svg
+                    className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
+                      expandedIndustry === index ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                
+                {/* Accordion Content */}
+                <div className={`overflow-hidden transition-all bg-white rounded-b-lg duration-300 ease-in-out ${
+                  expandedIndustry === index 
+                    ? 'max-h-[1000px] opacity-100' 
+                    : 'max-h-0 opacity-0'
+                }`}>
+                  <div className="p-4 pt-2 bg-white/50 rounded-b-lg mx-3 mb-2">
+                    {/* Industry Image */}
+                    <div className="mb-4">
+                      <Image
+                        src={industry.image}
+                        width={300}
+                        alt={`${industry.title} industry showcase image`}
+                        className="w-full aspect-[4/3] object-cover rounded-lg"
+                      />
+                    </div>
+
+                    <h4 className="font-semibold text-text-secondary mb-2 text-base">
+                      {industry.title}
+                    </h4>
+                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                      {industry.description}
+                    </p>
+                    
+                    {/* All Features */}
+                    <div className="mb-4">
+                      {industry.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-start gap-2 mb-2">
+                          <Image
+                            src={bullet}
+                            width={8}
+                            alt="Feature bullet point"
+                            className="mt-1 flex-shrink-0"
+                          />
+                          <span className="text-sm text-gray-600 leading-relaxed">
+                            {feature}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Our Work */}
+                    <div className="mb-4 pb-4 border-b border-gray-200">
+                      <div className="flex flex-col sm:flex-row gap-2">
+                        <span className="text-sm text-gray-500 font-semibold min-w-fit">
+                          Our Work:
+                        </span>
+                        <span className="text-sm text-gray-600">{industry.work}</span>
+                      </div>
+                    </div>
+
+                    {/* Company Logos */}
+                    <div className="mb-4">
+                      <div className="flex gap-2 flex-wrap">
+                        {[1, 2, 3, 4].map((item, logoIndex) => (
+                          <div
+                            key={logoIndex}
+                            className="border p-2 px-3 border-red-600 rounded-full"
+                          >
+                            <Image
+                              src={honeywell}
+                              width={50}
+                              height={20}
+                              alt="Honeywell partner company logo"
+                              className="w-12"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* CTA Button */}
+                    <div className="mt-4">
+                      <PrimaryButton
+                        icon={arrowSvg}
+                        text={industry.buttonText}
+                        className="text-white bg-primary-button text-sm py-2 px-4 transition-all duration-300 arrow-animate w-full sm:w-auto"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tablet Tab Bar - Visible on md to lg screens */}
+        <div className="hidden md:block xl:hidden mb-4 relative">
           {/* Left white overlay */}
           <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
           {/* Right white overlay */}
@@ -272,8 +415,8 @@ const IndustrySection = () => {
             </div>
           </div>
           
-          {/* Content Section */}
-          <div className="md:col-span-1 lg:col-span-6 xl:col-span-5 order-2 md:order-1 xl:order-1 flex flex-col justify-between">
+          {/* Content Section - Hidden on mobile, visible on tablet and desktop */}
+          <div className="hidden md:flex md:col-span-1 lg:col-span-6 xl:col-span-5 order-2 md:order-1 xl:order-1 flex-col justify-between">
             <div
               className="transition-all duration-500 ease-in-out opacity-100 animate-fade-in"
               key={`content-${activeIndustry}`}
@@ -340,8 +483,8 @@ const IndustrySection = () => {
             </div>
           </div>
           
-          {/* Image Section */}
-          <div className="md:col-span-1 lg:col-span-6 xl:col-span-5 order-1 md:order-2 xl:order-2 xl:h-full">
+          {/* Image Section - Hidden on mobile, visible on tablet and desktop */}
+          <div className="hidden md:block md:col-span-1 lg:col-span-6 xl:col-span-5 order-1 md:order-2 xl:order-2 xl:h-full">
             <div
               className="transition-all duration-500 ease-in-out opacity-100 animate-fade-in w-full xl:h-full"
               key={`image-${activeIndustry}`}
