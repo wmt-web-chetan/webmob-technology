@@ -24,7 +24,7 @@ export function HeroContentSection({ isMobile }) {
 
       {/* SVG Pattern Overlay - Only visible on desktop and tablet */}
       {!isMobile && (
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 opacity-70">
           <Image
             src={patternglow}
             alt="Pattern overlay"

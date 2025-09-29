@@ -128,7 +128,7 @@ export default function BlogsSection(props) {
   const viewAllButton = { title: "View All Blogs", url: "/blog" };
 
   return (
-    <section className="px-wrapper section-padding-y-v2 ">
+    <section className="px-wrapper section-padding-y ">
       {/* Header */}
       <div className="text-center mb-8 sm:mb-12 xl:mb-16">
         <h1 className="h2-heading  text-text-primary mb-4 sm:mb-6">

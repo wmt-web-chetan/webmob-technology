@@ -46,8 +46,8 @@ export default async function Home() {
       <BrandSection />
       <ServiceSection />
       <CaseStudySection />
-      <AipoweredVelocity />
       <SlidingBanner />
+      <AipoweredVelocity />
       <StatsSection />
      <IntelligenceReturn />
      <TestimonialSection/>
