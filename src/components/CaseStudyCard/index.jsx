@@ -6,18 +6,18 @@ import arrowBlueSvg from "@/assets/svg/arrow-blue.svg";
 
 const CaseStudyCard = ({ data }) => {
   return (
-    <div className="bg-white rounded-3xl p-6 h-full flex flex-col w-full hover:shadow-2xl transition-shadow duration-300 group">
-      <div className="flex justify-center bg-[#eeeff1] rounded-2xl p-4">
+    <div className="bg-white rounded-3xl p-2 sm:p-4 h-full flex flex-col w-full hover:shadow-2xl transition-shadow duration-300 group">
+      <div className="flex justify-center bg-[#eeeff1] rounded-2xl p-4 h-48 md:h-56 lg:h-64 xl:h-72">
         <Image
           src={data?.image}
           width={600}
-          className="rounded-2xl hover:scale-105 transition-transform 2xl:h-72 duration-300"
+          className="rounded-2xl hover:scale-105 transition-transform duration-300 object-contain h-full w-auto"
           alt={data?.title || "Case study image"}
         />
       </div>
       <div className="px-3 mt-6 xl:mt-3 flex-grow flex flex-col">
-        <h3 className=" text-xl lg:text-2xl font-semibold w-full">{data?.title}</h3>
-        <p className="text-text-secondary text-base max-w-lg  mt-3 mb-3 flex-grow">
+        <h3 className=" text-[16px] lg:text-2xl font-semibold w-full">{data?.title}</h3>
+        <p className="text-text-secondary text-[10px] sm:text-base max-w-lg  mt-3 mb-3 flex-grow">
           {data?.description}
         </p>
       </div>
@@ -26,7 +26,7 @@ const CaseStudyCard = ({ data }) => {
           {data?.tags.map((item, index) => (
             <div
               key={index}
-              className="bg-[#C4C7CE33] text-text-primary p-1 rounded-full text-sm inline-block px-3 lg:px-5 py-2"
+              className="bg-[#C4C7CE33] text-text-primary p-1 rounded-full text-[8px] sm:text-sm inline-block px-3 lg:px-5 py-2"
             >
               {item}
             </div>
