@@ -64,7 +64,7 @@ const AiPoweredRightSection = () => {
     <div className="relative">
       <div>
         <div>
-          <div className="py-15">
+          <div className="py-0 sm:py-8">
             {cards.map((card, index) => {
               const stickyPositions = ["top-26", "top-30", "top-34", "top-38"];
               return (

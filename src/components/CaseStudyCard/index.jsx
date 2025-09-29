@@ -39,7 +39,7 @@ const CaseStudyCard = ({ data }) => {
             alt="Arrow icon"
             className="transition-opacity duration-300 group-hover:opacity-0 absolute"
             width={24}
-            height={24}
+            height={24}                  
           />    
           {/* Blue arrow - visible on hover */}
           <Image

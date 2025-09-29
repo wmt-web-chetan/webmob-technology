@@ -171,14 +171,17 @@ const IndustrySection = () => {
   const toggleIndustryExpansion = (index) => {
     if (expandedIndustry === index) {
       setExpandedIndustry(-1); // Close if clicking the same one
+      // Don't reset activeIndustry to -1, keep it at current index for tablet/desktop view
+      // Only the mobile view should not show active state when closed
     } else {
       setExpandedIndustry(index); // Open the clicked one
+      setActiveIndustry(index); // Set active state when opening
     }
-    setActiveIndustry(index);
   };
+  
 
   return (
-    <div className="px-wrapper section-padding-y-v2">
+    <div className="px-wrapper section-padding-y">
       <div className="flex justify-center   ">
         <h2 className="h2-heading  text-center">
           Fluent in the Language of Your{" "}
@@ -195,33 +198,33 @@ const IndustrySection = () => {
           with the unique challenges and opportunities of your vertical.
         </p>
       </div>
-      <div className="border-[1px] rounded-2xl border-[#1B1B3533] p-2  md:p-3 md:py-4 mt-8 ">
+      <div className=" rounded-2xl  p-2  md:p-3 md:py-4 mt-8 ">
         {/* Mobile Accordion - Only visible on small screens */}
-        <div className="md:hidden mb-4">
+        <div className="md:hidden">
           <div className="bg-light-bg rounded-xl p-2 space-y-1">
             {industries.map((industry, index) => (
               <div key={index} className="border-b border-gray-100 last:border-b-0">
                 {/* Accordion Header */}
                 <button
-                  className={`w-full flex items-center justify-between p-3 rounded-t-lg rounded-b-0  transition-all duration-200 ${
-                    activeIndustry === index 
-                      ? 'bg-white shadow-sm' 
-                      : 'hover:bg-white/50'
-                  }`}
+               className={`w-full flex items-center justify-between p-3 rounded-t-lg rounded-b-0  transition-all duration-200 ${
+                expandedIndustry === index
+                  ? 'bg-white shadow-sm  ' 
+                  : ''
+              }`}
                   onClick={() => toggleIndustryExpansion(index)}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`p-2 rounded-lg ${
-                      activeIndustry === index ? 'bg-primary' : 'bg-gray-100'
+                      expandedIndustry === index ? 'bg-primary' : ''
                     }`}>
                       <Image
-                        src={activeIndustry === index ? industry.iconWhite : industry.iconBlack}
+                        src={expandedIndustry === index ? industry.iconWhite : industry.iconBlack}
                         width={18}
                         alt={`${industry.name} industry icon`}
                       />
                     </div>
                     <span className={`font-medium text-left ${
-                      activeIndustry === index ? 'text-text-secondary' : 'text-gray-600'
+                      expandedIndustry === index ? 'text-text-secondary' : 'text-gray-600'
                     }`}>
                       {industry.name}
                     </span>
@@ -249,7 +252,7 @@ const IndustrySection = () => {
                     ? 'max-h-[1000px] opacity-100' 
                     : 'max-h-0 opacity-0'
                 }`}>
-                  <div className="p-4 pt-2 bg-white/50 rounded-b-lg mx-3 mb-2">
+                  <div className="pt-2 bg-white/50 rounded-b-lg mx-3 mb-2">
                     {/* Industry Image */}
                     <div className="mb-4">
                       <Image
@@ -319,7 +322,7 @@ const IndustrySection = () => {
                       <PrimaryButton
                         icon={arrowSvg}
                         text={industry.buttonText}
-                        className="text-white bg-primary-button text-sm py-2 px-4 transition-all duration-300 arrow-animate w-full sm:w-auto"
+                        className="text-white bg-primary-button text-xs sm:text-sm py-2 px-4 transition-all duration-300 arrow-animate w-full sm:w-auto"
                       />
                     </div>
                   </div>

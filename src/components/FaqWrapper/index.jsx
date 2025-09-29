@@ -11,7 +11,7 @@ const FaqWrapper = ({ leftColumnFaqs, rightColumnFaqs }) => {
   };
 
   return (
-    <div className="mt-10 sm:mt-12 lg:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+    <div className="mt-10 sm:mt-12 lg:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-0 sm:gap-8 lg:gap-12">
       {/* Left Column */}
       <div>
         {leftColumnFaqs?.map((faq) => (
@@ -57,7 +57,7 @@ const FaqItem = ({ faq, isOpen, onToggle }) => {
     >
       <button
         onClick={onToggle}
-        className={`w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex justify-between items-start transition-colors duration-200 cursor-pointer ${
+        className={`w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex justify-between items-center transition-colors duration-200 cursor-pointer ${
           isOpen ? "text-primary" : "text-gray-800"
         }`}
       >
@@ -68,7 +68,7 @@ const FaqItem = ({ faq, isOpen, onToggle }) => {
         >
           {faq.question}
         </span>
-        <div className="flex-shrink-0 mt-0.5 sm:mt-1">
+        <div className="flex-shrink-0">
           <Image
             src={plusIconSvg}
             alt=""
@@ -85,7 +85,7 @@ const FaqItem = ({ faq, isOpen, onToggle }) => {
         className="overflow-hidden transition-all duration-300 ease-in-out"
       >
         <div className="px-4 sm:px-6 pb-3 sm:pb-4">
-          <p className="text-gray-600 leading-relaxed text-sm sm:text-base lg:text-lg">
+          <p className="text-text-secondary leading-relaxed text-sm sm:text-base lg:text-lg">
             {faq.answer}
           </p>
         </div>

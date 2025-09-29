@@ -35,7 +35,7 @@ export default function IntelligenceReturn({
   ctaText = 'See the Velocity in Action →',
 }) {
   return (
-    <section className="px-wrapper section-padding-y-v2 mx-auto">
+    <section className="px-wrapper section-padding-y mx-auto">
       {/* Top Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
         <div className="space-y-6">

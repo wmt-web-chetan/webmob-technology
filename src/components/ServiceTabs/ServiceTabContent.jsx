@@ -3,6 +3,10 @@ import { tabsData } from "./tabsData";
 import Image from "next/image";
 import serviceImage from "../../assets/images/service.webp";
 import pythonSvg from "../../assets/svg/python.svg";
+import tensorflowSvg from "../../assets/svg/vertex.svg";
+import pytorchSvg from "../../assets/svg/qodo.svg";
+import scikitSvg from "../../assets/svg/copilot.svg";
+import openAiSvg from "../../assets/svg/chatgpt.svg";
 import PrimaryButton from "../PrimaryButton";
 import arrowSvg from "../../assets/svg/arrow.svg";
 
@@ -62,7 +66,67 @@ const ServiceTabContent = ({ activeTab }) => {
                 {currentTab.tools.description}
               </p>
               <div className="flex flex-wrap gap-4 lg:gap-6">
-                {currentTab.tools.logos.map((_, index) => (
+                <div
+                  // key={index}
+                  className="bg-light-bg pt-2 pb-2 px-6 border-none rounded-lg flex flex-col items-center justify-center shadow-sm"
+                >
+                  <Image
+                    src={pythonSvg}
+                    width={40}
+                    height={40}
+                    alt="Technology logo"
+                  />
+                  <div className="text-xs mt-1.5">Python</div>
+                </div>{" "}
+                <div
+                  // key={index}
+                  className="bg-light-bg pt-2 pb-2 px-6 border-none rounded-lg flex flex-col items-center justify-center shadow-sm"
+                >
+                  <Image
+                    src={tensorflowSvg}
+                    width={40}
+                    height={40}
+                    alt="Technology logo"
+                  />
+                  <div className="text-xs mt-1.5">Vertex</div>
+                </div>{" "}
+                <div
+                  // key={index}
+                  className="bg-light-bg pt-2 pb-2 px-6 border-none rounded-lg flex flex-col items-center justify-center shadow-sm"
+                >
+                  <Image
+                    src={pytorchSvg}
+                    width={40}
+                    height={40}
+                    alt="Technology logo"
+                  />
+                  <div className="text-xs mt-1.5">Qodo</div>
+                </div>{" "}
+                <div
+                  // key={index}
+                  className="bg-light-bg pt-2 pb-2 px-6 border-none rounded-lg flex flex-col items-center justify-center shadow-sm"
+                >
+                  <Image
+                    src={scikitSvg}
+                    width={40}
+                    height={40}
+                    alt="Technology logo"
+                  />
+                  <div className="text-xs mt-1.5">Copilot</div>
+                </div>{" "}
+                <div
+                  // key={index}
+                  className="bg-light-bg pt-2 pb-2 px-6 border-none rounded-lg flex flex-col items-center justify-center shadow-sm"
+                >
+                  <Image
+                    src={openAiSvg}
+                    width={40}
+                    height={40}
+                    alt="Technology logo"
+                  />
+                  <div className="text-xs mt-1.5">OpenAI API</div>
+                </div>
+                {/* {currentTab.tools.logos.map((_, index) => (
                   <div
                     key={index}
                     className="bg-light-bg pt-2 pb-2 px-6 border-none rounded-lg flex flex-col items-center justify-center shadow-sm"
@@ -75,13 +139,13 @@ const ServiceTabContent = ({ activeTab }) => {
                     />
                     <div className="text-xs mt-1.5">Python</div>
                   </div>
-                ))}
+                ))} */}
               </div>
-              <div className="mt-8">
+              <div className="mt-8 flex sm:block justify-center ">
                 <PrimaryButton
                   icon={arrowSvg}
                   text="Explore Our AI Capabilities"
-                  className="text-white bg-primary-button text-sm arrow-animate"
+                  className="text-white bg-primary-button text-sm arrow-animate "
                 />
               </div>
             </div>
