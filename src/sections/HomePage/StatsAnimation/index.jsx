@@ -88,41 +88,148 @@ export default function StatsAnimation({ statsData }) {
   return (
     <div
       ref={sectionRef}
-      className="2xl:max-w-6xl 3xl:max-w-7xl 3xl:px-4 mx-auto space-y-6 sm:space-y-6 md:space-y-6 lg:space-y-6 xl:space-y-6 2xl:space-y-6 3xl:space-y-6 mt-10"
+      className="2xl:max-w-6xl 3xl:max-w-7xl  mx-auto space-y-6  2xl:space-y-6 3xl:space-y-12 mt-10"
     >
-      {/* Mobile Layout - All cards stacked */}
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:hidden gap-4 sm:gap-4 md:gap-5">
-        {statsData.map((stat, index) => {
-          const { base, symbol } = formatAnimatedNumber(
-            stat.number,
-            animatedValues[index]
-          );
-          return (
-            <article
-              key={index}
-              className="bg-white rounded-2xl py-5 px-3 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 transform-gpu flex flex-col justify-center items-center "
-            >
-              <div className="mb-4">
+      {/* Mobile Layout - Custom pattern: full, half-half, full, half-half */}
+      <div className="lg:hidden space-y-4 px-wrapper">
+        {/* Row 1: Single card (index 0) */}
+        {statsData[0] && (
+          <div className="grid grid-cols-1">
+            <article className="bg-white rounded-2xl py-5 px-4 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 transform-gpu flex flex-col justify-center items-center">
+              <div className="mb-3">
                 <span
-                  className="text-3xl sm:text-4xl 2xl:text-xl font-semibold text-text-primary"
+                  className="text-3xl sm:text-4xl font-medium text-text-primary"
                   aria-live="polite"
                 >
-                  {base}
-                  {symbol && (
-                    <span className="text-gradient-primary">{symbol}</span>
-                  )}
+                  {(() => {
+                    const { base, symbol } = formatAnimatedNumber(
+                      statsData[0].number,
+                      animatedValues[0]
+                    );
+                    return (
+                      <>
+                        {base}
+                        {symbol && (
+                          <span className="text-gradient-primary">
+                            {symbol}
+                          </span>
+                        )}
+                      </>
+                    );
+                  })()}
                 </span>
               </div>
-              <p className="text-sm sm:text-base md:text-base text-text-secondary leading-relaxed font-medium">
-                {stat.description}
+              <p className="text-xs text-text-secondary leading-relaxed font-medium">
+                {statsData[0].description}
               </p>
             </article>
-          );
-        })}
+          </div>
+        )}
+
+        {/* Row 2: Two cards (index 1, 2) */}
+        {statsData[1] && statsData[2] && (
+          <div className="grid grid-cols-2 gap-4">
+            {[1, 2].map((index) => {
+              const { base, symbol } = formatAnimatedNumber(
+                statsData[index].number,
+                animatedValues[index]
+              );
+              return (
+                <article
+                  key={index}
+                  className="bg-white rounded-2xl py-4 px-3 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 transform-gpu flex flex-col justify-center items-center"
+                >
+                  <div className="mb-2">
+                    <span
+                      className="text-3xl sm:text-3xl font-medium text-text-primary"
+                      aria-live="polite"
+                    >
+                      {base}
+                      {symbol && (
+                        <span className="text-gradient-primary">{symbol}</span>
+                      )}
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-secondary leading-relaxed font-medium">
+                    {statsData[index].description}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Row 3: Single card (index 3) */}
+        {statsData[3] && (
+          <div className="grid grid-cols-1">
+            <article className="bg-white rounded-2xl py-5 px-4 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 transform-gpu flex flex-col justify-center items-center">
+              <div className="mb-3">
+                <span
+                  className="text-3xl sm:text-4xl font-medium text-text-primary"
+                  aria-live="polite"
+                >
+                  {(() => {
+                    const { base, symbol } = formatAnimatedNumber(
+                      statsData[3].number,
+                      animatedValues[3]
+                    );
+                    return (
+                      <>
+                        {base}
+                        {symbol && (
+                          <span className="text-gradient-primary">
+                            {symbol}
+                          </span>
+                        )}
+                      </>
+                    );
+                  })()}
+                </span>
+              </div>
+              <p className="text-xs text-text-secondary leading-relaxed font-medium">
+                {statsData[3].description}
+              </p>
+            </article>
+          </div>
+        )}
+
+        {/* Row 4: Two cards (index 4, 5) */}
+        {statsData[4] && statsData[5] && (
+          <div className="grid grid-cols-2 gap-4">
+            {[4, 5].map((index) => {
+              const { base, symbol } = formatAnimatedNumber(
+                statsData[index].number,
+                animatedValues[index]
+              );
+              return (
+                <article
+                  key={index}
+                  className="bg-white rounded-2xl py-4 px-3 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 transform-gpu flex flex-col justify-center items-center"
+                >
+                  <div className="mb-2">
+                    <span
+                      className="text-3xl sm:text-3xl font-medium text-text-primary"
+                      aria-live="polite"
+                    >
+                      {base}
+                      {symbol && (
+                        <span className="text-gradient-primary">{symbol}</span>
+                      )}
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-text-secondary leading-relaxed font-medium">
+                    {statsData[index].description}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        )}
       </div>
 
+
       {/* Desktop Layout - First Row (3 cards with different widths) */}
-      <div className="hidden lg:flex xl:flex gap-6 xl:gap-6 2xl:gap-6 3xl:gap-6 items-stretch">
+      <div className="hidden lg:flex xl:flex gap-6 xl:gap-6 2xl:gap-6 3xl:gap-8 items-stretch">
         {statsData.slice(0, 3).map((stat, index) => {
           const { base, symbol } = formatAnimatedNumber(
             stat.number,
@@ -137,7 +244,7 @@ export default function StatsAnimation({ statsData }) {
               >
                 <div className="">
                   <span
-                    className="text-4xl lg:text-5xl xl:text-5xl 2xl:text-5xl 3xl:text-5xl font-semibold text-black"
+                    className="text-4xl lg:text-5xl xl:text-5xl 2xl:text-5xl 3xl:text-5xl font-medium text-black"
                     aria-live="polite"
                   >
                     {base}
@@ -146,7 +253,7 @@ export default function StatsAnimation({ statsData }) {
                     )}
                   </span>
                 </div>
-                <p className="text-base text-text-secondary leading-relaxed font-medium">
+                <p className="text-base text-text-secondary  font-medium">
                   {stat.description}
                 </p>
               </article>
@@ -169,7 +276,7 @@ export default function StatsAnimation({ statsData }) {
             >
               <div className="mb-4">
                 <span
-                  className="text-5xl font-semibold text-black"
+                  className="text-5xl font-medium text-black"
                   aria-live="polite"
                 >
                   {base}

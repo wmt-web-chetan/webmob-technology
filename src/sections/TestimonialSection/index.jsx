@@ -44,7 +44,7 @@ const testimonialsData = [
 const TestimonialSection = () => {
   return (
     <section className="bg-light-bg">
-      <div className="px-wrapper section-padding-y-v2 max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl mx-auto">
+      <div className="px-wrapper section-padding-y max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-screen-2xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl mx-auto">
         {/* Header */}
         <div className="flex justify-center">
           <h2 className="h2-heading text-center text-text-primary">

@@ -64,7 +64,7 @@ const AiPoweredRightSection = () => {
     <div className="relative">
       <div>
         <div>
-          <div className="py-15">
+          <div className="py-5 sm:py-15">
             {cards.map((card, index) => {
               const stickyPositions = ["top-26", "top-30", "top-34", "top-38"];
               return (
@@ -83,7 +83,7 @@ const AiPoweredRightSection = () => {
                     </div>
                     <h3 className="text-xl sm:text-3xl font-semibold">{card.title}</h3>
                   </div>
-                  <p className="text-text-secondary text-xs sm:text-lg ">
+                  <p className="text-text-secondary text-sm sm:text-lg ">
                     {card.description}
                   </p>
                   <div className="space-y-3">
@@ -98,7 +98,7 @@ const AiPoweredRightSection = () => {
                           alt="bullet"
                           className="mt-1"
                         />
-                        <div className="text-text-secondary text-xs sm:text-lg ">
+                        <div className="text-text-secondary text-sm sm:text-lg ">
                           {feature}
                         </div>
                       </div>

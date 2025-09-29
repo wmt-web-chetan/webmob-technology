@@ -16,6 +16,7 @@ export default function BlogsSection(props) {
       "It's no secret, really, the HealthTech market is absolutely booming right now. Innovation is, of course, driving incredible progress, and that's wonderful to see. But at the heart of this sector, perhaps more than any other, is trust. Patients are sharing truly sensitive data, and understandably, they expect it to be kept safe, completely secure.",
     author: "Marketing WMT",
     date: "Aug 20, 2025",
+    readTime: "9 min read",
     tags: ["Latest", "Tech", "Health"],
     imageSrc:
       "https://webmobtechcdn.nyc3.cdn.digitaloceanspaces.com/wmt_v4/2025/08/WMT-Featured-Image-For-Blogs-4-1.png",
@@ -28,6 +29,7 @@ export default function BlogsSection(props) {
         "The Founder's Checklist: 7 Steps to Ensuring Your HealthTech App is HIPAA Compliant from Day One",
       author: "Marketing WMT",
       date: "Aug 20, 2025",
+      readTime: "15 min read",
       tags: ["Latest", "Tech", "Health"],
       thumbnailSrc:
         "https://webmobtechcdn.nyc3.cdn.digitaloceanspaces.com/wmt_v4/2025/08/WMT-Featured-Image-For-Blogs-2.png",
@@ -39,6 +41,7 @@ export default function BlogsSection(props) {
       author: "Tech Team",
       date: "Aug 18, 2025",
       tags: ["Latest", "Tech", "Health"],
+      readTime: "4 min read",
       thumbnailSrc:
         "https://webmobtechcdn.nyc3.cdn.digitaloceanspaces.com/wmt_v4/2025/08/WMT-Featured-Image-For-Blogs-9.png",
       readMoreLink: "#",
@@ -48,6 +51,7 @@ export default function BlogsSection(props) {
         "The Founder's Checklist: 7 Steps to Ensuring Your HealthTech App is HIPAA Compliant from Day One",
       author: "Health Expert",
       date: "Aug 15, 2025",
+      readTime: "7 min read",
       tags: ["Latest", "Tech", "Health"],
       thumbnailSrc:
         "https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=800&q=80",
@@ -58,6 +62,7 @@ export default function BlogsSection(props) {
         "The Founder's Checklist: 7 Steps to Ensuring Your HealthTech App is HIPAA Compliant from Day One",
       author: "Development Team",
       date: "Aug 12, 2025",
+      readTime: "11 min read",
       tags: ["Latest", "Tech", "Health"],
       thumbnailSrc:
         "https://webmobtechcdn.nyc3.cdn.digitaloceanspaces.com/wmt_v4/2025/08/WMT-Featured-Image-For-Blogs-2.png",
@@ -69,7 +74,7 @@ export default function BlogsSection(props) {
   const title = data?.title || "Explore Our Latest Insights";
   const subtitle =
     data?.subtitle ||
-    "Exploring the latest insights and trends in your industry.";
+    "Explore our latest insights, deep dives, and expert analyses on the technologies and strategies that are shaping the future of business.";
 
   // Transform blog data from new structure
   const blogNodes = data?.blogList?.nodes || [];
@@ -91,6 +96,7 @@ export default function BlogsSection(props) {
           defaultFeaturedBlog.description,
         author: featuredPost.author?.node?.name || "Author",
         date: new Date().toLocaleDateString(),
+        readTime: "10 min read",
         tags: ["Latest"],
         imageSrc:
           featuredPost.blogCardFields?.cardImage?.node?.mediaItemUrl ||
@@ -109,6 +115,7 @@ export default function BlogsSection(props) {
           title: post.title,
           author: post.author?.node?.name || "Author",
           date: new Date().toLocaleDateString(),
+          readTime: "10 min read",
           tags: ["Latest"],
           thumbnailSrc:
             post.blogCardFields?.cardImage?.node?.mediaItemUrl ||
@@ -124,11 +131,11 @@ export default function BlogsSection(props) {
     <section className="px-wrapper section-padding-y-v2 ">
       {/* Header */}
       <div className="text-center mb-8 sm:mb-12 xl:mb-16">
-        <h1 className="h2-heading font-bold text-gray-900 mb-4 sm:mb-6">
+        <h1 className="h2-heading  text-text-primary mb-4 sm:mb-6">
           {title.includes(" ") ? (
             <>
               {title.split(" ").slice(0, -1).join(" ")}{" "}
-              <span className="text-gradient-primary">
+              <span className="font-semibold text-gradient-primary">
                 {title.split(" ").slice(-1)[0]}
               </span>
             </>
@@ -136,7 +143,7 @@ export default function BlogsSection(props) {
             <span className="text-gradient-primary">{title}</span>
           )}
         </h1>
-        <p className="h2-description max-w-3xl mx-auto leading-relaxed">
+        <p className="h2-description text-text-secondary max-w-3xl mx-auto leading-relaxed">
           {subtitle}
         </p>
       </div>
@@ -162,7 +169,7 @@ export default function BlogsSection(props) {
                 <div className="flex-shrink-0 w-2/5 sm:w-2/5 lg:w-1/2">
                   <Image
                     height={120}
-                    width={200}
+                    width={120}
                     src={blog.thumbnailSrc || "/placeholder.svg"}
                     alt="Blog thumbnail"
                     className="w-full h-full object-cover rounded-lg border border-disabled-text"
@@ -170,32 +177,34 @@ export default function BlogsSection(props) {
                 </div>
 
                 {/* Content section - responsive width and spacing */}
-                <div className="flex flex-col justify-between pl-3 sm:pl-4 lg:pl-4 w-3/5 sm:w-3/5 lg:w-1/2">
+                <div className="flex flex-col  justify-between pl-3 sm:pl-4 lg:pl-4 w-3/5 sm:w-3/5 lg:w-1/2">
                   <div className="flex-1 flex flex-col">
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1 mb-2 sm:mb-3">
                       {blog.tags.slice(0, 2).map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-2 py-1 text-[10px] sm:text-xs font-medium rounded-full bg-primary/10 text-primary"
+                          className="px-2 py-1 text-[10px] sm:text-xs rounded-full bg-primary/10 text-primary"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-text-primary mb-2 sm:mb-3 line-clamp-2 sm:line-clamp-2 leading-tight flex-1">
-                      {blog.title}
-                    </h3>
+                    <div>
+                      {/* Title */}
+                      <h3 className="text-xs sm:text-sm lg:text-base font-medium text-text-primary mb-2 sm:mb-3 line-clamp-2 sm:line-clamp-2  md:line-clamp-5 leading-tight flex-1">
+                        {blog.title}
+                      </h3>
 
-                    {/* Read more link */}
-                    <a
-                      href={blog.readMoreLink}
-                      className="text-primary hover:text-secondary text-xs sm:text-sm lg:text-base font-medium transition-colors duration-200 block mb-2"
-                    >
-                      Read more
-                    </a>
+                      {/* Read more link */}
+                      <a
+                        href={blog.readMoreLink}
+                        className="text-primary hover:text-secondary text-xs items-s sm:text-sm lg:text-base font-medium transition-colors duration-200 block "
+                      >
+                        Read more
+                      </a>
+                    </div>
                   </div>
 
                   {/* Author Info - Pushed to bottom */}
@@ -212,8 +221,12 @@ export default function BlogsSection(props) {
                       <p className="font-medium text-text-primary text-[10px] sm:text-xs truncate">
                         {blog.author}
                       </p>
-                      <p className="text-[9px] sm:text-[10px] text-text-secondary">
+                      <p className="flex gap-2 text-[9px] sm:text-[10px] text-text-secondary">
                         {blog.date}
+                        <span className="text-2xl text-text-secondary leading-4">
+                          ·
+                        </span>
+                        <span>{blog.readTime}</span>
                       </p>
                     </div>
                   </div>

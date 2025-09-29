@@ -168,7 +168,7 @@ const IndustrySection = () => {
     },
   ];
   return (
-    <div className="px-wrapper section-padding-y-v2">
+    <div className="px-wrapper section-padding-y">
       <div className="flex justify-center   ">
         <h2 className="h2-heading  text-center">
           Fluent in the Language of Your{" "}

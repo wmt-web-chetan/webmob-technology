@@ -7,7 +7,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 
 const AipoweredVelocity = () => {
   return (
-    <div className="px-wrapper section-padding-y-v2 max-w-[1700px] mx-auto ">
+    <div className="px-wrapper section-padding-y max-w-[1700px] mx-auto ">
       <div className="flex justify-center text-center">
         <h2 className="h2-heading">
           The Symbiosis: How We Achieve{" "}
@@ -15,7 +15,7 @@ const AipoweredVelocity = () => {
         </h2>
       </div>
       <div className="lg:flex gap-5 mt-4 md:mt-6 xl:mt-10 relative">
-        <div className="flex-1 py-15 lg:sticky lg:top-10 self-start">
+        <div className="flex-1 py-5 sm:py-15 lg:sticky lg:top-10 self-start">
           <p className="text-base sm:text-2xl text-text-primary">
             This isn't about developers just working harder. It's about them
             working smarter, amplified by a suite of proprietary and
@@ -49,7 +49,7 @@ const AipoweredVelocity = () => {
         <PrimaryButton
           icon={arrowSvg}
           text="See the Velocity in Action"
-          className="text-white bg-primary-button text-sm arrow-animate"
+          className="text-white bg-primary-button text-sm arrow-animate  "
         />
       </div>
     </div>

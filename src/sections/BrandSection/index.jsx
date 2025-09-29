@@ -104,7 +104,7 @@ export default function BrandSection() {
                         alt={`${logo.name} logo`}
                         width={192}
                         height={96}
-                        className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 2xl:h-22 3xl:h-24 w-20 sm:w-24 md:w-28 lg:w-32 xl:w-40 2xl:w-44 3xl:w-48 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                        className="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 2xl:h-22 3xl:h-24 w-40 sm:w-24 md:w-28 lg:w-32 xl:w-40 2xl:w-44 3xl:w-48 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                       />
                     </div>
                   ))}

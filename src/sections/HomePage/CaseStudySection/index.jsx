@@ -44,7 +44,7 @@ const CaseStudySection = () => {
   ];
 
   return (
-    <div className="bg-light-bg pt-14 pb-10 px-wrapper ">
+    <div className="bg-light-bg px-wrapper section-padding-y">
       <div className="flex justify-center text-center mb-8 xl:mb-12">
         <h2 className="h2-heading">
           Our Work is{" "}
