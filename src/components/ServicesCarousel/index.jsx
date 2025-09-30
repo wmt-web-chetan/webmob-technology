@@ -85,7 +85,7 @@ const ServicesCarousel = ({ services }) => {
         )}
 
       {/* Embla carousel viewport */}
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div className="overflow-hidden p-0.5" ref={emblaRef}>
         <div className="flex gap-6">
           {services.map((service, index) => (
             <div

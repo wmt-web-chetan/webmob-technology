@@ -2,6 +2,8 @@ import PrimaryButton from "@/components/PrimaryButton";
 import Image from "next/image";
 import React from "react";
 import patternglow from "@/assets/svg/svgpatternforHero.svg";
+import arrowSvg from "@/assets/svg/arrow.svg";
+import blueArrowSvg from "@/assets/svg/bluearrow.svg";
 
 // Hero Content Section with overlay and text (50% of viewport height on desktop, full height on mobile)
 export function HeroContentSection({ isMobile }) {
@@ -36,15 +38,16 @@ export function HeroContentSection({ isMobile }) {
       )}
 
       {/* Content Container - Top positioned on mobile, centered on desktop */}
-      <div className={`relative z-10 h-full px-4 sm:px-6 lg:px-8 ${
-        isMobile 
-          ? 'flex items-start justify-center pt-20' 
-          : 'flex items-center justify-center'
-      }`}>
+      <div
+        className={`relative z-10 h-full px-4 sm:px-6 lg:px-8 ${
+          isMobile
+            ? "flex items-start justify-center pt-20"
+            : "flex items-center justify-center"
+        }`}
+      >
         <div className="text-center space-y-6 max-w-6xl">
           <h1 className="h1-heading text-white">
-            Where Vision Gets{" "}
-            <span className="font-bold">Velocity.</span>
+            Where Vision Gets <span className="font-bold">Velocity.</span>
           </h1>
           <p className=" text-sm sm:text-xl max-w-5xl text-white text-center px-2">
             We don't just build software. We architect legacies. By fusing 15
@@ -53,13 +56,25 @@ export function HeroContentSection({ isMobile }) {
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-3 pt-4">
             <PrimaryButton
+              icon={arrowSvg}
               text="Architect Your Future"
-              className="text-white bg-primary-button text-sm"
+              className="text-white bg-primary-button text-sm arrow-animate"
             />
             <PrimaryButton
+              icon={arrowSvg}
               text="Explore Our Realized Visions"
-              className="border text-white text-sm border-white"
+              className="border text-white text-sm border-white arrow-animate"
             />
+            {/* <PrimaryButton
+              icon={arrowSvg}
+              text="Schedule a Strategic Call"
+              className="text-white bg-primary-button arrow-animate"
+            />
+            <PrimaryButton
+              icon={blueArrowSvg}
+              text="Send Us Your Project Brief"
+              className="gradient-border-button-pulse arrow-animate"
+            /> */}
           </div>
         </div>
       </div>

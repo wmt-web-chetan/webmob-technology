@@ -15,7 +15,7 @@ export function BlogCard({
 }) {
   return (
     <div
-      className={`relative overflow-hidden bg-white p-6 sm:p-8 xl:p-6 2xl:p-6 3xl:p-6 rounded-4xl border border-text-disabled flex flex-col ${className}`}
+      className={`relative overflow-hidden bg-white p-6 sm:p-8 xl:p-6 2xl:p-6 3xl:p-6 rounded-4xl border border-text-disabled flex flex-col hover:border-primary hover:shadow-lg  duration-500 transition-all group ${className}`}
       {...props}
     >
       <div className="mb-6 sm:mb-8 xl:mb-10 rounded-2xl border-1 border-text-disabled flex-shrink-0">
@@ -27,7 +27,7 @@ export function BlogCard({
           alt="Featured Article Image"
           width={800}
           height={400}
-          className="w-full h-56 sm:h-64 md:h-96 xl:h-96 object-fill rounded-2xl"
+          className="w-full h-56 sm:h-64 md:h-96 xl:h-96 object-fill rounded-2xl group-hover:scale-105 transition-transform duration-500"
         />
       </div>
 

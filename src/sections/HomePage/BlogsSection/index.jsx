@@ -153,17 +153,17 @@ export default function BlogsSection(props) {
         {/* Featured Blog - Left 50% on large screens */}
         <div className="lg:w-1/2 order-1 lg:order-none flex">
           <div className="w-full flex flex-col">
-            <BlogCard {...featuredBlog} className="h-full flex-1" />
+            <BlogCard {...featuredBlog} className="h-full flex-1 " />
           </div>
         </div>
 
         {/* Smaller Blog Cards - Right 50% on large screens */}
         <div className="lg:w-1/2 flex order-2 lg:order-none">
-          <div className="flex flex-col gap-4 lg:gap-4 w-full h-full">
+          <div className="flex flex-col gap-4 lg:gap-4 w-full h-full ">
             {blogCards.slice(0, 3).map((blog, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-5 border border-text-disabled flex flex-1 min-h-[140px] sm:min-h-[160px]"
+                className="bg-white rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-5 border border-text-disabled flex flex-1 min-h-[140px] sm:min-h-[160px] hover:border-primary hover:shadow-lg  duration-500 transition-all group"
               >
                 {/* Image section - responsive width */}
                 <div className="flex-shrink-0 w-2/5 sm:w-2/5 lg:w-1/2">
@@ -172,7 +172,7 @@ export default function BlogsSection(props) {
                     width={120}
                     src={blog.thumbnailSrc || "/placeholder.svg"}
                     alt="Blog thumbnail"
-                    className="w-full h-full object-cover rounded-lg border border-disabled-text"
+                    className="w-full h-full object-cover rounded-lg border border-disabled-text group-hover:scale-103 transition-transform duration-500"
                   />
                 </div>
 

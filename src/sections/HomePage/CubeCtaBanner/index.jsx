@@ -13,7 +13,7 @@ const CubeCtaBanner = () => {
       {/* Cube background images */}
       <div className="absolute inset-0">
         {/* Top-left cube */}
-        <div className="absolute bottom-[-57px]  left-[-50px] sm:bottom-[-57px] sm:left-[-50px] lg:top-[-77px] lg:left-66 3xl:top-[-77px] 3xl:left-64 h-35 sm:h-52 ">
+        <div className="absolute bottom-[-57px]  left-[-50px] sm:bottom-[-57px] sm:left-[-50px] lg:top-[-120px] lg:left-66 3xl:top-[-120px] 3xl:left-90 h-35 sm:h-52 ">
           <Image
             src={roundcube1}
             alt=""
@@ -75,7 +75,7 @@ const CubeCtaBanner = () => {
           <PrimaryButton
             icon={arrowSvg}
             text="Schedule a Strategic Call"
-            className="btn-style501 arrow-animate"
+            className="text-white bg-primary-button arrow-animate"
           />
           <PrimaryButton
             icon={blueArrowSvg}
