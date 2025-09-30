@@ -11,7 +11,7 @@ const CaseStudyCard = ({ data }) => {
         <Image
           src={data?.image}
           width={600}
-          className="rounded-2xl hover:scale-105 transition-transform duration-500 object-contain h-full w-auto"
+          className="rounded-2xl group-hover:scale-105 transition-transform duration-500 object-contain h-full w-auto"
           alt={data?.title || "Case study image"}
         />
       </div>
@@ -34,14 +34,30 @@ const CaseStudyCard = ({ data }) => {
             </div>
           ))}
         </div>
-        <div className="relative w-8 h-8 md:w-10 md:h-10 border-text-secondary border border-solid rounded-full flex items-center justify-center flex-shrink-0 group-hover:border-primary">
-          <Image
+        <div className="relative w-8 h-8 md:w-10 md:h-10 border-text-secondary border border-solid rounded-full flex items-center justify-center flex-shrink-0 group-hover:border-primary group-hover:text-primary">
+          {/* <Image
             src={arrowGreySvg}
             alt="Arrow icon"
             width={24}
             height={24}
-            className="transition-transform duration-500 ease-in-out group-hover:-rotate-45"
-          />
+            className="transition-transform duration-500 ease-in-out group-hover:text-primary group-hover:-rotate-45"
+          /> */}
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-foreground transition-transform duration-500 ease-in-out group-hover:text-primary group-hover:-rotate-45"
+          >
+            <path
+              d="M4.16669 10H15.8334M15.8334 10L10 4.16669M15.8334 10L10 15.8334"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </div>
       </div>
     </div>
