@@ -1,10 +1,7 @@
-import React from "react";
-
-
-// Video Section - Responsive on desktop and tablet (50% of viewport height)
-export function HeroVideoSection() {
+export default function HeroVideoSection() {
   return (
-    <section className="w-full h-[50vh] bg-[#1b1d36] -mt-1">
+    // {/* Video Section - Hidden on mobile, visible on md+ screens */}
+    <section className="w-full h-[50vh] bg-[#1b1d36] -mt-1 hidden md:block">
       <div className="w-full h-full flex items-center justify-center">
         <video
           className="max-w-full max-h-full object-contain"

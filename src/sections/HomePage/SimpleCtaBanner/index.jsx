@@ -11,7 +11,7 @@ const SimpleCtaBanner = () => {
       {/* Cube background images */}
       <div className="absolute inset-0">
         {/* Top-left cube */}
-        <div className="absolute top-[-46px] opacity-50  h-[55%] sm:h-96 ">
+        <div className="absolute top-[-46px] sm:top-[-120px] md:top-[-110px]  opacity-50  h-[55%] sm:h-96 ">
           <Image 
             src={Checks} 
             alt="" 

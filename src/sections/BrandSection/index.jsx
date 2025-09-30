@@ -74,9 +74,9 @@ export default function BrandSection() {
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24">
             {/* Trusted By Text - Left aligned */}
             <div className="mb-6 lg:mb-0 lg:shrink-0 text-center lg:text-left">
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl font-medium ">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl ">
                 Trusted by{" "}
-                <span className="font-bold text-gradient-primary">3500+</span>
+                <span className="font-medium text-gradient-primary">3500+</span>
                 <span className="xl:block"> Brand worldwide</span>
               </p>
             </div>
