@@ -7,11 +7,20 @@ import arrowSvg from "@/assets/svg/arrow.svg"
 
 const SimpleCtaBanner = () => {
   return (
-    <div className="relative min-h-[350px] bg-dark-bg overflow-hidden">
+    <div className="relative min-h-[214px] sm:min-h-[350px] bg-dark-bg overflow-hidden">
       {/* Cube background images */}
       <div className="absolute inset-0">
         {/* Top-left cube */}
-        <div className="absolute top-[-18px]  h-96 opacity-30 blur-[1px]">
+        <div className="absolute top-[-46px] opacity-50  h-[55%] sm:h-96 ">
+          <Image 
+            src={Checks} 
+            alt="" 
+            width={128}
+            height={128}
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div className="block sm:hidden absolute bottom-[-161px] sm:bottom-[-46px]  h-96 rotate-180 ">
           <Image 
             src={Checks} 
             alt="" 
@@ -23,7 +32,7 @@ const SimpleCtaBanner = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[350px]  text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center  min-h-[300px] sm:min-h-[350px]  text-center">
         {/* Main heading */}
         <div className='flex justify-center'>
         <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center text-white leading-tight'>

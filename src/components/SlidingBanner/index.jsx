@@ -65,7 +65,7 @@ export default function SlidingBanner({
   );
 
   return (
-    <div className="w-full text-white py-2 sm:py-3 lg:py-4 overflow-hidden relative" style={{backgroundColor}}>
+    <div className="w-full text-white py-4 sm:py-3 lg:py-4 overflow-hidden relative" style={{backgroundColor}}>
       {/* Left shadow gradient */}
       <div 
         className="absolute left-0 top-0 bottom-0 w-10 sm:w-16 lg:w-20 z-10 pointer-events-none" 

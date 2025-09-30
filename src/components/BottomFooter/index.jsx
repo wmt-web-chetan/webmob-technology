@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Logo from "@/assets/images/WebMobTech_Logo.png";
 import Image from "next/image";
 import "./index.css";
@@ -21,6 +21,14 @@ const BottomFooter = () => {
 
   const DropdownSection = ({ title, items, sectionKey }) => {
     const isOpen = openDropdowns[sectionKey];
+    const contentRef = useRef(null);
+    const [height, setHeight] = useState(0);
+
+    useEffect(() => {
+      if (contentRef.current) {
+        setHeight(isOpen ? contentRef.current.scrollHeight : 0);
+      }
+    }, [isOpen]);
 
     return (
       <div className="lg:block">
@@ -32,7 +40,7 @@ const BottomFooter = () => {
           >
             <span>{title}</span>
             <svg
-              className={`w-5 h-5 transform transition-transform duration-200 ${
+              className={`w-5 h-5 transform transition-transform duration-300 ease-in-out ${
                 isOpen ? "rotate-180" : ""
               }`}
               fill="none"
@@ -47,13 +55,19 @@ const BottomFooter = () => {
               />
             </svg>
           </button>
-          {isOpen && (
+          
+          {/* Animated dropdown content */}
+          <div
+            ref={contentRef}
+            style={{ height: `${height}px` }}
+            className="overflow-hidden transition-all duration-300 ease-in-out"
+          >
             <ul className="mt-4 space-y-3 sm:space-y-4 text-sm sm:text-base font-normal text-text-disabled">
               {items.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
-          )}
+          </div>
         </div>
 
         {/* Desktop Static */}
