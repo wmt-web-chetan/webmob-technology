@@ -163,18 +163,29 @@ export default function BlogsSection(props) {
             {blogCards.slice(0, 3).map((blog, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-5 border border-text-disabled flex flex-1 min-h-[140px] sm:min-h-[160px] hover:border-primary hover:shadow-lg  duration-500 transition-all group"
+                className="bg-white rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-5 border border-text-disabled flex flex-1 w-full min-h-[140px] sm:min-h-[160px] hover:border-primary hover:shadow-lg  duration-500 transition-all group"
               >
                 {/* Image section - responsive width */}
-                <div className="flex-shrink-0 w-2/5 sm:w-2/5 lg:w-1/2">
+                <div className="relative flex-shrink-0 w-2/5 sm:w-2/5 lg:w-1/2 h-[140px] sm:h-[160px] lg:h-full ">
                   <Image
-                    height={120}
-                    width={120}
                     src={blog.thumbnailSrc || "/placeholder.svg"}
                     alt="Blog thumbnail"
-                    className="w-full h-full object-cover rounded-lg border border-disabled-text group-hover:scale-103 transition-transform duration-500"
+                    fill
+                    quality={95}
+                    sizes="(max-width: 640px) 40vw, (max-width: 1024px) 40vw, 50vw"
+                    className="object-fill rounded-lg border border-disabled-text group-hover:scale-103 transition-transform duration-500"
                   />
                 </div>
+
+                {/* <div className="flex-shrink-0 w-2/5 sm:w-2/5 lg:w-1/2">
+                  <Image
+                    height={1200}
+                    width={1200}
+                    src={blog.thumbnailSrc || "/placeholder.svg"}
+                    alt="Blog thumbnail"
+                    className="w-full h-[231px] object-fill rounded-lg border border-disabled-text group-hover:scale-103 transition-transform duration-500"
+                  />
+                </div> */}
 
                 {/* Content section - responsive width and spacing */}
                 <div className="flex flex-col  justify-between pl-3 sm:pl-4 lg:pl-4 w-3/5 sm:w-3/5 lg:w-1/2">
