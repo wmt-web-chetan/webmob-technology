@@ -30,7 +30,7 @@ export default function StatsSection({ stats = [] }) {
       <div className="text-center ">
         <div id="stats-heading" className="h2-heading ">
           The Data Behind the{" "}
-          <span className="text-gradient-primary font-bold">Dominance</span>
+          <span className="text-gradient-custom font-bold">Dominance</span>
         </div>
         <div className="flex justify-center mt-3">
           <p className="  h2-description lg:max-w-3xl  xl:max-w-4xl  2xl:max-w-5xl 3xl:max-w-7xl text-center">

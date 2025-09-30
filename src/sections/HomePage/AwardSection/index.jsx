@@ -21,7 +21,7 @@ const staticData = {
         mediaItemUrl: clutchaward // Award/trophy icon
       }
     },
-    value: "4.8",
+    value: "4.5",
     reviewCount: "44 reviews on Clutch"
   },
   awards: [

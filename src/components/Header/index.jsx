@@ -59,12 +59,7 @@ const Header = () => {
                     `}
                   >
                     {item.name}
-                    
-                    {/* Active underline */}
-                    {activeTab === item.name && (
-                      <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary rounded-full animate-fade-in"></div>
-                    )}
-                    
+
                     {item.hasDropdown && (
                       <Image
                         src="/assets/svg/Union.svg"
@@ -75,6 +70,11 @@ const Header = () => {
                       />
                     )}
                   </Link>
+
+                  {/* Active underline */}
+                  {activeTab === item.name && (
+                    <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary rounded-full animate-fade-in"></div>
+                  )}
                 </div>
               ))}
             </nav>
@@ -123,20 +123,22 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-   {mobileMenuOpen && (
+        {mobileMenuOpen && (
           <div className="lg:hidden">
             {/* Backdrop */}
-            <div 
+            <div
               className={`fixed  inset-0  bg-opacity-50 z-40 transition-opacity duration-300`}
               onClick={() => setMobileMenuOpen(false)}
             ></div>
-            
+
             {/* Menu Panel - positioned below header */}
-            <div className={`
+            <div
+              className={`
               fixed top-16 right-0 bottom-0 w-full bg-white  z-50
               transform transition-transform duration-300 ease-in-out
-              ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
-            `}>
+              ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}
+            `}
+            >
               {/* Close Button */}
               {/* <div className="flex justify-end p-4 border-b border-gray-200 bg-white">
                 <button

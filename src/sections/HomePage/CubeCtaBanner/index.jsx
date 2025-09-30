@@ -52,10 +52,10 @@ const CubeCtaBanner = () => {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[400px]  text-center">
         {/* Main heading */}
         <div className="flex justify-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center text-gray-900 leading-tight">
-            The <span className="text-gradient-primary font-bold">Future</span>{" "}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center text-text-primary leading-tight">
+            The <span className="text-gradient-custom font-semibold">Future</span>{" "}
             Doesn't Wait.{" "}
-            <span className="text-gradient-primary font-bold">Neither</span>{" "}
+            <span className="text-gradient-custom font-semibold">Neither</span>{" "}
             Should You.
           </h2>
         </div>

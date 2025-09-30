@@ -43,7 +43,7 @@ export default function IntelligenceReturn({
                 word.toLowerCase() === "intelligence" ? (
                   <span
                     key={index}
-                    className="text-gradient-primary font-semibold"
+                    className="text-gradient-custom font-semibold"
                   >
                     {word}{" "}
                   </span>

@@ -49,7 +49,7 @@ const TestimonialSection = () => {
         <div className="flex justify-center">
           <h2 className="h2-heading text-center text-text-primary">
             The{" "}
-            <span className="font-semibold text-gradient-primary">
+            <span className="font-semibold text-gradient-custom">
               Human Experience
             </span>{" "} 
             <span>

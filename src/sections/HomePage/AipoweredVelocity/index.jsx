@@ -11,7 +11,7 @@ const AipoweredVelocity = () => {
       <div className="flex justify-center text-center">
         <h2 className="h2-heading">
           The Symbiosis: How We Achieve{" "}
-          <span className="text-gradient-primary font-bold">5X Velocity</span>
+          <span className="text-gradient-custom font-bold">5X Velocity</span>
         </h2>
       </div>
       <div className="lg:flex gap-5 mt-4 md:mt-6 xl:mt-10 relative">

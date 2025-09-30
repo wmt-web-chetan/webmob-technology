@@ -185,7 +185,7 @@ const IndustrySection = () => {
       <div className="flex justify-center   ">
         <h2 className="h2-heading  text-center">
           Fluent in the Language of Your{" "}
-          <span className="font-bold text-gradient-primary">
+          <span className="font-bold text-gradient-custom">
             Industry's Code
           </span>{" "}
         </h2>

@@ -52,7 +52,7 @@ const FaqItem = ({ faq, isOpen, onToggle }) => {
   return (
     <div
       className={`border border-gray-200 rounded-lg mb-3 sm:mb-4 transition-all duration-300 ease-in-out ${
-        isOpen ? "bg-blue-50 border-blue-200" : "bg-white"
+        isOpen ? "bg-light-bg " : "bg-white"
       }`}
     >
       <button

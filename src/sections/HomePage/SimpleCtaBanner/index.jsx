@@ -11,7 +11,7 @@ const SimpleCtaBanner = () => {
       {/* Cube background images */}
       <div className="absolute inset-0">
         {/* Top-left cube */}
-        <div className="absolute top-[-46px] sm:top-[-120px] md:top-[-110px]  opacity-50  h-[55%] sm:h-96 ">
+        {/* <div className="absolute top-[-46px] sm:top-[-120px] md:top-[-110px]  opacity-50  h-[55%] sm:h-96 ">
           <Image 
             src={Checks} 
             alt="" 
@@ -19,16 +19,16 @@ const SimpleCtaBanner = () => {
             height={128}
             className="w-full h-full object-contain"
           />
-        </div>
-        <div className="block sm:hidden absolute bottom-[-161px] sm:bottom-[-46px]  h-96 rotate-180 ">
+        </div> */}
+        {/* <div className="block sm:hidden absolute bottom-[-161px] sm:bottom-[-46px]  h-96 rotate-180 "> */}
           <Image 
             src={Checks} 
             alt="" 
             width={128}
             height={128}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
           />
-        </div>
+        {/* </div> */}
       </div>
 
       {/* Content */}

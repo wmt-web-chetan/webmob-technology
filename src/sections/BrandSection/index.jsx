@@ -59,7 +59,7 @@ export default function BrandSection() {
           <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-16 2xl:mb-16 3xl:mb-16">
             <div className="h2-heading mb-2 mb:mb-6">
               The Engine Behind Ambitious{" "}
-              <span className="text-gradient-primary font-bold">
+              <span className="text-gradient-custom font-bold">
                 Innovators
               </span>
             </div>

@@ -68,7 +68,7 @@ const EngineeringHorizonSection = () => {
           <div className="flex-1 max-w-4xl">
             <h2 className="h2-heading  text-text-primary mb-6">
               Engineering the{" "}
-              <span className="text-gradient-primary font-semibold">
+              <span className="text-gradient-custom font-semibold">
                 Horizon
               </span>
             </h2>

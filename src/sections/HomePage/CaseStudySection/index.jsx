@@ -48,9 +48,9 @@ const CaseStudySection = () => {
       <div className="flex justify-center text-center mb-8 xl:mb-12">
         <h2 className="h2-heading">
           Our Work is{" "}
-          <span className="text-gradient-primary font-bold">Our Proof.</span>
+          <span className="text-gradient-custom font-bold">Our Proof.</span>
            Analyze the Unredacted{" "}
-          <span className="text-gradient-primary font-bold">Evidence.</span>
+          <span className="text-gradient-custom font-bold">Evidence.</span>
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2  gap-3 md:gap-4 xl:gap-4 2xl:gap-6 mx-auto items-stretch">

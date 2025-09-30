@@ -71,8 +71,8 @@ const FaqSection = () => {
   return (
     <div className='px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-32 py-12 sm:py-16 lg:py-24'>
       <div className='flex justify-center'>
-        <h2 className='h2-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center text-gray-900 leading-tight'>
-          Your <span className='text-gradient-primary font-bold'>Questions</span>, Answered with <span className='text-gradient-primary font-bold'>Clarity</span>.
+        <h2 className='h2-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center text-text-primary leading-tight'>
+          Your <span className='text-gradient-custom font-semibold'>Questions</span>, Answered with <span className='text-gradient-custom font-semibold'>Clarity</span>.
         </h2>
       </div>
       

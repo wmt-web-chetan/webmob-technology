@@ -25,13 +25,13 @@
   --color-gradient-end: #2c23e8;
 
   /* breakpoint */
-  --breakpoint-sm:640px;
-   --breakpoint-md:768px;
-   --breakpoint-lg: 1025px;
-   --breakpoint-xl:1280px;
-   --breakpoint-2xl: 1536px;
-   --breakpoint-3xl: 1791px;
- 
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1025px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1791px;
+
 }
 
 body {
@@ -44,40 +44,45 @@ body {
 }
 
 .h1-heading {
-  @apply text-3xl  md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl;
+  @apply text-3xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-7xl;
 }
 
 
-.h2-heading{
+.h2-heading {
   @apply text-2xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl 3xl:text-5xl leading-tight;
 }
 
-.h2-description{
+.h2-description {
   @apply text-sm md:text-lg xl:text-lg 2xl:text-lg 3xl:text-lg leading-tight text-text-secondary;
 }
 
 .text-gradient-primary {
-  background: linear-gradient(
-    163deg,
-    rgba(42, 159, 255, 1) 0%,
-    rgba(44, 35, 232, 1) 67%
-  );
+  background: linear-gradient(163deg,
+      rgba(42, 159, 255, 1) 0%,
+      rgba(44, 35, 232, 1) 67%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+.text-gradient-custom {
+  background: linear-gradient(180deg, #2A9FFF 27.02%, #2C23E8 71.33%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .bg-primary-button {
-  background: linear-gradient(
-    163deg,
-    rgba(42, 159, 255, 1) 0%,
-    rgba(44, 35, 232, 1) 67%
-  );
+  background: linear-gradient(163deg,
+      rgba(42, 159, 255, 1) 0%,
+      rgba(44, 35, 232, 1) 67%);
 }
 
 /* by yash */
 .section-padding-y {
   @apply py-8 sm:py-10 md:py-12 lg:py-16 xl:py-20 2xl:py-24;
 }
+
 .section-padding-y-v2 {
   @apply py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 2xl:py-20;
 }
@@ -85,6 +90,7 @@ body {
 .px-wrapper {
   @apply px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20;
 }
+
 .px-wrapper-v2 {
   @apply px-3 sm:px-3 md:px-6 lg:px-9 xl:px-12 2xl:px-[72px];
 }
@@ -167,7 +173,7 @@ body {
   color: #ffff;
 }
 
-.px-wrapper-v2{
+.px-wrapper-v2 {
   @apply px-3 sm:px-3 md:px-6 lg:px-9 xl:px-12 2xl:px-[72px] 3xl:px-40;
 }
 
@@ -177,6 +183,7 @@ body {
     opacity: 0;
     transform: translateY(1px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -199,4 +206,8 @@ body {
 .arrow-animate:hover svg,
 .arrow-animate:hover .arrow-icon {
   transform: rotate(-45deg);
+}
+
+.my-custom-gradient {
+  background: linear-gradient(163deg, #2A9FFF 0%, #2C23E8 67%);
 }

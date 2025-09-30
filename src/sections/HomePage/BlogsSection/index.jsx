@@ -135,12 +135,12 @@ export default function BlogsSection(props) {
           {title.includes(" ") ? (
             <>
               {title.split(" ").slice(0, -1).join(" ")}{" "}
-              <span className="font-semibold text-gradient-primary">
+              <span className="font-semibold text-gradient-custom">
                 {title.split(" ").slice(-1)[0]}
               </span>
             </>
           ) : (
-            <span className="text-gradient-primary">{title}</span>
+            <span className="text-gradient-custom">{title}</span>
           )}
         </h1>
         <p className="h2-description text-text-secondary max-w-3xl mx-auto leading-relaxed">
