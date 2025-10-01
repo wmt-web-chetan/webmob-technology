@@ -16,7 +16,7 @@ const AipoweredVelocity = () => {
       </div>
       <div className="lg:flex gap-5 mt-4 md:mt-6 xl:mt-10 relative">
         <div className="flex-1 py-5 sm:py-15 lg:sticky lg:top-10 self-start">
-          <p className="text-base sm:text-2xl text-text-primary">
+          <p className="text-base sm:text-lg text-text-primary">
             This isn't about developers just working harder. It's about them
             working smarter, amplified by a suite of proprietary and
             best-in-class AI tools. This fusion of human expertise and machine
@@ -35,7 +35,7 @@ const AipoweredVelocity = () => {
               return (
                 <div key={index} className="flex gap-5 mb-3">
                   <Image src={bullet} width={10} alt="bullet point" />
-                  <div className="text-text-secondary text-sm sm:text-lg">{item}</div>
+                  <div className="text-text-primary text-sm sm:text-lg ">{item}</div>
                 </div>
               );
             })}
