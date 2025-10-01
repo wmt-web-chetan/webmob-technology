@@ -7,12 +7,14 @@ const TestimonialSlider = ({ testimonials }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isHovered, setIsHovered] = useState(false); // New hover state
   const intervalRef = useRef(null);
 
   const currentTestimonial = testimonials[currentIndex];
 
   useEffect(() => {
-    if (isAutoPlaying && testimonials.length > 1) {
+    // Pause autoplay when hovered
+    if (isAutoPlaying && !isHovered && testimonials.length > 1) {
       intervalRef.current = setInterval(() => {
         if (!isTransitioning) {
           handleNext(true);
@@ -29,7 +31,7 @@ const TestimonialSlider = ({ testimonials }) => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isAutoPlaying, isTransitioning, testimonials.length]);
+  }, [isAutoPlaying, isHovered, isTransitioning, testimonials.length]); // Added isHovered to dependencies
 
   const triggerTransition = (newIndex, isAuto = false) => {
     if (isTransitioning) return;
@@ -71,9 +73,13 @@ const TestimonialSlider = ({ testimonials }) => {
   }, [isAutoPlaying]);
 
   return (
-    <div className="relative">
+    <div 
+      className="relative px-wrapper"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {/* Testimonial Card */}
-      <div className="flex">
+      <div className="flex px-wrapper" >
         <TestimonialCard
           testimonial={currentTestimonial}
           isTransitioning={isTransitioning}

@@ -15,7 +15,7 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
   return (
     <>
       {/* Mobile Layout - Fixed Height */}
-      <div className="lg:hidden h-[400px] sm:h-[295px] flex flex-col">
+      <div className="lg:hidden h-[400px] sm:h-[295px]  flex flex-col ">
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Quote icon at top */}
           <div
@@ -99,7 +99,7 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
       </div>
 
       {/* Desktop Layout - Fixed Height */}
-      <div className="hidden lg:flex lg:gap-8 xl:gap-12 2xl:gap-16 3xl:gap-20 items-stretch h-[400px]">
+      <div className="hidden lg:flex lg:gap-8 xl:gap-12 2xl:gap-16 3xl:gap-20 items-stretch h-[400px] md:h-[455px] xl:h-[400px]">
         {/* Right  */}
         <div className="relative">
           <div className="relative  h-full rounded-2xl group">
@@ -108,7 +108,7 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
               width={200}
               src={testimonial.image}
               alt={`${testimonial.name} testimonial`}
-              className={`object-cover min-w-2xs h-full rounded-2xl transition-all duration-500 ease-in-out ${
+              className={`object-cover min-w-[340px] h-full rounded-2xl transition-all duration-500 ease-in-out ${
                 isTransitioning
                   ? "opacity-0 -translate-x-8"
                   : "opacity-100 translate-x-0"
@@ -167,7 +167,7 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
             {/* Testimonial text - Scrollable area */}
             <div className="">
               <blockquote
-                className={`text-lg lg:text-xl xl:text-xl  3xl:text-2xl leading-relaxed text-text-primary transition-all duration-500 ease-in-out delay-200 ${transitionClass}`}
+                className={`text-lg lg:text-xl xl:text-xl  3xl:text-xl leading-relaxed text-text-primary transition-all duration-500 ease-in-out delay-200 ${transitionClass}`}
               >
                 "{testimonial.text}"
               </blockquote>
@@ -179,7 +179,7 @@ const TestimonialCard = ({ testimonial, isTransitioning }) => {
               <div
                 className={`mb-2 transition-all duration-500 ease-in-out delay-200 ${transitionClass}`}
               >
-                <h3 className="text-xl lg:text-2xl xl:text-2xl 2xl:text-3xl font-bold text-text-primary">
+                <h3 className="text-xl lg:text-2xl xl:text-xl 2xl:text-3xl font-bold text-text-primary">
                   {testimonial.name}
                 </h3>
               </div>

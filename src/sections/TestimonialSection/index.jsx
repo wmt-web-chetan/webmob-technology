@@ -10,7 +10,7 @@ const testimonialsData = [
     id: 1,
     image: demoImage,
     personImage: demoImage,
-    text: "WebMob Technologies has delivered the app with the majority of the required features and expertly matched the frontend to the supplied UI design. The team has consistently provided high-quality work on time. They've also maintained clear, honest communication via online meetings. online meetings.honest communication via online meetings. ",
+    text: "We were looking for an AI development company that could really understand our business. WebMob Technologies did more than that—they became a true partner. The agent they built for us has saved our team hundreds of hours every month. Their process was clear, and their team is top-notch ",
     name: "Andoni",
     position: "CEO & Founder at",
     company: mellySvg,
