@@ -76,7 +76,7 @@ export default function BrandSection() {
             <div className="mb-6 lg:mb-0 lg:shrink-0 text-center lg:text-left">
               <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl ">
                 Trusted by{" "}
-                <span className="font-medium text-gradient-primary">3500+</span>
+                <span className="font-semibold text-gradient-primary">3500+</span>
                 <span className="xl:block"> Brand worldwide</span>
               </p>
             </div>

@@ -176,7 +176,7 @@ const AvantGardeSection = () => {
                   </div>
 
                   {/* Service Name */}
-                  <h3 className="text-xs md:text-sm lg:text-2xl xl:text-2xl font-semibold text-white mb-1 md:mb-2 lg:mb-3  transition-all duration-300 line-clamp-1">
+                  <h3 className="text-xs md:text-sm lg:text-2xl xl:text-2xl font-medium text-white mb-1 md:mb-2 lg:mb-3  transition-all duration-300 line-clamp-1">
                     {service.name}
                   </h3>
 
