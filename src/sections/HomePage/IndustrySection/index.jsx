@@ -23,11 +23,26 @@ import sportBlack from "../../../assets/svg/sportblack.svg";
 import sportWhite from "../../../assets/svg/sportwhite.svg";
 import ecommerceBlack from "../../../assets/svg/Ecommerceblack.svg";
 import ecommerceWhite from "../../../assets/svg/Ecommercewhite.svg";
-import arrowSvg from "../../../assets/svg/arrow.svg"
+import arrowSvg from "../../../assets/svg/arrow.svg";
+import honeywellImg from "@/assets/svg/HoneywellImg.svg";
+import HouzequestImg from "@/assets/svg/HouzequestImg.svg";
+import TrinityImg from "@/assets/svg/TrinityImg.svg";
+import PentairImg from "@/assets/svg/PentairImg.svg";
+import fintechImg from "@/assets/svg/Fintech.svg";
+import entertainmentImg from "@/assets/svg/Entertainment.svg"
+import logisticImg from "@/assets/svg/logistics.svg"
+import healthcareImg from "@/assets/svg/Healthcare.svg"
+import edTechImg from "@/assets/svg/EdTech.svg"
+import sportsImg from "@/assets/svg/Sports.svg"
+import realestateImg from "@/assets/svg/Realestate.svg"
+import ecommerceImg from "@/assets/svg/Ecommerce.svg"
+
+// import entertainmentImg from "@/assets/images"
+
 
 const IndustrySection = () => {
   const [activeIndustry, setActiveIndustry] = useState(0);
-  const [expandedIndustry, setExpandedIndustry] = useState(0); // Track which industry is expanded (only one at a time)
+  const [expandedIndustry, setExpandedIndustry] = useState(0);
 
   const industries = [
     {
@@ -43,9 +58,10 @@ const IndustrySection = () => {
       ],
       work: "We built a platform that reduced commercial property closing times by 30%.",
       buttonText: "Explore Our PropTech Solutions",
-      image: section,
+      image: realestateImg,
       iconBlack: homeBlack,
       iconWhite: homeWhite,
+      logos: [honeywellImg, PentairImg, TrinityImg, HouzequestImg], // Replace with your actual logos
     },
     {
       name: "FinTech",
@@ -60,9 +76,10 @@ const IndustrySection = () => {
       ],
       work: "We developed a payment system that processes 1M+ transactions daily with 99.99% uptime.",
       buttonText: "Explore Our FinTech Solutions",
-      image: section,
+      image: fintechImg,
       iconBlack: fintechBlack,
       iconWhite: fintechWhite,
+      logos: [honeywellImg, PentairImg, TrinityImg, HouzequestImg], // Replace with fintech logos
     },
     {
       name: "Logistics",
@@ -77,9 +94,10 @@ const IndustrySection = () => {
       ],
       work: "We created a logistics platform that reduced delivery times by 40%.",
       buttonText: "Explore Our Logistics Solutions",
-      image: section,
+      image: logisticImg,
       iconBlack: logisticsBlack,
       iconWhite: logisticsWhite,
+      logos: [honeywellImg, PentairImg, TrinityImg, HouzequestImg], // Replace with logistics logos
     },
     {
       name: "EdTech",
@@ -94,9 +112,10 @@ const IndustrySection = () => {
       ],
       work: "We built an e-learning platform serving 500K+ students globally.",
       buttonText: "Explore Our EdTech Solutions",
-      image: section,
+      image: edTechImg,
       iconBlack: edtechBlack,
       iconWhite: edtechWhite,
+      logos: [honeywellImg, PentairImg, TrinityImg, HouzequestImg], // Replace with edtech logos
     },
     {
       name: "Healthcare",
@@ -111,9 +130,10 @@ const IndustrySection = () => {
       ],
       work: "We developed a telehealth platform used by 100+ healthcare providers.",
       buttonText: "Explore Our HealthTech Solutions",
-      image: section,
+      image: healthcareImg,
       iconBlack: healthcareBlack,
       iconWhite: healthcareWhite,
+      logos: [honeywellImg, PentairImg, TrinityImg, HouzequestImg], // Replace with healthcare logos
     },
     {
       name: "Entertainment",
@@ -128,9 +148,10 @@ const IndustrySection = () => {
       ],
       work: "We built a streaming platform handling 10M+ concurrent users.",
       buttonText: "Explore Our Entertainment Solutions",
-      image: section,
+      image: entertainmentImg,
       iconBlack: entertainmentBlack,
       iconWhite: entertainmentWhite,
+      logos: [honeywellImg, PentairImg, TrinityImg, HouzequestImg], // Replace with entertainment logos
     },
     {
       name: "Sports",
@@ -145,9 +166,10 @@ const IndustrySection = () => {
       ],
       work: "We created a sports analytics platform used by professional teams.",
       buttonText: "Explore Our Sports Solutions",
-      image: section,
+      image: sportsImg,
       iconBlack: sportBlack,
       iconWhite: sportWhite,
+      logos: [honeywellImg, PentairImg, TrinityImg, HouzequestImg], // Replace with sports logos
     },
     {
       name: "E-commerce",
@@ -162,23 +184,21 @@ const IndustrySection = () => {
       ],
       work: "We built an e-commerce platform processing $50M+ in annual sales.",
       buttonText: "Explore Our E-commerce Solutions",
-      image: section,
+      image: ecommerceImg,
       iconBlack: ecommerceBlack,
       iconWhite: ecommerceWhite,
+      logos: [honeywellImg, PentairImg, TrinityImg, HouzequestImg], // Replace with ecommerce logos
     },
   ];
 
   const toggleIndustryExpansion = (index) => {
     if (expandedIndustry === index) {
-      setExpandedIndustry(-1); // Close if clicking the same one
-      // Don't reset activeIndustry to -1, keep it at current index for tablet/desktop view
-      // Only the mobile view should not show active state when closed
+      setExpandedIndustry(-1);
     } else {
-      setExpandedIndustry(index); // Open the clicked one
-      setActiveIndustry(index); // Set active state when opening
+      setExpandedIndustry(index);
+      setActiveIndustry(index);
     }
   };
-  
 
   return (
     <div className="px-wrapper section-padding-y">
@@ -198,40 +218,51 @@ const IndustrySection = () => {
           with the unique challenges and opportunities of your vertical.
         </p>
       </div>
-      <div className=" rounded-2xl  p-2  md:p-3 md:py-4 mt-8 ">
+      <div className=" rounded-[40px]  p-2 md:p-4 mt-8 border-none sm:border-solid border-[1px] border-text-disabled">
         {/* Mobile Accordion - Only visible on small screens */}
         <div className="md:hidden">
           <div className="bg-light-bg rounded-xl p-2 space-y-1">
             {industries.map((industry, index) => (
-              <div key={index} className="border-b border-gray-100 last:border-b-0">
+              <div
+                key={index}
+                className="border-b border-gray-100 last:border-b-0"
+              >
                 {/* Accordion Header */}
                 <button
-               className={`w-full flex items-center justify-between p-3 rounded-t-lg rounded-b-0  transition-all duration-200 ${
-                expandedIndustry === index
-                  ? 'bg-white shadow-sm  ' 
-                  : ''
-              }`}
+                  className={`w-full flex items-center justify-between p-3 rounded-t-lg rounded-b-0  transition-all duration-200 ${
+                    expandedIndustry === index ? "bg-white shadow-sm  " : ""
+                  }`}
                   onClick={() => toggleIndustryExpansion(index)}
                 >
                   <div className="flex items-center gap-3">
-                    <div className={`p-2 rounded-lg ${
-                      expandedIndustry === index ? 'bg-primary' : ''
-                    }`}>
+                    <div
+                      className={`p-2 rounded-lg ${
+                        expandedIndustry === index ? "bg-primary" : ""
+                      }`}
+                    >
                       <Image
-                        src={expandedIndustry === index ? industry.iconWhite : industry.iconBlack}
+                        src={
+                          expandedIndustry === index
+                            ? industry.iconWhite
+                            : industry.iconBlack
+                        }
                         width={18}
                         alt={`${industry.name} industry icon`}
                       />
                     </div>
-                    <span className={`font-medium text-left ${
-                      expandedIndustry === index ? 'text-text-secondary' : 'text-gray-600'
-                    }`}>
+                    <span
+                      className={`font-medium text-left ${
+                        expandedIndustry === index
+                          ? "text-text-secondary"
+                          : "text-gray-600"
+                      }`}
+                    >
                       {industry.name}
                     </span>
                   </div>
                   <svg
                     className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
-                      expandedIndustry === index ? 'rotate-180' : ''
+                      expandedIndustry === index ? "rotate-180" : ""
                     }`}
                     fill="none"
                     stroke="currentColor"
@@ -245,13 +276,15 @@ const IndustrySection = () => {
                     />
                   </svg>
                 </button>
-                
+
                 {/* Accordion Content */}
-                <div className={`overflow-hidden transition-all bg-white rounded-b-lg duration-300 ease-in-out ${
-                  expandedIndustry === index 
-                    ? 'max-h-[1000px] opacity-100' 
-                    : 'max-h-0 opacity-0'
-                }`}>
+                <div
+                  className={`overflow-hidden transition-all bg-white rounded-b-lg duration-300 ease-in-out ${
+                    expandedIndustry === index
+                      ? "max-h-[1000px] opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
                   <div className="pt-2 bg-white/50 rounded-b-lg mx-3 mb-2">
                     {/* Industry Image */}
                     <div className="mb-4">
@@ -259,7 +292,7 @@ const IndustrySection = () => {
                         src={industry.image}
                         width={300}
                         alt={`${industry.title} industry showcase image`}
-                        className="w-full aspect-[4/3] object-cover rounded-lg"
+                        className="w-full aspect-[4/3] object-cover rounded-lg" 
                       />
                     </div>
 
@@ -269,11 +302,14 @@ const IndustrySection = () => {
                     <p className="text-sm text-gray-600 mb-4 leading-relaxed">
                       {industry.description}
                     </p>
-                    
+
                     {/* All Features */}
                     <div className="mb-4">
                       {industry.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-start gap-2 mb-2">
+                        <div
+                          key={featureIndex}
+                          className="flex items-start gap-2 mb-2"
+                        >
                           <Image
                             src={bullet}
                             width={8}
@@ -293,24 +329,26 @@ const IndustrySection = () => {
                         <span className="text-sm text-gray-500 font-semibold min-w-fit">
                           Our Work:
                         </span>
-                        <span className="text-sm text-gray-600">{industry.work}</span>
+                        <span className="text-sm text-gray-600">
+                          {industry.work}
+                        </span>
                       </div>
                     </div>
 
-                    {/* Company Logos */}
+                    {/* Company Logos - DYNAMIC */}
                     <div className="mb-4">
                       <div className="flex gap-2 flex-wrap">
-                        {[1, 2, 3, 4].map((item, logoIndex) => (
+                        {industry.logos.map((logo, logoIndex) => (
                           <div
                             key={logoIndex}
-                            className="border p-2 px-3 border-red-600 rounded-full"
+                            // className="border p-2 px-3 border-red-600 rounded-full"
                           >
                             <Image
-                              src={honeywell}
-                              width={50}
-                              height={20}
-                              alt="Honeywell partner company logo"
-                              className="w-12"
+                              src={logo}
+                              width={88}
+                              height={32}
+                              alt={`${industry.name} partner company logo ${logoIndex + 1}`}
+                              // className="w-12"
                             />
                           </div>
                         ))}
@@ -417,7 +455,7 @@ const IndustrySection = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Content Section - Hidden on mobile, visible on tablet and desktop */}
           <div className="hidden md:flex md:col-span-1 lg:col-span-6 xl:col-span-5 order-2 md:order-1 xl:order-1 flex-col justify-between">
             <div
@@ -460,17 +498,18 @@ const IndustrySection = () => {
                   {industries[activeIndustry].work}
                 </div>
               </div>
+              {/* Company Logos - DYNAMIC */}
               <div className="flex gap-2 md:gap-3 mt-4 flex-wrap transition-all duration-300">
-                {[1, 2, 3, 4].map((item, index) => (
+                {industries[activeIndustry].logos.map((logo, index) => (
                   <div
                     key={index}
-                    className="border p-2 md:p-3 px-3 md:px-4 border-red-600 rounded-full"
+                    // className="border p-2 md:p-3 px-3 md:px-4 border-red-600 rounded-full"
                   >
                     <Image
-                      src={honeywell}
+                      src={logo}
                       width={60}
                       height={24}
-                      alt="Honeywell partner company logo"
+                      alt={`${industries[activeIndustry].name} partner company logo ${index + 1}`}
                       className="md:w-20 xl:w-20 2xl:w-20 3xl:w-22"
                     />
                   </div>
@@ -478,14 +517,14 @@ const IndustrySection = () => {
               </div>
               <div className="mt-8">
                 <PrimaryButton
-                icon ={arrowSvg}
+                  icon={arrowSvg}
                   text={industries[activeIndustry].buttonText}
                   className="text-white bg-primary-button text-md py-3 transition-all duration-300 arrow-animate"
                 />
               </div>
             </div>
           </div>
-          
+
           {/* Image Section - Hidden on mobile, visible on tablet and desktop */}
           <div className="hidden md:block md:col-span-1 lg:col-span-6 xl:col-span-5 order-1 md:order-2 xl:order-2 xl:h-full">
             <div
@@ -496,7 +535,7 @@ const IndustrySection = () => {
                 src={industries[activeIndustry].image}
                 width={300}
                 alt={`${industries[activeIndustry].title} industry showcase image`}
-                className="w-full aspect-square md:aspect-[4/3] xl:h-full xl:aspect-auto object-cover rounded-2xl transition-all duration-300"
+                className="w-full aspect-square md:aspect-[4/3] xl:h-full xl:aspect-auto object-cover rounded-3xl transition-all duration-300"
               />
             </div>
           </div>

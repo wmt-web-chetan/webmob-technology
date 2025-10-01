@@ -10,6 +10,19 @@ const inter = Inter({
 export const metadata = {
   title: "Web & App Development Company in US",
   description: "Web & App Development Company in US",
+  openGraph: {
+    title: "Web & App Development Company in US",
+    description: "Web & App Development Company in US",
+    images: [
+      {
+        url: "/bgHero.webp",
+        width: 1200,
+        height: 630,
+        alt: "WebMobTech",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
