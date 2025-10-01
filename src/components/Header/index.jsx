@@ -42,10 +42,10 @@ const Header = () => {
           </div>
 
           {/* Right Section: Navigation + Contact Us */}
-          <div className="hidden lg:flex items-center flex-nowrap">
-            <nav className="flex items-center space-x-6 xl:space-x-8">
+          <div className="hidden lg:flex items-center flex-nowrap h-full">
+            <nav className="flex items-center space-x-6 xl:space-x-8 h-full">
               {navigationItems.map((item) => (
-                <div key={item.name} className="relative group">
+                <div key={item.name} className="relative group h-full flex items-center">
                   <Link
                     href={item.href}
                     onClick={() => handleNavClick(item.name)}
@@ -73,7 +73,7 @@ const Header = () => {
 
                   {/* Active underline */}
                   {activeTab === item.name && (
-                    <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary rounded-full animate-fade-in"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary rounded-[4px] animate-fade-in"></div>
                   )}
                 </div>
               ))}
