@@ -6,7 +6,7 @@ import arrowBlueSvg from "@/assets/svg/arrow-blue.svg";
 
 const CaseStudyCard = ({ data }) => {
   return (
-    <div className="bg-white rounded-3xl lg:rounded-[40px] p-2 sm:p-4 h-full flex flex-col w-full hover:shadow-lg transition-shadow duration-500 group">
+    <div className="bg-white rounded-3xl lg:rounded-[48px] p-2 sm:p-4 h-full flex flex-col w-full hover:shadow-lg transition-shadow duration-500 group">
       <div className="flex justify-center bg-[#eeeff1] rounded-2xl lg:rounded-[40px] p-4 h-48 md:h-56 lg:h-64 xl:h-95">
         <Image
           src={data?.image}
@@ -15,7 +15,7 @@ const CaseStudyCard = ({ data }) => {
           alt={data?.title || "Case study image"}
         />
       </div>
-      <div className="px-3 mt-6 xl:mt-3 flex-grow flex flex-col">``
+      <div className="px-3 mt-6 xl:mt-3 flex-grow flex flex-col">
         <h3 className=" text-lg  lg:text-3xl font-semibold w-full">
           {data?.title}
         </h3>
@@ -23,7 +23,7 @@ const CaseStudyCard = ({ data }) => {
           {data?.description}
         </p>
       </div>
-      <div className="flex justify-between items-end  px-3 mt-3 mb-4">
+      <div className="flex justify-between items-end p-2">
         <div className="flex gap-2 lg:gap-3 flex-wrap">
           {data?.tags.map((item, index) => (
             <div
