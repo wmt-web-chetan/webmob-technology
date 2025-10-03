@@ -28,7 +28,7 @@ import honeywellImg from "@/assets/svg/HoneywellImg.svg";
 import HouzequestImg from "@/assets/svg/HouzequestImg.svg";
 import TrinityImg from "@/assets/svg/TrinityImg.svg";
 import PentairImg from "@/assets/svg/PentairImg.svg";
-import fintechImg from "@/assets/svg/Fintech.svg";
+import fintechImg from "@/assets/images/Fintech11.png";
 import entertainmentImg from "@/assets/svg/Entertainment.svg"
 import logisticImg from "@/assets/svg/logistics.svg"
 import healthcareImg from "@/assets/svg/Healthcare.svg"
